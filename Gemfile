@@ -51,7 +51,7 @@ end
 
 gem 'kaminari', github: 'amatsuda/kaminari'
 
-#gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'devise'
 
 

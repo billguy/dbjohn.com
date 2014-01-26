@@ -8,7 +8,7 @@ html lang="en"
     meta content="" name="description"
     meta content="" name="author"
     link href="favicon.png" rel="shortcut icon"
-    title DBJohn.com | #{content_for(:title)}
+    title David B. John #{content_for(:title)}
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
 
@@ -28,7 +28,8 @@ html lang="en"
             a href="#" Blog
           li
             a href="#" About
-        h3#slogan.text-muted data-slogan="#{@slogan}" David B. John
+        a href="/"
+          h3#slogan.text-muted data-slogan="#{@slogan.title}" David B. John
       = yield
 
       .footer

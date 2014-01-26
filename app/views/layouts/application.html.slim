@@ -1,0 +1,42 @@
+doctype
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    meta content="" name="description"
+    meta content="" name="author"
+    link href="favicon.png" rel="shortcut icon"
+    title DBJohn.com | #{content_for(:title)}
+
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+
+    /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /![if lt IE 9]
+      | <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      | <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+    = csrf_meta_tags
+  body
+    .container
+      .header
+        ul.nav.nav-pills.pull-right
+          li
+            a href="#" Pics
+          li
+            a href="#" Blog
+          li
+            a href="#" About
+        h3#slogan.text-muted data-slogan="#{@slogan}" David B. John
+      = yield
+
+      .footer
+        p &copy; DBJohn, LLC
+    /! /container
+    /!
+      | Bootstrap core JavaScript
+      | \==================================================
+    /! Placed at the end of the document so the pages load faster
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+

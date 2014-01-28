@@ -1,0 +1,67 @@
+require 'spec_helper'
+
+describe Pic do
+
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:caption) }
+  it { should have_attached_file(:attachment) }
+  it { should callback(:notify_admin).after(:create) }
+  it { should callback(:generate_token).before(:create) }
+
+  describe '#latest' do
+    before do
+      Pic.any_instance.stub(:notify_admin).and_return(nil)
+    end
+
+    it 'returns the lates pic' do
+      pics = []
+      5.times do
+        pics << FactoryGirl.create(:pic, published: true)
+      end
+      latest = pics.last
+      Pic.latest.first.should == latest
+    end
+
+  end
+
+  describe '#notify_admin' do
+    it 'should call PicMailer unless published' do
+      pic = FactoryGirl.build(:pic)
+      PicMailer.should_receive(:notify_admin).and_return( double("PicMailer", :deliver => true) )
+      pic.save
+    end
+
+    it 'should not call PicMailer if published' do
+      pic = FactoryGirl.build(:pic, published: true)
+      PicMailer.should_not_receive(:notify_admin)
+      pic.save
+    end
+  end
+
+  describe '#generate_token' do
+    it 'should generate a token' do
+      pic = FactoryGirl.build(:pic)
+      expect { pic.save }.to change{pic.token}
+    end
+
+    it 'should be 64 in length' do
+      subject.send(:generate_token).length.should >= 16
+    end
+
+  end
+
+  describe '#approve' do
+    it 'should publish when a valid token' do
+      pic = FactoryGirl.create(:pic)
+      expect { pic.approve(pic.token) }.to change{pic.published}.to(true)
+
+    end
+
+    it 'should not publish when an invalid token' do
+      pic = FactoryGirl.create(:pic)
+      expect { pic.approve("invalid") }.not_to change{pic.published}.to(true)
+    end
+  end
+
+
+end

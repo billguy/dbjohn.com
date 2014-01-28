@@ -1,0 +1,56 @@
+-if @page
+
+  - if can? :edit, @page
+
+    #editor contenteditable="false"
+      =@page.try(:content).try(:html_safe)
+    = button_tag 'Edit', id: 'edit_button', class: 'btn btn-primary'
+
+
+    - content_for :footer do
+
+      javascript:
+
+        var editor;
+        var edit_button = $('#edit_button');
+
+        $(edit_button).on('click', function(){
+          var text = $(edit_button).text();
+          if (text == 'Edit'){
+            $('#editor').prop('contentEditable',true).focus();
+            editor = CKEDITOR.inline( 'editor', { } );
+            $(edit_button).text('Save');
+          } else {
+            var data = editor.getData();
+            $.ajax({
+              url:'#{@page ? page_path(@page) : '/pages'}',
+              type:"PUT",
+              dataType:'json',
+              data: { page: { content: data } },
+              error: function (responseObject) {
+                alert(responseObject.responseText);
+              },
+              success: function (responseObject) {
+                $('#editor').prop('contentEditable',false);
+                if (CKEDITOR.instances.editor) CKEDITOR.instances.editor.destroy();
+                $(edit_button).text('Edit');
+              }
+            });
+          }
+        });
+
+        $('#editor').on('click', function(e) {
+          if(typeof e.target.href != 'undefined' && e.shiftKey == true) {
+            window.open(e.target.href);
+          }
+        });
+
+  - else
+    .content
+      =@page.try(:content).try(:html_safe)
+
+
+  - if @page.javascript
+    -content_for :footer do
+      javascript:
+        #{raw @page.javascript}

@@ -1,0 +1,28 @@
+= simple_form_for(@pic) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :published
+    = f.input :title
+    = f.input :attachment
+    = f.input :caption
+    = f.input :tag_list
+
+  .form-actions
+    = f.button :submit
+
+- content_for :footer do
+  javascript:
+    $(function(){
+      var options = {theme: 'facebook', preventDuplicates: true};
+      var tags = "#{@pic.tag_list}";
+
+      if (tags.length > 0){
+        var tv = [];
+        $.each(tags.split(","), function(index, value){
+          tv.push({id: value, name: value});
+        });
+        options['prePopulate'] = tv;
+      }
+      $("#pic_tag_list").tokenInput("/tags", options);
+    });

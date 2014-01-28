@@ -47,13 +47,14 @@ group :test do
   gem 'zeus'
   gem 'shoulda-matchers'
   gem "shoulda-callback-matchers", ">=0.3.0"
+  gem 'database_cleaner'
 end
 
 gem 'kaminari', github: 'amatsuda/kaminari'
 
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'devise'
-
+gem 'acts-as-taggable-on'
 
 gem 'cancan'
 
@@ -65,8 +66,8 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', '>= 3.0.0.rc2'
 
 gem 'rvm-capistrano'
-
-
+gem 'mailman'
+gem 'whenever'
 gem 'better_errors'
 gem 'binding_of_caller'
 
@@ -81,8 +82,9 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 
 gem 'truncate_html'
+gem 'jquery-tokeninput-rails'
 
-
+gem "has_permalink"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

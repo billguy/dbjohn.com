@@ -15,7 +15,7 @@ module MailHelpers
         body '<h1>Funky Title</h1><p>Here is the attachment you wanted</p>'
       end
 
-      add_file 'testing.png'
+      add_file 'spec/support/testing.png'
     end
   end
 end

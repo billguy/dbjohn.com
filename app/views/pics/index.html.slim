@@ -1,0 +1,25 @@
+h1 Listing pics
+
+table
+  tr
+    th Published
+    th Title
+    th Attachment
+    th Caption
+    th
+    th
+    th
+
+  - @pics.each do |pic|
+    tr
+      td = pic.published
+      td = pic.title
+      td = pic.attachment
+      td = pic.caption
+      td = link_to 'Show', pic
+      td = link_to 'Edit', edit_pic_path(pic)
+      td = link_to 'Destroy', pic, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Pic', new_pic_path

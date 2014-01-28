@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Published:
+  = @pic.published
+p
+  strong Title:
+  = @pic.title
+p
+  strong Attachment:
+  = @pic.attachment
+p
+  strong Caption:
+  = @pic.caption
+
+= link_to 'Edit', edit_pic_path(@pic)
+'|
+= link_to 'Back', pics_path

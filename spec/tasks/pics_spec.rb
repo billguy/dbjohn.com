@@ -1,37 +1,22 @@
-require '../spec_helper'
+require 'spec_helper'
 require 'rake'
+include MailHelpers
 
-describe 'foo namespace rake task' do
-  before :all do
-    Rake.application.rake_require "tasks/pic"
-    Rake::Task.define_task(:environment)
+describe 'pic:email' do
+  before do
+    DbjohnCom::Application.load_tasks
+    PicsHelper.stub(:fetch_email).and_return(nil)
   end
 
-  describe 'foo:bar' do
-    before do
-      BarOutput.stub(:banner)
-      BarOutput.stub(:puts)
-    end
+  let(:run_rake_task) { Rake::Task['pic:email'].invoke }
 
-    let :run_rake_task do
-      Rake::Task["pic:email"].reenable
-      Rake.application.invoke_task "pic:email"
-    end
+  it { expect { run_rake_task }.not_to raise_exception }
 
-    it "should bake a bar" do
-      Bar.any_instance.should_receive :bake
-      run_rake_task
-    end
-
-    it "should bake a bar again" do
-      Bar.any_instance.should_receive :bake
-      run_rake_task
-    end
-
-    it "should output two banners" do
-      BarOutput.should_receive(:banner).twice
-      run_rake_task
-    end
-
+  it 'should create a new pic from an email' do
+    authorized_email = mail_with_attachment(APP_CONFIG['pics_mail_address'], APP_CONFIG['pics_authorized_emails'].first)
+    PicsHelper.stub(:fetch_email).and_return(authorized_email)
+    Pic.any_instance.should_receive :create
+    run_rake_task
   end
+
 end

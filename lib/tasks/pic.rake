@@ -1,43 +1,23 @@
 namespace :pic do
-
-
-  def fetch_from_email
-    require "mailman"
-    require File.dirname(__FILE__) + "/../../config/environment"
-
-    Mailman.config.ignore_stdin = true
-    Mailman.config.logger = Logger.new File.expand_path("../../../log/mailman_pics_#{Rails.env}.log", __FILE__)
-
-    if Rails.env.test?
-      Mailman.config.maildir = File.expand_path("../../../tmp/test_maildir", __FILE__)
-    else
-      Mailman.config.poll_interval = 0
-      Mailman.config.pop3 = {
-          server: APP_CONFIG['pics_mail_host'], port: APP_CONFIG['pics_mail_port'], ssl: APP_CONFIG['pics_mail_ssl'],
-          username: APP_CONFIG['pics_mail_address'],
-          password: APP_CONFIG['pics_mail_pass']
-      }
-
-    end
-
-    Mailman::Application.run do
-
-      from(APP_CONFIG['pics_authorized_emails']).to(APP_CONFIG['pics_mail_address']) do
-        begin
-          #Pic.create_from_message
-        rescue Exception => e
-          Mailman.logger.error "Exception occurred while receiving message:\n#{message}"
-          Mailman.logger.error [e, *e.backtrace].join("\n")
-          #TicketMailer.exception_notification(message,e).deliver
-        end
-      end
-
-    end
-
-  end
+  require "#{Rails.root}/app/helpers/pics_helper"
+  include PicsHelper
 
   desc 'Fetch pics from secret email address'
   task email: :environment do
-    fetch_from_email
+    if email = PicsHelper.fetch_email
+      caption = (email.multipart? ? email.text_part.body.decoded : email.body.decoded).encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => "")
+      attributes = { title: email.subject, caption: caption, sent_by: email.from.first}
+      email.attachments.each do | attachment |
+        filename = attachment.filename
+        file = StringIO.new(attachment.decoded)
+        file.class.class_eval { attr_accessor :original_filename, :content_type }
+        file.original_filename = filename
+        file.content_type = attachment.mime_type
+        attributes[:title] = filename unless attributes[:title]
+        attributes[:caption] = filename unless attributes[:caption]
+        pic = Pic.create(attributes.reverse_merge(attachment: file))
+        pic.tag_list.add("mobile") if pic
+      end
+    end
   end
 end

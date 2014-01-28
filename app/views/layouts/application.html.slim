@@ -11,6 +11,8 @@ html lang="en"
     title David B. John #{content_for(:title)}
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    =yield :header
+
 
     /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /![if lt IE 9]
@@ -23,13 +25,13 @@ html lang="en"
       .header
         ul.nav.nav-pills.pull-right
           li
-            a href="#" Pics
+            a href="pics" Pics
           li
-            a href="#" Blog
+            a href="blog#" Blog
           li
-            a href="#" About
+            a href="about" About
         a href="/"
-          h3#slogan.text-muted data-slogan="#{@slogan.title}" David B. John
+          h3#slogan.text-muted data-slogan="#{@slogan.title rescue nil}" David B. John
       = yield
 
       .footer
@@ -40,4 +42,5 @@ html lang="en"
       | \==================================================
     /! Placed at the end of the document so the pages load faster
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    =yield :footer
 

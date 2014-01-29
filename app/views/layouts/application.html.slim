@@ -10,7 +10,9 @@ html lang="en"
     link href="favicon.png" rel="shortcut icon"
     title David B. John #{content_for(:title)}
 
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all"
+    = stylesheet_link_tag controller.controller_name, :media => "all" if Rails.application.assets.find_asset("#{controller.controller_name}.css")
+
     =yield :header
 
 
@@ -25,11 +27,11 @@ html lang="en"
       .header
         ul.nav.nav-pills.pull-right
           li
-            a href="pics" Pics
+            a href="/pics" Pics
           li
-            a href="blog#" Blog
+            a href="/blog" Blog
           li
-            a href="about" About
+            a href="/about" About
         a href="/"
           h3#slogan.text-muted data-slogan="#{@slogan.title rescue nil}" David B. John
       = yield
@@ -41,6 +43,8 @@ html lang="en"
       | Bootstrap core JavaScript
       | \==================================================
     /! Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "application"
+    = javascript_include_tag controller.controller_name if Rails.application.assets.find_asset("#{controller.controller_name}.js")
+
     =yield :footer
 

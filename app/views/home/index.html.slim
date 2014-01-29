@@ -1,22 +1,8 @@
--if @latest_pics
-  #carousel.carousel.slide.carousel-fit.carousel-caption-active data-ride="carousel"
-    /! Indicators
-    ol.carousel-indicators
-      - @latest_pics.length.times do |n|
-        li class="#{n == 0 && 'active'}" data-slide-to="#{n}" data-target="#carousel"
-    /! Wrapper for slides
-    .carousel-inner
-      - @latest_pics.each_with_index do |pic, index|
-        .item class="#{index == 0 && 'active'}"
-          =image_tag(pic.attachment.url(:large))
-          .carousel-caption
-            h4= pic.title
-            p= pic.caption
-    /! Controls
-    a.left.carousel-control data-slide="prev" href="#carousel-example-generic"
-      span.glyphicon.glyphicon-chevron-left
-    a.right.carousel-control data-slide="next" href="#carousel-example-generic"
-      span.glyphicon.glyphicon-chevron-right
+- if @latest_pic
+  figure.cap-bot
+    =link_to pic_path(@latest_pic) do
+      =image_tag(@latest_pic.attachment.url(:large))
+      figcaption= caption(@latest_pic)
 
 .row.marketing
   .col-md-6

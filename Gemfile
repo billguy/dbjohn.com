@@ -29,7 +29,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -61,6 +60,8 @@ gem 'cancan'
 gem "ckeditor", github: 'galetahub/ckeditor'
 
 gem 'acts_as_textcaptcha'
+gem 'exifr'
+
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', '>= 3.0.0.rc2'
@@ -76,7 +77,8 @@ gem 'exception_notification'
 
 gem "validates_formatting_of"
 
-gem 'simple_form'
+gem 'bootstrap_form', github: 'potenza/bootstrap_form'
+gem "geocoder"
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 

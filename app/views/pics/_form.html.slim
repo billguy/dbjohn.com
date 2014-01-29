@@ -1,15 +1,16 @@
-= simple_form_for(@pic) do |f|
-  = f.error_notification
+= bootstrap_form_for(@pic, style: :horizontal, left: "col-sm-2", right: "col-sm-7") do |f|
 
-  .form-inputs
-    = f.input :published
-    = f.input :title
-    = f.input :attachment
-    = f.input :caption
-    = f.input :tag_list
-
-  .form-actions
-    = f.button :submit
+  = f.form_group do
+    = f.check_box :published
+  = f.text_field :title
+  = f.form_group do
+    = image_tag(f.object.attachment.url(:thumb), class: 'img-polaroid') if f.object.attachment.exists?
+  = f.file_field :attachment, data: { fileupload: true }
+  = f.text_area :caption
+  = f.text_field :tag_list
+  = f.form_group do
+    = f.primary "Save", data: { "disable-with" => "Saving..."}
+    button.btn.btn-link type="button" onclick="location.href = '#{pics_path}'" Cancel
 
 - content_for :footer do
   javascript:

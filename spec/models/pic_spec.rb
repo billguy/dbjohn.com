@@ -8,6 +8,23 @@ describe Pic do
   it { should callback(:notify_admin).after(:create) }
   it { should callback(:generate_token).before(:create) }
 
+
+  describe 'geocode' do
+    before do
+      Pic.any_instance.stub(:notify_admin).and_return(nil)
+    end
+    it 'geocodes images with gps exif' do
+      pic = FactoryGirl.create(:pic_gps)
+      p pic.inspect
+      pic.location.should_not be_nil
+    end
+    it 'does not geocode images without gps exif' do
+      pic = FactoryGirl.create(:pic)
+      pic.location.should be_nil
+    end
+  end
+
+
   describe '#latest' do
     before do
       Pic.any_instance.stub(:notify_admin).and_return(nil)

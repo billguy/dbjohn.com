@@ -8,6 +8,11 @@ class CreatePics < ActiveRecord::Migration
       t.text :caption
       t.string :token
       t.string :sent_by
+      t.string :location
+      t.float :latitude
+      t.float :longitude
+      t.string :camera_model
+      t.datetime :date_taken
 
       t.timestamps
     end

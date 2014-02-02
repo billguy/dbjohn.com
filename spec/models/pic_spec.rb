@@ -30,13 +30,32 @@ describe Pic do
       Pic.any_instance.stub(:notify_admin).and_return(nil)
     end
 
-    it 'returns the lates pic' do
+    it 'returns the latest pic' do
       pics = []
       5.times do
         pics << FactoryGirl.create(:pic, published: true)
       end
       latest = pics.last
       Pic.latest.first.should == latest
+    end
+
+  end
+
+  describe '#filter_by' do
+    before do
+      Pic.any_instance.stub(:notify_admin).and_return(nil)
+      FactoryGirl.create(:pic, published: true)
+      FactoryGirl.create(:pic, published: true, created_at: 2.years.ago)
+      FactoryGirl.create(:pic, published: true, created_at: 2.months.ago)
+    end
+    it 'returns all' do
+      Pic.filter_by.length.should == 3
+    end
+    it 'filters by year' do
+      Pic.filter_by(:year).length.should == 2
+    end
+    it 'filters by month' do
+      Pic.filter_by(:month).length.should == 1
     end
 
   end

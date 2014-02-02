@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require lazyload.min.js
 
 $(function() {
 
@@ -22,5 +23,7 @@ $(function() {
             $(this).text(slogan).fadeIn(500);
         });
     }
+
+
 
 });

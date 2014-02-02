@@ -1,21 +1,46 @@
-= form_for @page do |f|
-  - if @page.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
-      ul
-        - @page.errors.full_messages.each do |message|
-          li = message
+- if can? :edit, @page
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :permalink
-    = f.text_field :permalink
-  .field
-    = f.label :content
-    = f.cktext_area :content
-  .field
-    = f.label :javascript
-    = f.text_area :javascript
-  .actions = f.submit 'Save'
+  #editor contenteditable="true"
+    =@page.content.try(:html_safe)
+
+  #accordion.panel-group
+    .panel.panel-default
+      .panel-heading
+        .panel-title
+          a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" Page details...
+      #collapseOne.panel-collapse.collapse.in
+        .panel-body
+          = bootstrap_form_for(@page, style: :horizontal, left: "col-sm-2", right: "col-sm-7") do |f|
+            = f.text_field :title
+            = f.text_field :permalink
+            = f.text_area :javascript
+            = f.text_area :content, class: 'hide', hide_label: true
+            =f.submit
+
+
+  - content_for :footer do
+
+    javascript:
+
+      var editor = CKEDITOR.inline( 'editor', { } );
+
+      $('form').on('submit', function(){
+        var data = editor.getData();
+        $('#page_content').val(data);
+      });
+
+      $('#editor').on('click', function(e) {
+        if(typeof e.target.href != 'undefined' && e.shiftKey == true) {
+          window.open(e.target.href);
+        }
+      });
+
+- else
+  .content
+    =@page.content.try(:html_safe)
+
+
+- if @page.javascript
+  -content_for :footer do
+    javascript:
+      #{raw @page.javascript}

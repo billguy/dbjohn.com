@@ -31,18 +31,20 @@ html lang="en"
             a href="/blog" Blog
           li
             a href="/about" About
-        a href="/"
-          .h3#slogan.text-muted data-slogan="#{@slogan.title rescue nil}" David B. John
+        .h3
+          a#slogan href="/" data-slogan="#{@slogan.title rescue nil}" David B. John
+
+
       - flash.each do |key, value|
         div class="#{flash_class(key)}"
           button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
           =value
-      = yield
+      .content= yield
 
       .footer
         .pull-right
           a href="http://rubyonrails.org/"
-            =image_tag 'rails.jpg', class: 'inline'
+            img.inline src='assets/rails.jpg' alt="Ruby on Rails Logo"
         .pull-left &nbsp;&copy; DBJohn, LLC
 
 

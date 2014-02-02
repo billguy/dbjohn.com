@@ -6,12 +6,14 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    @page = Page.find_by_permalink(params[:id]) or redirect_to action: :new
+    @page = Page.find_by_permalink(params[:id]) or current_user ? redirect_to(action: :new, id: params[:id]) : redirect_to(root_url, flash: {alert: "Page not found"})
   end
 
   # GET /pages/new
   def new
-    @page = Page.new
+    title = params[:id].titleize
+    permalink = params[:id].parameterize
+    @page = Page.new(title: title, permalink: permalink, content: 'click edit to change content')
   end
 
   # GET /pages/1/edit
@@ -25,11 +27,12 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to page_path(@page), notice: 'Page was successfully created.' }
         format.json { render action: 'show', status: :created, location: @page }
       else
+        flash[:notice] = @page.errors.full_messages.to_sentence
         format.html { render action: 'new' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
+        format.json { render json: [@page.errors.full_messages.to_sentence], status: :unprocessable_entity }
       end
     end
   end
@@ -39,11 +42,12 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to page_path(@page), notice: 'Page was successfully updated.' }
         format.json { head :no_content }
       else
+        flash[:notice] = @page.errors.full_messages.to_sentence
         format.html { render action: 'edit' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
+        format.json { render json: [@page.errors.full_messages.to_sentence], status: :unprocessable_entity }
       end
     end
   end

@@ -1,8 +1,8 @@
 -title(@pic.title)
 
-figure.cap-bot
+figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
-    =image_tag(@pic.attachment.url(:large))
+    =image_tag('/assets/blank.gif', class: 'lazy-load', data: { src: @pic.attachment.url(:large)})
     figcaption= caption(@pic)
 .clearfix
 

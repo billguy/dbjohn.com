@@ -26,7 +26,7 @@ module ApplicationHelper
     return '' if tags.size == 0
     output = "<ul class=\"inline tags\">"
     tags.each do |tag|
-      output << "<li><a href=\"#{pics_path(tags: [tag.name])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
+      output << "<li><a href=\"#{pics_path(tags: [tag.name], filter: params[:filter])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
     end
     output << "</ul>"
     output.html_safe

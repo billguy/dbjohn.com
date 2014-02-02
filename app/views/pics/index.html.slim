@@ -4,10 +4,21 @@
   br
   br
 
+.btn-group.pull-right
+  = link_to 'All', pics_path, class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
+  = link_to 'Month', pics_path(filter: :month), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
+  = link_to 'Year', pics_path(filter: :year), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
+
+.pull-left
+  = print_tags(Pic, Pic.tag_counts_on(:tags))
+
+.clearfix
+br
+
 - @pics.each do |pic|
   figure.cap-bot
     = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
-      =image_tag(pic.attachment.url(:medium))
+      =image_tag('/assets/blank.gif', class: 'lazy-load', data: { src: pic.attachment.url(:medium)})
       figcaption= caption(pic)
 .clearfix
 

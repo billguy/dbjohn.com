@@ -21,6 +21,24 @@ class Pic < ActiveRecord::Base
     where(published: true).order(created_at: :desc).limit(num)
   }
 
+  scope :filter_by, ->(filter=nil, published=true){
+    case filter
+      when :year
+        created = 1.year.ago
+      when :month
+        created = 1.month.ago
+      when :day
+        created = DateTime.now.beginning_of_day
+      else
+        created = 5.years.ago
+    end
+    if published
+      where("pics.created_at > ? and pics.published = ?", created, published).order(created_at: :desc)
+    else
+      where("pics.created_at > ?", created).order(created_at: :desc)
+    end
+  }
+
   reverse_geocoded_by :latitude, :longitude do |obj,geo|
     obj.location  = [geo.first.city, " #{geo.first.state}"].join(",")
   end

@@ -13,6 +13,7 @@ FactoryGirl.define do
     longitude nil
     camera_model nil
     date_taken nil
+    created_at nil
   end
 
   factory :pic_gps, class: Pic do

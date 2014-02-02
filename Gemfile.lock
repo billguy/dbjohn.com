@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/amatsuda/kaminari.git
-  revision: 918b6d5ac507bc9fcd3f8758468d29fb6fa4efc2
-  specs:
-    kaminari (0.15.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-
-GIT
   remote: git://github.com/galetahub/ckeditor.git
   revision: 5d09c7f59c62e41a70a4abf2c191c5b0f8cf5b60
   specs:
@@ -152,6 +144,8 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    fancybox2-rails (0.2.5)
+      railties (>= 3.1.0)
     ffi (1.9.3)
     font-awesome-rails (4.0.3.1)
       railties (>= 3.2, < 5.0)
@@ -172,6 +166,12 @@ GEM
     jquery-ui-rails (4.1.1)
       railties (>= 3.1.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     listen (2.4.0)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -323,12 +323,13 @@ DEPENDENCIES
   exception_notification
   exifr
   factory_girl_rails
+  fancybox2-rails
   geocoder
   has_permalink
   jbuilder (~> 1.2)
   jquery-rails
   jquery-tokeninput-rails
-  kaminari!
+  kaminari-bootstrap (~> 3.0.1)
   mailman
   paper_trail (>= 3.0.0.rc2)
   paperclip!

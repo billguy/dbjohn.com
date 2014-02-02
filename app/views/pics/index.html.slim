@@ -1,25 +1,18 @@
-h1 Listing pics
+- title("Pics")
+- if can? :manage, Pic
+  = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
+  br
+  br
 
-table
-  tr
-    th Published
-    th Title
-    th Attachment
-    th Caption
-    th
-    th
-    th
+- @pics.each do |pic|
+  figure.cap-bot
+    = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
+      =image_tag(pic.attachment.url(:medium))
+      figcaption= caption(pic)
+.clearfix
 
-  - @pics.each do |pic|
-    tr
-      td = pic.published
-      td = pic.title
-      td = pic.attachment
-      td = pic.caption
-      td = link_to 'Show', pic
-      td = link_to 'Edit', edit_pic_path(pic)
-      td = link_to 'Destroy', pic, :confirm => 'Are you sure?', :method => :delete
+.pull-right
+  = paginate @pics
 
-br
+.clearfix
 
-= link_to 'New Pic', new_pic_path

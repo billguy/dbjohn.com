@@ -49,7 +49,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'devise'
@@ -82,7 +82,7 @@ gem "geocoder"
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
-
+gem 'fancybox2-rails'
 gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
 

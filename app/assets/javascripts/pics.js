@@ -1,4 +1,5 @@
 //= require jquery.tokeninput
+//= require fancybox
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;
@@ -20,3 +21,21 @@ $(document).on('change', 'form [data-fileupload]', function() {
         return image_container.hide();
     }
 });
+
+
+$(function() {
+    $("a.fancybox").fancybox({
+        helpers : {
+            title : {
+                type : 'inside'
+            }
+        }
+    });
+});
+
+
+$(document).on('click', 'img.fancybox-image', function(){
+    var current = $.fancybox.current.element;
+    window.location.href = $(current).data('path')
+});
+

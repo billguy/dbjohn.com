@@ -1,18 +1,19 @@
-p#notice = notice
+-title(@pic.title)
 
-p
-  strong Published:
-  = @pic.published
-p
-  strong Title:
-  = @pic.title
-p
-  strong Attachment:
-  = @pic.attachment
-p
-  strong Caption:
-  = @pic.caption
+figure.cap-bot
+  = link_to(@pic.attachment.url) do
+    =image_tag(@pic.attachment.url(:large))
+    figcaption= caption(@pic)
+.clearfix
 
-= link_to 'Edit', edit_pic_path(@pic)
-'|
-= link_to 'Back', pics_path
+h1=@pic.title
+
+- if can? :manage, Pic
+  .pull-right
+    = link_to 'Edit', edit_pic_path(@pic)
+    '  |
+    = link_to 'Delete', pic_path(@pic), method: :delete, data: { confirm: 'Are you sure?' }
+
+= print_tags(Pic, @pic.tags)
+p=@pic.caption
+

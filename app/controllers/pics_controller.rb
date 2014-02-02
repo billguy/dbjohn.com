@@ -7,7 +7,12 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-    @pics = Pic.all
+    if current_user
+      @pics = Pic.all.page params[:page]
+    else
+      @pics = Pic.latest(9).page params[:page]
+    end
+
   end
 
   # GET /pics/1

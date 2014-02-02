@@ -10,6 +10,7 @@ DbjohnCom::Application.routes.draw do
     end
   end
 
+  resources :slogans, except: [:show]
   resources :tags, only: [:index]
   get ':id', to: 'pages#show', as: :page
   resources :pages, except: [:index]

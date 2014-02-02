@@ -1,11 +1,12 @@
 class PagesController < ApplicationController
   load_and_authorize_resource find_by: :permalink
-  skip_load_resource only: [:create]
+  skip_load_resource only: [:create, :show]
   skip_authorize_resource only: [:show]
 
   # GET /pages/1
   # GET /pages/1.json
   def show
+    @page = Page.find_by_permalink(params[:id]) or redirect_to action: :new
   end
 
   # GET /pages/new

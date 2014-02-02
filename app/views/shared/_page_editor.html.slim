@@ -2,8 +2,11 @@
 
   - if can? :edit, @page
 
+      = f.text_field :title
+
+
     #editor contenteditable="false"
-      =@page.try(:content).try(:html_safe)
+      =@page.content.html_safe
     = button_tag 'Edit', id: 'edit_button', class: 'btn btn-primary'
 
 

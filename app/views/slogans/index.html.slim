@@ -1,0 +1,20 @@
+h1 Slogans
+= link_to 'New Slogan', new_slogan_path, class: 'btn btn-primary'
+
+table.table.table-hover
+  thead
+    tr
+      th Active
+      th Slogan
+      th
+      th
+      th
+  tbody
+    - @slogans.each do |slogan|
+      tr
+        td= slogan.active
+        td= slogan.title
+        td= link_to 'Edit', edit_slogan_path(slogan)
+        td= link_to 'Destroy', slogan, :confirm => 'Are you sure?', :method => :delete
+
+

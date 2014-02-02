@@ -8,13 +8,12 @@ html lang="en"
     meta content="" name="description"
     meta content="" name="author"
     link href="favicon.png" rel="shortcut icon"
-    title David B. John #{content_for(:title)}
+    title= content_for?(:title) ? yield(:title) : 'David B. John'
 
     = stylesheet_link_tag    "application", media: "all"
     = stylesheet_link_tag controller.controller_name, :media => "all" if Rails.application.assets.find_asset("#{controller.controller_name}.css")
 
     =yield :header
-
 
     /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /![if lt IE 9]
@@ -33,11 +32,20 @@ html lang="en"
           li
             a href="/about" About
         a href="/"
-          h3#slogan.text-muted data-slogan="#{@slogan.title rescue nil}" David B. John
+          .h3#slogan.text-muted data-slogan="#{@slogan.title rescue nil}" David B. John
+      - flash.each do |key, value|
+        div class="#{flash_class(key)}"
+          button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
+          =value
       = yield
 
       .footer
-        p &copy; DBJohn, LLC
+        .pull-right
+          a href="http://rubyonrails.org/"
+            =image_tag 'rails.jpg', class: 'inline'
+        .pull-left &nbsp;&copy; DBJohn, LLC
+
+
     /! /container
     /!
       | Bootstrap core JavaScript

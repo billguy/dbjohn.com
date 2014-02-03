@@ -49,9 +49,12 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development do
+  gem 'thin'
+end
+
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
-gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'devise'
 gem 'acts-as-taggable-on'
 
@@ -87,14 +90,6 @@ gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
 
 gem "has_permalink"
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'coderay'
+gem 'valid_email'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

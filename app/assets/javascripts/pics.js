@@ -1,5 +1,5 @@
-//= require jquery.tokeninput
 //= require fancybox
+//= require tags
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;
@@ -28,6 +28,10 @@ $(function() {
         helpers : {
             title : {
                 type : 'inside'
+            },
+            thumbs	: {
+                width	: 100,
+                height	: 100
             }
         }
     });

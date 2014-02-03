@@ -28,7 +28,7 @@ html lang="en"
           li
             a href="/pics" Pics
           li
-            a href="/blog" Blog
+            a href="/blogs" Blog
           li
             a href="/about" About
         .h3
@@ -39,13 +39,19 @@ html lang="en"
         div class="#{flash_class(key)}"
           button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;
           =value
-      .content= yield
+      = yield
 
       .footer
         .pull-right
           a href="http://rubyonrails.org/"
-            img.inline src='assets/rails.jpg' alt="Ruby on Rails Logo"
-        .pull-left &nbsp;&copy; DBJohn, LLC
+            img.inline src='/assets/rails.jpg' alt="Ruby on Rails Logo"
+        .pull-left
+          | &nbsp;&copy;&nbsp;
+          -if current_user
+            = link_to "DBJohn, LLC", destroy_user_session_path, method: :delete, class: 'text-muted'
+          - else
+            = link_to "DBJohn, LLC", new_user_session_path, class: 'text-muted'
+
 
 
     /! /container

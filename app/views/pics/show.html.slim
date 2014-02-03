@@ -1,12 +1,16 @@
 -title(@pic.title)
+h1.hide=@pic.title
 
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
-    =image_tag('/assets/blank.gif', class: 'lazy-load', data: { src: @pic.attachment.url(:large)})
+    =image_tag('/assets/blank.gif', class: 'lazy-load img-responsive', data: { src: @pic.attachment.url(:large)})
     figcaption= caption(@pic)
 .clearfix
 
-h1=@pic.title
+.pull-left.h1=@pic.title
+.pull-right.h1= print_tags(Pic, @pic.tags)
+
+.clearfix
 
 - if can? :manage, Pic
   .pull-right
@@ -14,6 +18,5 @@ h1=@pic.title
     '  |
     = link_to 'Delete', pic_path(@pic), method: :delete, data: { confirm: 'Are you sure?' }
 
-= print_tags(Pic, @pic.tags)
 p=@pic.caption
 

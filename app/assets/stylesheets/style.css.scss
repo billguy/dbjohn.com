@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Artifika);
 @import url(http://fonts.googleapis.com/css?family=Fenix);
 
-h1, h2, h3, #slogan{
+h1, .h1, h2, .h2, h3, .h3, #slogan{
   font-family: 'Artifika', serif;
 }
 /* Space out content a bit */
@@ -11,12 +11,22 @@ body {
   padding-bottom: 20px;
   font-family: 'Fenix', serif;
   font-size: 16px;
+  background: url('light_wool.png');
 }
 
 .inline{
   display: inline;
 }
 
+
+.text-muted{
+  &:hover {
+    color: #999999;
+  }
+}
+.smaller{
+  font-size: 75%;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -104,4 +114,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+@media (max-width: 767px) {
+  #slogan {
+    font-size: 0.6em;
+  }
+
 }

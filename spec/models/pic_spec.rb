@@ -7,7 +7,7 @@ describe Pic do
   it { should have_attached_file(:attachment) }
   it { should callback(:notify_admin).after(:create) }
   it { should callback(:generate_token).before(:create) }
-
+  it { should respond_to(:tag_list)}
 
   describe 'geocode' do
     before do
@@ -52,10 +52,10 @@ describe Pic do
       Pic.filter_by.length.should == 3
     end
     it 'filters by year' do
-      Pic.filter_by(:year).length.should == 2
+      Pic.filter_by('year').length.should == 2
     end
     it 'filters by month' do
-      Pic.filter_by(:month).length.should == 1
+      Pic.filter_by('month').length.should == 1
     end
 
   end

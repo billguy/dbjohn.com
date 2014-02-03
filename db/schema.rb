@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128214007) do
+ActiveRecord::Schema.define(version: 20140203161550) do
+
+  create_table "blogs", force: true do |t|
+    t.boolean  "published"
+    t.string   "title"
+    t.string   "permalink"
+    t.text     "content"
+    t.text     "javascript"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false

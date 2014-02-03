@@ -1,0 +1,20 @@
+- title "Blog posts of David B. John"
+h1.hide Blog posts of David B. John
+
+.pull-left= print_tags(Blog, Blog.tag_counts_on(:tags))
+- if can? :create, Blog
+  .pull-right.h1= link_to 'New Post', new_blog_path, class: 'btn btn-primary'
+
+.clearfix
+
+.row
+  - @blogs.each do |blog|
+    .col-md-6
+      h4
+        = link_to blog.title, blog
+      .text-muted.small=blog.updated_at.to_s(:pretty)
+      p= truncate_html(blog.content, length: 200)
+
+.pull-right
+  = paginate @blogs
+.clearfix

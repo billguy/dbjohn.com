@@ -15,21 +15,30 @@ module ApplicationHelper
 
   def caption(pic)
     date = pic.date_taken || pic.updated_at
-    pic_date = date.strftime("%m.%d.%y %l:%M%p")
+    pic_date = "#{date.strftime("%m.%d.%y %l:%M%p")}<br/>"
     location = pic.location
     model = pic.camera_model
-    taken_with = location && model ? "Taken with a #{pic.camera_model} near #{location}<br/>" : nil
-    raw "#{pic_date}<br/>#{taken_with} #{pic.caption}"
+    taken_with = model ? "<span class='smaller'>Taken with a #{pic.camera_model}</span>" : nil
+    near = location ? "<span class='smaller'>#{location}</span>" : nil
+    raw "#{pic_date}#{pic.title}<br/>#{taken_with}#{near}"
   end
 
   def print_tags(model, tags)
     return '' if tags.size == 0
     output = "<ul class=\"inline tags\">"
     tags.each do |tag|
-      output << "<li><a href=\"#{pics_path(tags: [tag.name], filter: params[:filter])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
+      output << "<li><a href=\"#{polymorphic_path(model, tag: tag.name, filter: params[:filter])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
     end
     output << "</ul>"
-    output.html_safe
 
+    filter = []
+    if params[:tag]
+      filter << link_to("tagged with '#{params[:tag]}'", url_for(only_path: true, filter: params[:filter]))
+    end
+    if params[:filter]
+      filter << link_to("filtered by '#{params[:filter]}'", url_for(only_path: true, filter: params[:tag]))
+    end
+    output << "<span class='text-muted'>Viewing </span>" << filter.join(" and ") if filter.any?
+    output.html_safe
   end
 end

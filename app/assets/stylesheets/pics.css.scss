@@ -1,14 +1,19 @@
-@import 'token-input-facebook';
 @import "fancybox";
 @import "caption";
 @import "tags";
 
 
-
-.content{
-  min-height: 750px;
+.fancybox-prev, .fancybox-next{
+  opacity: 0;
 }
 
-#subject{
-  min-height: 363px;
+@media screen and (min-width: 768px) {
+
+  .content{
+    min-height: 750px;
+  }
+
+  #subject{
+    min-height: 363px;
+  }
 }

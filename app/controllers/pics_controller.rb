@@ -7,11 +7,11 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-    if params[:tags]
-      @pics = Pic.tagged_with(params[:tags], :match_all => true)
-      @pics = @pics.filter_by( filter: params[:filter], published: !current_user.present?).page params[:page]
+    if params[:tag]
+      @pics = Pic.tagged_with(params[:tag])
+      @pics = @pics.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
     else
-      @pics = Pic.filter_by( filter: params[:filter], published: !current_user.present?).page params[:page]
+      @pics = Pic.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
     end
   end
 

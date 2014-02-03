@@ -3,14 +3,14 @@ class Pic < ActiveRecord::Base
   has_permalink(:title, true)
   has_paper_trail
   acts_as_taggable
-  paginates_per 9
+  #paginates_per 9
 
   ActsAsTaggableOn.remove_unused_tags = true
   ActsAsTaggableOn.force_lowercase = true
   ActsAsTaggableOn.force_parameterize = true
 
   validates_presence_of :title, :caption
-  has_attached_file :attachment, :styles => { :large => "700x363#", :medium => "230x230#", :thumb => "100x100#" }
+  has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
   validates :attachment, :attachment_presence => true
   before_create :generate_token
   after_create :notify_admin, unless: :published?
@@ -23,11 +23,11 @@ class Pic < ActiveRecord::Base
 
   scope :filter_by, ->(filter=nil, published=true){
     case filter
-      when :year
+      when /year/
         created = 1.year.ago
-      when :month
+      when /month/
         created = 1.month.ago
-      when :day
+      when /day/
         created = DateTime.now.beginning_of_day
       else
         created = 5.years.ago

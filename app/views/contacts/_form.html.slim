@@ -1,0 +1,11 @@
+= bootstrap_form_for(@contact) do |f|
+  = f.text_field :name
+  = f.text_field :email
+  = f.text_area :message, rows: 10, cols: 10
+  = textcaptcha_fields(f) do
+    .field
+      = f.label :textcaptcha_answer, @contact.textcaptcha_question
+      = f.text_field :textcaptcha_answer, :value => '', hide_label: true
+  = f.primary "Send"
+  button.btn.btn-link type="button" onclick="location.href = '#{page_path(id: 'about')}'" Nevermind
+

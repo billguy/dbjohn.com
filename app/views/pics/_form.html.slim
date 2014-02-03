@@ -7,23 +7,10 @@
     = image_tag(f.object.attachment.url(:thumb), class: 'img-polaroid') if f.object.attachment.exists?
   = f.file_field :attachment, data: { fileupload: true }
   = f.text_area :caption
-  = f.text_field :tag_list
+  = f.text_field :tag_list, class: 'tag_list'
   = f.form_group do
     = f.primary "Save", data: { "disable-with" => "Saving..."}
     button.btn.btn-link type="button" onclick="location.href = '#{pics_path}'" Cancel
 
-- content_for :footer do
-  javascript:
-    $(function(){
-      var options = {theme: 'facebook', preventDuplicates: true};
-      var tags = "#{@pic.tag_list}";
-
-      if (tags.length > 0){
-        var tv = [];
-        $.each(tags.split(","), function(index, value){
-          tv.push({id: value, name: value});
-        });
-        options['prePopulate'] = tv;
-      }
-      $("#pic_tag_list").tokenInput("/tags", options);
-    });
+javascript:
+  tags = '#{@pic.tag_list}'

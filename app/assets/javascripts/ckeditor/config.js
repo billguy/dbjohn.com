@@ -13,6 +13,19 @@ CKEDITOR.editorConfig = function( config )
     config.height = '350px';
     config.allowedContent = true;
 
+    config.toolbar = 'mini';
+    config.toolbar_mini =
+        [
+            ['Source','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+            ['NumberedList','BulletedList','-','Outdent','Indent'],
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['Link','Unlink'],
+            ['Image','Table','HorizontalRule'],
+            ['Styles','Format','Font','FontSize'],
+            ['TextColor','BGColor']
+        ];
+
 
     config.removePlugins = 'newpage,templates,font,colorbutton';
 

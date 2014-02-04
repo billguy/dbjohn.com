@@ -1,10 +1,10 @@
 @import "tags";
-
+@import "syntax-highlighter-rails/shCore";
+@import "syntax-highlighter-rails/shThemeDefault";
 
 @media screen and (min-width: 768px) {
   h1, .h1{
     margin-top: 0px;
-
   }
 }
 

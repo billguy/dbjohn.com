@@ -48,6 +48,14 @@ class Pic < ActiveRecord::Base
     permalink
   end
 
+  def next(published=true)
+    published ? Pic.where("id > ? and published = ?", id, published).order("id ASC").first : Pic.where("id > ?", id).order("id ASC").first
+  end
+
+  def prev(published=true)
+    published ? Pic.where("id < ? and published = ?", id, published).order("id DESC").first : Pic.where("id < ?", id).order("id DESC").first
+  end
+
   def image?
     attachment && attachment_content_type =~ /image/
   end

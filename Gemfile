@@ -76,8 +76,6 @@ gem 'fancybox2-rails'
 gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
 gem "has_permalink"
-gem 'coderay'
-gem 'redcarpet'
-gem 'pygments.rb'
+gem 'syntax-highlighter-rails'
 gem 'valid_email'
 

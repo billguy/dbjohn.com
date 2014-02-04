@@ -11,12 +11,15 @@ CKEDITOR.editorConfig = function( config )
     // config.uiColor = '#AADC6E';
 
     config.height = '350px';
-    config.allowedContent = true;
+
+    config.extraPlugins = 'syntaxhighlight';
+    config.enterMode = CKEDITOR.ENTER_BR;
+    config.entities = false;
 
     config.toolbar = 'mini';
     config.toolbar_mini =
         [
-            ['Source','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            ['Syntaxhighlight', 'Source','-','Find','Replace','-','SelectAll','RemoveFormat'],
             ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
             ['NumberedList','BulletedList','-','Outdent','Indent'],
             ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
@@ -92,9 +95,6 @@ CKEDITOR.editorConfig = function( config )
         return url + ( ( url.indexOf( "?" ) != -1 ) ? "&" : "?" ) + queryString.join( "&" );
     };
 
-
-
-
     // Integrate Rails CSRF token into file upload dialogs (link, image, attachment and flash)
     CKEDITOR.on( 'dialogDefinition', function( ev ){
         // Take the dialog name and its definition from the event data.
@@ -131,25 +131,8 @@ CKEDITOR.on( 'dialogDefinition', function( ev )
         var cssField = infoTab.get( 'txtGenClass' );
         cssField['default'] = 'lightbox';
 
-
-
         var linkTab = dialogDefinition.getContents( 'info' );
         var link = linkTab.get( 'txtUrl' );
-
-//        var css = linkTab.get( 'txtClass' );
-//        css['default'] = 'lightbox';
-
-//        link['onChange'] = function(evt){
-//            var dialog = CKEDITOR.dialog.getCurrent();
-//            dialog.getContentElement('Link', 'txtUrl').setValue(dialog.getContentElement('info', 'txtUrl').getValue());
-//
-//            // Set default values for Image attributes
-//            var infoTab = dialogDefinition.getContents( 'info' );
-//
-//            var imgWidth = infoTab.get('txtWidth');
-//            dialog.getContentElement('info', 'txtWidth').setValue(250);
-//            //imgWidth['default'] = '250';
-//        }
     }
 });
 

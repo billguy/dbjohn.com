@@ -18,6 +18,8 @@ class PicsController < ApplicationController
   # GET /pics/1
   # GET /pics/1.json
   def show
+    @previous_pic = @pic.prev(!current_user)
+    @next = @pic.next(!current_user)
   end
 
   # GET /pics/new

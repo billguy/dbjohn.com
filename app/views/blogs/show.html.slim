@@ -6,7 +6,9 @@ h1.pull-left= @blog.title
 .clearfix
 
 .text-muted.small=@blog.updated_at.to_s(:pretty)
-= raw @blog.content
+/= raw @blog.content
+
+= markdown @blog.content
 
 
 - if can? :manage, Blog
@@ -14,9 +16,13 @@ h1.pull-left= @blog.title
   '&nbsp;|
   = link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' }
 
+= stylesheet_link_tag 'pygments'
 
 - if @blog.javascript
   - content_for :footer do
     javascript:
       #{raw @page.javascript}
+
+
+
 

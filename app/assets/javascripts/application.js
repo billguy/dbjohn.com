@@ -24,6 +24,13 @@ $(function() {
         });
     }
 
+    function showAlert() {
+        $("#alert").addClass("in");
+    }
+
+    window.setTimeout(function () {
+        showAlert();
+    }, 50);
 
 
 });

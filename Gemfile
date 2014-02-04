@@ -54,42 +54,30 @@ group :development do
 end
 
 gem 'kaminari-bootstrap', '~> 3.0.1'
-
 gem 'devise'
 gem 'acts-as-taggable-on'
-
 gem 'cancan'
-
 gem "ckeditor", github: 'galetahub/ckeditor'
-
 gem 'acts_as_textcaptcha'
 gem 'exifr'
-
-
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', '>= 3.0.0.rc2'
-
 gem 'rvm-capistrano'
 gem 'mailman'
 gem 'whenever'
 gem 'better_errors'
 gem 'binding_of_caller'
-
-
 gem 'exception_notification'
-
 gem "validates_formatting_of"
-
 gem 'bootstrap_form', github: 'potenza/bootstrap_form'
 gem "geocoder"
-
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-
 gem 'fancybox2-rails'
 gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
-
 gem "has_permalink"
 gem 'coderay'
+gem 'redcarpet'
+gem 'pygments.rb'
 gem 'valid_email'
 

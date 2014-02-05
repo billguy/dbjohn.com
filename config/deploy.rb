@@ -1,3 +1,5 @@
+APP_CONFIG = YAML.load_file("config/config.yml")["production"]
+
 set :application, "DbjohnCom"
 set :repository,  "git@github.com:billguy/dbjohn.com.git"
 
@@ -53,5 +55,5 @@ end
 after 'deploy:assets:precompile', 'copy_nondigest_assets'
 
 load 'deploy/assets'
-require "rvm/capistrano"
-require "whenever/capistrano"
+#require "rvm/capistrano"
+#require "whenever/capistrano"

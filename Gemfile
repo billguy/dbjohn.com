@@ -79,4 +79,5 @@ gem 'jquery-tokeninput-rails'
 gem "has_permalink"
 gem 'syntax-highlighter-rails'
 gem 'valid_email'
+gem 'sitemap_generator'
 

@@ -1,13 +1,8 @@
 class Pic < ActiveRecord::Base
 
-  has_permalink(:title, true)
-  has_paper_trail
-  acts_as_taggable
-  #paginates_per 9
+  include Navigatable
 
-  ActsAsTaggableOn.remove_unused_tags = true
-  ActsAsTaggableOn.force_lowercase = true
-  ActsAsTaggableOn.force_parameterize = true
+  has_paper_trail
 
   validates_presence_of :title, :caption
   has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
@@ -17,44 +12,10 @@ class Pic < ActiveRecord::Base
 
   after_post_process :load_exif
 
-  scope :latest, ->(num=1){
-    where(published: true).order(created_at: :desc).limit(num)
-  }
-
-  scope :filter_by, ->(filter=nil, published=true){
-    case filter
-      when /year/
-        created = 1.year.ago
-      when /month/
-        created = 1.month.ago
-      when /day/
-        created = DateTime.now.beginning_of_day
-      else
-        created = 5.years.ago
-    end
-    if published
-      where("pics.created_at > ? and pics.published = ?", created, published).order(created_at: :desc)
-    else
-      where("pics.created_at > ?", created).order(created_at: :desc)
-    end
-  }
-
   reverse_geocoded_by :latitude, :longitude do |obj,geo|
     obj.location  = [geo.first.city, " #{geo.first.state}"].join(",")
   end
   before_save :reverse_geocode, if: :gps?
-
-  def to_param
-    permalink
-  end
-
-  def next(published=true)
-    published ? Pic.where("id > ? and published = ?", id, published).order("id ASC").first : Pic.where("id > ?", id).order("id ASC").first
-  end
-
-  def prev(published=true)
-    published ? Pic.where("id < ? and published = ?", id, published).order("id DESC").first : Pic.where("id < ?", id).order("id DESC").first
-  end
 
   def image?
     attachment && attachment_content_type =~ /image/

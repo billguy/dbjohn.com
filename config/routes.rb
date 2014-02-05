@@ -1,6 +1,5 @@
 DbjohnCom::Application.routes.draw do
 
-
   devise_for :users
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -15,8 +14,8 @@ DbjohnCom::Application.routes.draw do
   resources :blogs
   resources :contacts, only: [:new, :create], path: 'contact'
 
-  get ':id', to: 'pages#show', as: :page
-  resources :pages, except: [:index]
+  resources :pages
+  get ':id', to: 'pages#show'
   root to: 'home#index'
 
 end

@@ -1,7 +1,7 @@
 class PicsController < ApplicationController
 
   load_and_authorize_resource find_by: :permalink
-  skip_load_resource only: [:create]
+  skip_load_resource only: [:create, :show]
   skip_authorize_resource only: [:index, :show, :approve]
 
   # GET /pics
@@ -18,8 +18,9 @@ class PicsController < ApplicationController
   # GET /pics/1
   # GET /pics/1.json
   def show
-    @previous_pic = @pic.prev(!current_user)
-    @next = @pic.next(!current_user)
+    @pic = Pic.find_by!(permalink: params[:id])
+    @previous_pic = @pic.prev(!current_user) || @pic.last
+    @next_pic = @pic.next(!current_user) || @pic.first
   end
 
   # GET /pics/new
@@ -32,7 +33,11 @@ class PicsController < ApplicationController
   end
 
   def approve
-    @pic.approve(params[:token])
+    if @pic.approve(params[:token])
+      redirect_to @pic
+    else
+      redirect_to root_path, notice: 'Incorrect token.'
+    end
   end
 
   # POST /pics

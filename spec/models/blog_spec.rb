@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "navigatable"
 
 describe Blog do
 
@@ -19,6 +20,8 @@ describe Blog do
     end
 
   end
+
+  it_behaves_like "navigatable"
 
   describe '#filter_by' do
     before do
@@ -41,6 +44,5 @@ describe Blog do
     end
 
   end
-
 
 end

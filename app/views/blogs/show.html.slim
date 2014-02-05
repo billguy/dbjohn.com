@@ -1,7 +1,17 @@
 - title @blog.title
 
+- if @previous_blog || @next_blog
+  .row
+    .col-xs-6.pull-left
+      - if @previous_blog
+        = link_to "<< #{@previous_blog.title}", blog_path(@previous_blog), class: 'pull-left'
+    .col-xs-6
+      - if @next_blog
+        = link_to "#{@next_blog.title} >>", blog_path(@next_blog), class: 'pull-right'
+  .clearfix
+
 h1.pull-left= @blog.title
-.pull-right.h1= print_tags(Blog, @blog.tags)
+.pull-right.h1.pad-top= print_tags(Blog, @blog.tags)
 
 .clearfix
 
@@ -10,9 +20,11 @@ h1.pull-left= @blog.title
 = process @blog.content
 
 - if can? :manage, Blog
-  = link_to 'Edit', edit_blog_path(@blog)
-  '&nbsp;|
-  = link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' }
+  .pull-right
+    = link_to 'Edit', edit_blog_path(@blog)
+    '&nbsp;|
+    = link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' }
+  .clearfix
 
 - if @blog.javascript
   - content_for :footer do

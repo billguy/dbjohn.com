@@ -1,5 +1,23 @@
 -title(@pic.title)
 h1.hide=@pic.title
+- if @previous_pic || @next_pic
+  .row
+    .col-xs-6
+      - if @previous_pic
+        .media
+          = link_to pic_path(@previous_pic), class: 'pull-left thumbnail' do
+            = image_tag @previous_pic.attachment.url(:thumb)
+          .media-body.hidden-xs
+            h4.media-heading=link_to @previous_pic.title, @previous_pic
+            p= truncate_html(@previous_pic.caption, length: 100)
+    .col-xs-6
+      - if @next_pic
+        .media
+          = link_to pic_path(@next_pic), class: 'pull-right thumbnail' do
+            = image_tag @next_pic.attachment.url(:thumb)
+          .media-body.hidden-xs
+            h4.media-heading=link_to @next_pic.title, @next_pic
+            p= truncate_html(@next_pic.caption, length: 100)
 
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
@@ -8,15 +26,15 @@ figure#subject.cap-bot
 .clearfix
 
 .pull-left.h1=@pic.title
-.pull-right.h1= print_tags(Pic, @pic.tags)
+.pull-right.h1.pad-top= print_tags(Pic, @pic.tags)
 
 .clearfix
+
+p=@pic.caption
 
 - if can? :manage, Pic
   .pull-right
     = link_to 'Edit', edit_pic_path(@pic)
     '  |
     = link_to 'Delete', pic_path(@pic), method: :delete, data: { confirm: 'Are you sure?' }
-
-p=@pic.caption
-
+  .clearfix

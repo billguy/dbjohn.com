@@ -1,7 +1,13 @@
 class PagesController < ApplicationController
   load_and_authorize_resource find_by: :permalink
-  skip_load_resource only: [:create, :show]
+  skip_load_resource only: [:create, :show, :index]
   skip_authorize_resource only: [:show]
+
+  # GET /pages
+  # GET /pages.json
+  def index
+    @pages = Page.all
+  end
 
   # GET /pages/1
   # GET /pages/1.json
@@ -11,8 +17,8 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    title = params[:id].titleize
-    permalink = params[:id].parameterize
+    title = params[:id].titleize rescue nil
+    permalink = params[:id].parameterize rescue nil
     @page = Page.new(title: title, permalink: permalink, content: 'click edit to change content')
   end
 
@@ -24,7 +30,6 @@ class PagesController < ApplicationController
   # POST /pages.json
   def create
     @page = Page.new(page_params)
-
     respond_to do |format|
       if @page.save
         format.html { redirect_to page_path(@page), notice: 'Page was successfully created.' }

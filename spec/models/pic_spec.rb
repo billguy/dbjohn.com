@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "navigatable"
 
 describe Pic do
 
@@ -24,6 +25,7 @@ describe Pic do
     end
   end
 
+  it_behaves_like "navigatable"
 
   describe '#latest' do
     before do
@@ -75,6 +77,10 @@ describe Pic do
   end
 
   describe '#generate_token' do
+    before do
+      Pic.any_instance.stub(:notify_admin).and_return(nil)
+    end
+
     it 'should generate a token' do
       pic = FactoryGirl.build(:pic)
       expect { pic.save }.to change{pic.token}
@@ -87,10 +93,13 @@ describe Pic do
   end
 
   describe '#approve' do
+    before do
+      Pic.any_instance.stub(:notify_admin).and_return(nil)
+    end
+
     it 'should publish when a valid token' do
       pic = FactoryGirl.create(:pic)
       expect { pic.approve(pic.token) }.to change{pic.published}.to(true)
-
     end
 
     it 'should not publish when an invalid token' do
@@ -98,6 +107,5 @@ describe Pic do
       expect { pic.approve("invalid") }.not_to change{pic.published}.to(true)
     end
   end
-
 
 end

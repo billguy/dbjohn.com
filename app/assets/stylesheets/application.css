@@ -12,7 +12,9 @@
  *= require style
  */
 
-
+.pad-top{
+    padding-top: 10px;
+}
 .lazy-load, .lazy-loaded {
     -webkit-transition: opacity 0.3s;
     -moz-transition: opacity 0.3s;

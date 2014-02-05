@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   load_and_authorize_resource find_by: :permalink
-  skip_load_resource only: [:create]
+  skip_load_resource only: [:create, :show]
   skip_authorize_resource only: [:index, :show]
 
   # GET /blogs
@@ -18,6 +18,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.find_by!(permalink: params[:id])
+    @previous_blog = @blog.prev(!current_user)
+    @next_blog = @blog.next(!current_user)
   end
 
   # GET /blogs/new

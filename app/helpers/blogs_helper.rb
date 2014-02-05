@@ -7,4 +7,5 @@ module BlogsHelper
     end
     text.html_safe
   end
+
 end

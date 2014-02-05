@@ -1,8 +1,6 @@
 - if can? :edit, @page
-
   #editor contenteditable="true"
-    =@page.content.try(:html_safe)
-
+    =@page.content.html_safe
   #accordion.panel-group
     .panel.panel-default
       .panel-heading
@@ -16,19 +14,16 @@
             = f.text_area :javascript
             = f.text_area :content, class: 'hide', hide_label: true
             =f.submit
-
+            .pull-right=link_to "All pages", pages_path
 
   - content_for :footer do
 
     javascript:
-
       var editor = CKEDITOR.inline( 'editor', { } );
-
       $('form').on('submit', function(){
         var data = editor.getData();
         $('#page_content').val(data);
       });
-
       $('#editor').on('click', function(e) {
         if(typeof e.target.href != 'undefined' && e.shiftKey == true) {
           window.open(e.target.href);
@@ -38,7 +33,6 @@
 - else
   .content
     =@page.content.try(:html_safe)
-
 
 - if @page.javascript
   -content_for :footer do

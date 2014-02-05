@@ -2,7 +2,6 @@
 @import "caption";
 @import "tags";
 
-
 .fancybox-prev, .fancybox-next{
   opacity: 0;
 }
@@ -16,11 +15,11 @@ a.fancybox{
 
 @media screen and (min-width: 768px) {
 
-  .content{
-    min-height: 750px;
-  }
+//  .content{
+//    min-height: 750px;
+//  }
 
   #subject{
-    min-height: 363px;
+    min-height: 400px;
   }
 }

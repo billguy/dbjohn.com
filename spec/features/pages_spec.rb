@@ -25,7 +25,7 @@ feature 'Pages' do
       visit new_page_path
       fill_in "Title", with: "Page Title"
       fill_in "Content", with: "created page"
-      click_button 'Save'
+      click_button 'Create Page'
       expect(page).to have_title "Page Title"
       page.should have_content("created page")
     end
@@ -33,7 +33,7 @@ feature 'Pages' do
     scenario 'edit in place' do
       login
       visit page_path(ppage)
-      page.should have_selector("#edit_button")
+      page.should have_selector("#editor")
     end
   end
 

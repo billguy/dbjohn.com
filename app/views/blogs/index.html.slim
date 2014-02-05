@@ -11,7 +11,7 @@ h1.hide Blog posts of David B. John
 
 .row
   - @blogs.each do |blog|
-    .col-md-6
+    .col-md-6 class="#{'disabled' unless blog.published}"
       h4
         = link_to blog.title, blog
       .text-muted.small=blog.updated_at.to_s(:pretty)

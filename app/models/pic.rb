@@ -5,28 +5,24 @@ class Pic < ActiveRecord::Base
   has_paper_trail
 
   validates_presence_of :title, :caption
-  has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
   validates :attachment, :attachment_presence => true
+
+  has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
+  after_attachment_post_process :load_exif
+
   before_create :generate_token
   after_create :notify_admin, unless: :published?
-
-  after_post_process :load_exif
 
   reverse_geocoded_by :latitude, :longitude do |obj,geo|
     obj.location  = [geo.first.city, " #{geo.first.state}"].join(",")
   end
-  before_save :reverse_geocode, if: :gps?
 
   def image?
-    attachment && attachment_content_type =~ /image/
+    self.attachment && self.attachment_content_type =~ /image/
   end
 
   def video?
-    attachment && attachment_content_type =~ /video/
-  end
-
-  def gps?
-    self.latitude && self.longitude
+    self.attachment && self.attachment_content_type =~ /video/
   end
 
   def approve(token)
@@ -40,6 +36,7 @@ class Pic < ActiveRecord::Base
     self.date_taken = exif.date_time if exif.date_time
     self.latitude = exif.gps_latitude if exif.gps_latitude
     self.longitude = exif.gps_longitude if exif.gps_longitude
+    reverse_geocode if self.latitude && self.longitude
   rescue
     false
   end

@@ -19,6 +19,7 @@ class PicsController < ApplicationController
   # GET /pics/1.json
   def show
     @pic = Pic.find_by!(permalink: params[:id])
+    flash.now[:notice] = "This pic is not published" unless @pic.published
     @previous_pic = @pic.prev(!current_user) || @pic.last
     @next_pic = @pic.next(!current_user) || @pic.first
   end

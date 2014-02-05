@@ -28,11 +28,16 @@ before "deploy:assets:precompile", "deploy:symlink_db"
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
+  #task :restart, :roles => :app, :except => { :no_release => true } do
+  #  run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  #end
   task :symlink_db, :roles => :app do
     run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
+    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  end
+  desc "Restart nginx"
+  task :restart do
+    run "#{deploy_to}/bin/restart"
   end
 end
 

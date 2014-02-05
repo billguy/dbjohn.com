@@ -4,9 +4,10 @@ namespace :pic do
 
   desc 'Fetch pics from secret email address'
   task email: :environment do
-    if email = PicsHelper.fetch_email
+    email = PicsHelper::fetch_email
+    if email
       caption = (email.multipart? ? email.text_part.body.decoded : email.body.decoded).encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => "")
-      attributes = { title: email.subject, caption: caption, sent_by: email.from.first}
+      attributes = { title: email.subject || 'On the go', caption: caption || 'On the go', sent_by: email.from.first}
       email.attachments.each do | attachment |
         filename = attachment.filename
         file = StringIO.new(attachment.decoded)

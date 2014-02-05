@@ -23,7 +23,7 @@
   - @pics.each do |pic|
     figure.cap-bot
       = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
-        =image_tag(pic.attachment.url(:medium), class: '', data: { src: pic.attachment.url(:medium)})
+        =image_tag(pic.attachment.url(:medium), class: "#{'disabled' unless pic.published}", data: { src: pic.attachment.url(:medium)})
         figcaption= caption(pic)
   .clearfix
 

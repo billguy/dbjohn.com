@@ -9,14 +9,13 @@ module PicsHelper
     Mailman.config.poll_interval = 0
     Mailman.config.pop3 = {
         server: APP_CONFIG['pics_mail_host'], port: APP_CONFIG['pics_mail_port'], ssl: APP_CONFIG['pics_mail_ssl'],
-        username: APP_CONFIG['pics_mail_address'],
+        username: APP_CONFIG['pics_mail_addresss'],
         password: APP_CONFIG['pics_mail_pass']
     }
 
     email = nil
     Mailman::Application.run do
-
-      from(APP_CONFIG['pics_authorized_emails']).to(APP_CONFIG['pics_mail_address']) do
+      from(APP_CONFIG['pics_authorized_emails']).to("#{APP_CONFIG['pics_mail_address']}@#{APP_CONFIG['smtp_domain']}") do
         begin
           email = message
         rescue Exception => e

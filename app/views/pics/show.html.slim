@@ -5,7 +5,7 @@ h1.hide=@pic.title
     .col-xs-6
       - if @previous_pic
         .media
-          = link_to pic_path(@previous_pic), class: 'pull-left thumbnail' do
+          = link_to pic_path(@previous_pic), class: "pull-left thumbnail #{'disabled' unless @previous_pic.published}" do
             = image_tag @previous_pic.attachment.url(:thumb)
           .media-body.hidden-xs
             h4.media-heading=link_to @previous_pic.title, @previous_pic
@@ -13,7 +13,7 @@ h1.hide=@pic.title
     .col-xs-6
       - if @next_pic
         .media
-          = link_to pic_path(@next_pic), class: 'pull-right thumbnail' do
+          = link_to pic_path(@next_pic), class: "pull-right thumbnail #{'disabled' unless @next_pic.published}" do
             = image_tag @next_pic.attachment.url(:thumb)
           .media-body.hidden-xs
             h4.media-heading=link_to @next_pic.title, @next_pic
@@ -21,7 +21,7 @@ h1.hide=@pic.title
 
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
-    =image_tag('/assets/blank.gif', class: 'lazy-load img-responsive', data: { src: @pic.attachment.url(:large)})
+    =image_tag('/assets/blank.gif', class: "lazy-load img-responsive #{'disabled' unless @pic.published}", data: { src: @pic.attachment.url(:large)})
     figcaption= caption(@pic)
 .clearfix
 

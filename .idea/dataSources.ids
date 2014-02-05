@@ -6,4 +6,7 @@
   <data-source source="LOCAL" name="Rails dbjohn.com: test" uuid="b7f872a9-5ff5-40be-81d1-3ccab9e21670">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails dbjohn.com: production" uuid="8cc2fabf-c865-4096-8e68-b9ff068b6511">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

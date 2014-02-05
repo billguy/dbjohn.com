@@ -10,13 +10,33 @@ describe Pic do
   it { should callback(:generate_token).before(:create) }
   it { should respond_to(:tag_list)}
 
+  it '#load_exif' do
+    Pic.any_instance.stub(:notify_admin).and_return(nil)
+    Pic.any_instance.should_receive(:load_exif)
+    pic = FactoryGirl.build(:pic_gps, published: true)
+    pic.save
+  end
+
   describe 'geocode' do
     before do
       Pic.any_instance.stub(:notify_admin).and_return(nil)
+      Geocoder.configure(:lookup => :test)
+      Geocoder::Lookup::Test.set_default_stub(
+          [
+              {
+                  'latitude'     => 40.7143528,
+                  'longitude'    => -74.0059731,
+                  'address'      => 'New York, NY, USA',
+                  'state'        => 'New York',
+                  'state_code'   => 'NY',
+                  'country'      => 'United States',
+                  'country_code' => 'US'
+              }
+          ]
+      )
     end
     it 'geocodes images with gps exif' do
-      pic = FactoryGirl.create(:pic_gps)
-      p pic.inspect
+      pic = FactoryGirl.create(:pic_gps, published: true)
       pic.location.should_not be_nil
     end
     it 'does not geocode images without gps exif' do

@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
 set :application, "DbjohnCom"

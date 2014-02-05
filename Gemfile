@@ -15,7 +15,7 @@ gem "slim-rails", '~> 1.1.1'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 #gem "compass-rails"
-#gem 'therubyracer'
+gem 'therubyracer'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

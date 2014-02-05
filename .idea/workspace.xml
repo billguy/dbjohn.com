@@ -92,25 +92,16 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1139">
+            <state line="33" column="32" selection-start="1088" selection-end="1088" vertical-scroll-proportion="-17.192308" vertical-offset="114" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.26153848" vertical-offset="0" max-vertical-offset="1513">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="production.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="production.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
+            <state line="43" column="0" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.6247863" vertical-offset="0" max-vertical-offset="1598">
               <folding />
             </state>
           </provider>
@@ -175,8 +166,8 @@
         <option value="$PROJECT_DIR$/config/sitemap.rb" />
         <option value="$PROJECT_DIR$/config/config.yml" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -1050,23 +1041,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
+        <state line="18" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.26153848" vertical-offset="0" max-vertical-offset="1513">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1139">
+        <state line="33" column="32" selection-start="1088" selection-end="1088" vertical-scroll-proportion="-17.192308" vertical-offset="114" max-vertical-offset="1428">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="434" selection-end="434" vertical-scroll-proportion="0.26153848" vertical-offset="0" max-vertical-offset="1513">
+        <state line="43" column="0" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.6247863" vertical-offset="0" max-vertical-offset="1598">
           <folding />
         </state>
       </provider>

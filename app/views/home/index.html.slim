@@ -5,9 +5,8 @@
   - if @latest_pic
     figure.cap-bot
       =link_to pic_path(@latest_pic) do
-        =image_tag('/assets/blank.gif', class: 'lazy-load img-responsive', data: { src: @latest_pic.attachment.url(:large)})
+        =image_tag(asset_path('blank.gif'), class: 'lazy-load img-responsive', data: { src: @latest_pic.attachment.url(:large)})
         figcaption= caption(@latest_pic)
-
 
 .row.marketing
   hr

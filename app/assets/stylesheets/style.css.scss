@@ -13,7 +13,7 @@ body {
   padding-bottom: 20px;
   font-family: 'Fenix', serif;
   font-size: 16px;
-  background: url('light_wool.png');
+  background: url(asset-path('light_wool.png', image));
 }
 
 .inline{

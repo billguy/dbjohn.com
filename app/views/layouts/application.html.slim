@@ -44,7 +44,7 @@ html lang="en"
       .footer
         .pull-right
           a href="http://rubyonrails.org/"
-            img.inline src='/assets/rails.jpg' alt="Ruby on Rails Logo"
+            img.inline src='#{asset_path 'rails.jpg'}' alt="Ruby on Rails Logo"
         .pull-left
           | &nbsp;&copy;&nbsp;
           -if current_user

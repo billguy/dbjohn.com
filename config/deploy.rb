@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require "whenever/capistrano"
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
@@ -74,5 +75,3 @@ end
 after 'deploy:assets:precompile', 'copy_nondigest_assets'
 
 load 'deploy/assets'
-#require "rvm/capistrano"
-#require "whenever/capistrano"

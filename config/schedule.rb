@@ -19,6 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 
+
+
+job_type :rake,    "cd :path && :environment_variable=:environment bundle exec rake :task --silent :output"
+
+
 every 5.minutes do
    rake "pic:email"
 end

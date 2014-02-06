@@ -15,7 +15,7 @@ h1.pull-left= @blog.title
 
 .clearfix
 
-.text-muted.small=@blog.updated_at.to_s(:pretty)
+.text-muted.small=@blog.created_at.to_s(:pretty)
 
 = process @blog.content
 

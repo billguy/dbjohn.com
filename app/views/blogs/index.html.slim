@@ -14,7 +14,7 @@ h1.hide Blog posts of David B. John
     .col-md-6 class="#{'disabled' unless blog.published}"
       h4
         = link_to blog.title, blog
-      .text-muted.small=blog.updated_at.to_s(:pretty)
+      .text-muted.small=blog.created_at.to_s(:pretty)
       p= truncate_html(blog.content, length: 200)
 
 .pull-right

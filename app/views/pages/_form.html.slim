@@ -32,7 +32,7 @@
 
 - else
   .content
-    =@page.content.try(:html_safe)
+    =@page.content.html_safe
 
 - if @page.javascript
   -content_for :footer do

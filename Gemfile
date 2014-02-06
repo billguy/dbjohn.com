@@ -63,7 +63,7 @@ gem 'acts_as_textcaptcha'
 gem 'exifr'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', '>= 3.0.0.rc2'
-gem 'capistrano'
+gem 'capistrano', github: 'capistrano/capistrano'
 gem 'mailman'
 gem 'whenever'
 gem 'better_errors'

@@ -6,6 +6,11 @@
   h1, .h1{
     margin-top: 0px;
   }
+  .row{
+    .col-md-6{
+      min-height: 150px;
+    }
+  }
 }
 
 h4{

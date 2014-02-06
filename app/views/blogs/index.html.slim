@@ -14,9 +14,21 @@ h1.hide Blog posts of David B. John
     .col-md-6 class="#{'disabled' unless blog.published}"
       h4
         = link_to blog.title, blog
-      .text-muted.small=blog.created_at.to_s(:pretty)
+      .text-muted.small
+        =blog.created_at.to_s(:pretty)
+        span &nbsp;•&nbsp;
+        = link_to blog.title, blog_path(blog, anchor: 'disqus_thread')
       p= truncate_html(blog.content, length: 200)
 
 .pull-right
   = paginate @blogs
 .clearfix
+
+- content_for :footer do
+  javascript:
+    var disqus_shortname = '#{APP_CONFIG['disqus_shortname']}'; // required: replace example with your forum shortname
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();

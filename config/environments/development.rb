@@ -28,13 +28,12 @@ DbjohnCom::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-      :address => "spam.east.cox.net",
+  config.action_mailer.smtp_settings = {
+      :address => APP_CONFIG['smtp_server'],
       :enable_starttls_auto => false,
       :openssl_verify_mode  => 'none',
-      :port => 25,
+      :port => APP_CONFIG['smtp_port'],
   }
 
 end
-Paperclip.options[:command_path] = "/usr/local/bin/"
+

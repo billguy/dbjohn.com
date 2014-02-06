@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contact.textcaptcha
+    @page = Page.find_by_permalink('contact') || Page.new(title: 'Contact', permalink: 'contact', content: 'Enter some content here...')
   end
 
   def create

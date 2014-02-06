@@ -26,7 +26,7 @@
       });
       $('#editor').on('click', function(e) {
         if(typeof e.target.href != 'undefined' && e.shiftKey == true) {
-          window.open(e.target.href);
+          window.location.href = e.target.href;
         }
       });
 

@@ -3,11 +3,11 @@ require "whenever/capistrano"
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
-set :application, "DbjohnCom"
-set :repository,  "git@github.com:billguy/dbjohn.com.git"
+set :application, Rails.application.class.parent_name
+set :repository,  APP_CONFIG['git_repo']
 
 set :user, APP_CONFIG['cap_user']
-set :domain, "dbjohn.com"
+set :domain, APP_CONFIG['domain']
 set :applicationdir, APP_CONFIG['cap_applicationdir']
 
 set :deploy_to, applicationdir
@@ -42,15 +42,11 @@ namespace :gems do
   end
 end
 
-
 before "deploy:assets:precompile", "deploy:symlink_db"
 
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  #task :restart, :roles => :app, :except => { :no_release => true } do
-  #  run "touch #{File.join(current_path,'tmp','restart.txt')}"
-  #end
   task :symlink_db, :roles => :app do
     run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"

@@ -1,61 +1,88 @@
 test:
-  cap_applicationdir:
-  cap_user:
+  host: 'http://dbjohn.com/'
+  domain: dbjohn.com
+
+  cap_applicationdir: /home/../..
+  cap_user: someuser
+
   devise_secret_key:
   secret_token:
-  admin_email: email@email.com
+
+  admin_email: dj@dbjohn.com
+
   textcaptcha_api_key: demo
 
   pics_mail_host: mail.webfaction.com
   pics_mail_port: 110
   pics_mail_ssl: false
-  pics_mail_address:
-  pics_mail_pass:
+  pics_mail_address: userid
+  pics_mail_pass: pass
   pics_authorized_emails:
     - email1@email.com
     - email2@email.com
 
   smtp_server: smtp.webfaction.com
   smtp_port: 587
-  smtp_domain:
+
+  analytics_key: 12345
+
+  git_repo: git@github.com:billguy/dbjohn.com.git
 
 development:
-  cap_applicationdir:
-  cap_user:
+  host: 'http://dbjohn.com/'
+  domain: dbjohn.com
+
+  cap_applicationdir: /home/../..
+  cap_user: someuser
+
   devise_secret_key:
   secret_token:
-  admin_email: email@email.com
+
+  admin_email: dj@dbjohn.com
+
   textcaptcha_api_key: demo
 
   pics_mail_host: mail.webfaction.com
   pics_mail_port: 110
   pics_mail_ssl: false
-  pics_mail_address:
-  pics_mail_pass:
+  pics_mail_address: userid
+  pics_mail_pass: pass
   pics_authorized_emails:
     - email1@email.com
     - email2@email.com
 
   smtp_server: smtp.webfaction.com
   smtp_port: 587
-  smtp_domain:
+
+  analytics_key: 12345
+
+  git_repo: git@github.com:billguy/dbjohn.com.git
 production:
-  cap_applicationdir:
-  cap_user:
+  host: 'http://dbjohn.com/'
+  domain: dbjohn.com
+
+  cap_applicationdir: /home/../..
+  cap_user: someuser
+
   devise_secret_key:
   secret_token:
-  admin_email: email@email.com
+
+  admin_email: dj@dbjohn.com
+
   textcaptcha_api_key: demo
 
   pics_mail_host: mail.webfaction.com
   pics_mail_port: 110
   pics_mail_ssl: false
-  pics_mail_address:
-  pics_mail_pass:
+  pics_mail_address: userid
+  pics_mail_pass: pass
   pics_authorized_emails:
     - email1@email.com
     - email2@email.com
 
   smtp_server: smtp.webfaction.com
   smtp_port: 587
-  smtp_domain:
+
+  analytics_key: 12345
+
+  git_repo: git@github.com:billguy/dbjohn.com.git

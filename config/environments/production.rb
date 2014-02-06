@@ -84,7 +84,7 @@ DbjohnCom::Application.configure do
   config.middleware.use ExceptionNotification::Rack,
                         :email => {
                             :email_prefix => "[%s Exception]" % [Rails.application.class.parent_name],
-                            :sender_address => %{"Exception Notifier" <dj@dbjohn.com>},
-                            :exception_recipients => %w{dj@dbjohn.com}
+                            :sender_address => %{"Exception Notifier" <#{APP_CONFIG['admin_email']}>},
+                            :exception_recipients => %W{#{APP_CONFIG['admin_email']}}
                         }
 end

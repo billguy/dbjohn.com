@@ -3,7 +3,7 @@ require "whenever/capistrano"
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
-set :application, Rails.application.class.parent_name
+set :application, "DbjohnCom" #change this to your Rails app name
 set :repository,  APP_CONFIG['git_repo']
 
 set :user, APP_CONFIG['cap_user']

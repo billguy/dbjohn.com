@@ -74,7 +74,7 @@
       <file leaf-file-name="deploy.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/deploy.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="33" selection-start="253" selection-end="253" vertical-scroll-proportion="0.11623932" vertical-offset="0" max-vertical-offset="1343">
+            <state line="5" column="65" selection-start="189" selection-end="189" vertical-scroll-proportion="0.072649576" vertical-offset="0" max-vertical-offset="1343">
               <folding />
             </state>
           </provider>
@@ -136,11 +136,11 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/pages/_form.html.slim" />
         <option value="$PROJECT_DIR$/config/config.yml" />
-        <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
         <option value="$PROJECT_DIR$/config/config_sample.yml" />
         <option value="$PROJECT_DIR$/app/mailers/pic_mailer.rb" />
+        <option value="$PROJECT_DIR$/config/deploy.rb" />
       </list>
     </option>
   </component>
@@ -1144,7 +1144,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="33" selection-start="253" selection-end="253" vertical-scroll-proportion="0.11623932" vertical-offset="0" max-vertical-offset="1343">
+        <state line="5" column="65" selection-start="189" selection-end="189" vertical-scroll-proportion="0.072649576" vertical-offset="0" max-vertical-offset="1343">
           <folding />
         </state>
       </provider>

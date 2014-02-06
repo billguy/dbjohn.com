@@ -5,9 +5,11 @@ class Pic < ActiveRecord::Base
   has_paper_trail
 
   validates_presence_of :title, :caption
-  validates :attachment, :attachment_presence => true
 
   has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
+  validates :attachment, :attachment_presence => true
+  validates_attachment_content_type :attachment, :content_type => %w(image/jpeg image/jpg image/png)
+
   after_attachment_post_process :load_exif
 
   before_create :generate_token

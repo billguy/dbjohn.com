@@ -11,7 +11,7 @@ class Pic < ActiveRecord::Base
   after_attachment_post_process :load_exif
 
   before_create :generate_token
-  after_create :notify_admin, unless: lambda{|p| p.published? }
+  after_create :notify_admin, unless: :published?
 
   reverse_geocoded_by :latitude, :longitude do |obj,geo|
     obj.location  = [geo.first.city, " #{geo.first.state}"].join(",")

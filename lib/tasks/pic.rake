@@ -5,15 +5,11 @@ namespace :pic do
   desc 'Fetch pics from secret email address'
   task email: :environment do
     email = PicsHelper::fetch_email
-    p '1'
     if email.present?
-      p '2'
       caption = (email.multipart? ? email.text_part.body.decoded : email.body.decoded).encode("UTF-8", :invalid => :replace, :undef => :replace, :replace => "")
       attributes = { title: email.subject, caption: caption, sent_by: email.from.first}
       email.attachments.each do | attachment |
-        p '3'
         if (attachment.content_type.start_with?('image/'))
-          p '4'
           pic = Pic.new(attributes)
           filename = attachment.filename
           file = StringIO.new(attachment.decoded)

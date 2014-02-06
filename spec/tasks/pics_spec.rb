@@ -5,7 +5,6 @@ include MailHelpers
 describe 'pic:email' do
   before do
     DbjohnCom::Application.load_tasks
-    Pic.any_instance.stub(:notify_admin).and_return(nil)
   end
 
   let(:run_rake_task) { Rake::Task['pic:email'].invoke }

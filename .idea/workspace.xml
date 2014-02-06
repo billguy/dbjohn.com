@@ -13,23 +13,23 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/dbjohn.com@foo_namespace_rake_task_foo_bar_should_create_a_new_pic_from_an_auhorized_email__dbjohn_com.coverage" NAME="foo namespace rake task foo:bar should create a new pic from an auhorized email: dbjohn.com Coverage Results" MODIFIED="1390919069797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__home_spec___dbjohn_com.coverage" NAME="Run spec 'home_spec': dbjohn.com Coverage Results" MODIFIED="1390771150324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_latest__dbjohn_com.coverage" NAME="Pic#latest: dbjohn.com Coverage Results" MODIFIED="1390939874247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_creates_a_new_pic_from_an_auth_email__dbjohn_com.coverage" NAME="pic:email creates a new pic from an auth email: dbjohn.com Coverage Results" MODIFIED="1391633567270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_generate_token_should_generate_a_token__dbjohn_com.coverage" NAME="Pic#generate_token should generate a token: dbjohn.com Coverage Results" MODIFIED="1390928634893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__home_spec___dbjohn_com.coverage" NAME="Run spec 'home_spec': dbjohn.com Coverage Results" MODIFIED="1390771150324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_creates_a_new_pic_from_an_auth_email__dbjohn_com.coverage" NAME="pic:email creates a new pic from an auth email: dbjohn.com Coverage Results" MODIFIED="1391643579052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_generate_token__dbjohn_com.coverage" NAME="Pic#generate_token: dbjohn.com Coverage Results" MODIFIED="1390928358482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_does_not_create_a_new_pic_from_an_unauth_email__dbjohn_com.coverage" NAME="pic:email does not create a new pic from an unauth email: dbjohn.com Coverage Results" MODIFIED="1391632569841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_generate_token_should_generate_a_token__dbjohn_com.coverage" NAME="Pic#generate_token should generate a token: dbjohn.com Coverage Results" MODIFIED="1390928634893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Slogan__random__dbjohn_com.coverage" NAME="Slogan #random: dbjohn.com Coverage Results" MODIFIED="1390916565557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_does_not_create_a_new_pic_from_an_unauth_email__dbjohn_com.coverage" NAME="pic:email does not create a new pic from an unauth email: dbjohn.com Coverage Results" MODIFIED="1391632569841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_Pic__dbjohn_com.coverage" NAME="Pic Pic: dbjohn.com Coverage Results" MODIFIED="1391448143167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_should_create_a_new_pic_from_an_email__dbjohn_com.coverage" NAME="pic:email should create a new pic from an email: dbjohn.com Coverage Results" MODIFIED="1391615889123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Blog_latest__dbjohn_com.coverage" NAME="Blog#latest: dbjohn.com Coverage Results" MODIFIED="1391449643210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocodes_images_with_gps_exif__dbjohn_com.coverage" NAME="Pic geocodes images with gps exif: dbjohn.com Coverage Results" MODIFIED="1391033595850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Blog_latest__dbjohn_com.coverage" NAME="Blog#latest: dbjohn.com Coverage Results" MODIFIED="1391449643210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_should_create_a_new_pic_from_an_email__dbjohn_com.coverage" NAME="pic:email should create a new pic from an email: dbjohn.com Coverage Results" MODIFIED="1391615889123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic__load_exif__dbjohn_com.coverage" NAME="Pic #load_exif: dbjohn.com Coverage Results" MODIFIED="1391617918235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@PicMailer__dbjohn_com.coverage" NAME="PicMailer: dbjohn.com Coverage Results" MODIFIED="1391616506961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Blog_filter_by_returns_all_for_current_user__dbjohn_com.coverage" NAME="Blog#filter_by returns all for current_user: dbjohn.com Coverage Results" MODIFIED="1391449933788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_approve_should_not_publish_when_an_invalid_token__dbjohn_com.coverage" NAME="Pic#approve should not publish when an invalid token: dbjohn.com Coverage Results" MODIFIED="1390938270029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_notify_admin_should_call_PicMailer__dbjohn_com.coverage" NAME="Pic#notify_admin should call PicMailer: dbjohn.com Coverage Results" MODIFIED="1390925542902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_does_not_croak__dbjohn_com.coverage" NAME="pic:email does not croak: dbjohn.com Coverage Results" MODIFIED="1391632582723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_does_not_croak__dbjohn_com.coverage" NAME="pic:email does not croak: dbjohn.com Coverage Results" MODIFIED="1391642764899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic__dbjohn_com.coverage" NAME="Pic: dbjohn.com Coverage Results" MODIFIED="1391618315298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocode_does_not_geocode_images_without_gps_exif__dbjohn_com.coverage" NAME="Pic geocode does not geocode images without gps exif: dbjohn.com Coverage Results" MODIFIED="1391617942702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__user_spec___dbjohn_com.coverage" NAME="Run spec 'user_spec': dbjohn.com Coverage Results" MODIFIED="1390937663970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
@@ -38,25 +38,25 @@
     <SUITE FILE_PATH="coverage/dbjohn.com@Slogan__dbjohn_com.coverage" NAME="Slogan: dbjohn.com Coverage Results" MODIFIED="1390769924674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Slogan_random_should_be_a_kind_of_String___dbjohn_com.coverage" NAME="Slogan random should be a kind of(String): dbjohn.com Coverage Results" MODIFIED="1390770342142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_generate_token_should_be_64_in_length__dbjohn_com.coverage" NAME="Pic#generate_token should be 64 in length: dbjohn.com Coverage Results" MODIFIED="1390928593247" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__pages_spec___dbjohn_com.coverage" NAME="Run spec 'pages_spec': dbjohn.com Coverage Results" MODIFIED="1391616695895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@PicMailer_notify_admin_renders_the_headers__dbjohn_com.coverage" NAME="PicMailer notify_admin renders the headers: dbjohn.com Coverage Results" MODIFIED="1390926105588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocode_geocodes_images_with_gps_exif__dbjohn_com.coverage" NAME="Pic geocode geocodes images with gps exif: dbjohn.com Coverage Results" MODIFIED="1391618291959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__pages_spec___dbjohn_com.coverage" NAME="Run spec 'pages_spec': dbjohn.com Coverage Results" MODIFIED="1391616695895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Contact__dbjohn_com.coverage" NAME="Contact: dbjohn.com Coverage Results" MODIFIED="1391461365226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocode__dbjohn_com.coverage" NAME="Pic geocode: dbjohn.com Coverage Results" MODIFIED="1391616794760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocode_geocodes_images_with_gps_exif__dbjohn_com.coverage" NAME="Pic geocode geocodes images with gps exif: dbjohn.com Coverage Results" MODIFIED="1391618291959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@foo_namespace_rake_task__dbjohn_com.coverage" NAME="foo namespace rake task: dbjohn.com Coverage Results" MODIFIED="1390916452211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_geocode__dbjohn_com.coverage" NAME="Pic geocode: dbjohn.com Coverage Results" MODIFIED="1391616794760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__contact_spec___dbjohn_com.coverage" NAME="Run spec 'contact_spec': dbjohn.com Coverage Results" MODIFIED="1391461774885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email__dbjohn_com.coverage" NAME="pic:email: dbjohn.com Coverage Results" MODIFIED="1391633583119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@pic_email__dbjohn_com.coverage" NAME="pic:email: dbjohn.com Coverage Results" MODIFIED="1391642722839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_notify_admin__dbjohn_com.coverage" NAME="Pic#notify_admin: dbjohn.com Coverage Results" MODIFIED="1390926025135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_approve_should_publish_when_a_valid_token__dbjohn_com.coverage" NAME="Pic#approve should publish when a valid token: dbjohn.com Coverage Results" MODIFIED="1390938228769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_filter_by_returns_all__dbjohn_com.coverage" NAME="Pic#filter_by returns all: dbjohn.com Coverage Results" MODIFIED="1391377105146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Pic_notify_admin_should_not_call_PicMailer_if_published__dbjohn_com.coverage" NAME="Pic#notify_admin should not call PicMailer if published: dbjohn.com Coverage Results" MODIFIED="1390926021218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Contact_validates_email_is_an_email__dbjohn_com.coverage" NAME="Contact validates email is an email: dbjohn.com Coverage Results" MODIFIED="1391461687504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Blog__dbjohn_com.coverage" NAME="Blog: dbjohn.com Coverage Results" MODIFIED="1391616531616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_should_create_a_new_pic_from_an_auhorized_email__dbjohn_com.coverage" NAME="pic:email should create a new pic from an auhorized email: dbjohn.com Coverage Results" MODIFIED="1390924551901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Blog__dbjohn_com.coverage" NAME="Blog: dbjohn.com Coverage Results" MODIFIED="1391616531616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Run_spec__pics_spec___dbjohn_com.coverage" NAME="Run spec 'pics_spec': dbjohn.com Coverage Results" MODIFIED="1390937835841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@Page__dbjohn_com.coverage" NAME="Page: dbjohn.com Coverage Results" MODIFIED="1391352638702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
-    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_filter_by__dbjohn_com.coverage" NAME="Pic#filter_by: dbjohn.com Coverage Results" MODIFIED="1391443379257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@foo_namespace_rake_task_foo_bar_should_receive_fetch_email__dbjohn_com.coverage" NAME="foo namespace rake task foo:bar should receive fetch_email: dbjohn.com Coverage Results" MODIFIED="1390918459598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
+    <SUITE FILE_PATH="coverage/dbjohn.com@Pic_filter_by__dbjohn_com.coverage" NAME="Pic#filter_by: dbjohn.com Coverage Results" MODIFIED="1391443379257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
     <SUITE FILE_PATH="coverage/dbjohn.com@pic_email_test__dbjohn_com.coverage" NAME="pic:email test: dbjohn.com Coverage Results" MODIFIED="1391616179694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="dbjohn.com" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -74,16 +74,7 @@
       <file leaf-file-name="pic.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/pic.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="11" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pics_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/helpers/pics_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+            <state line="25" column="49" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -92,16 +83,16 @@
       <file leaf-file-name="pic.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/pic.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="42" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+            <state line="11" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pic_mailer.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/mailers/pic_mailer.rb">
+      <file leaf-file-name="pics_helper.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/pics_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.2034188" vertical-offset="0" max-vertical-offset="1170">
+            <state line="12" column="15" selection-start="485" selection-end="485" vertical-scroll-proportion="0.28169015" vertical-offset="0" max-vertical-offset="639">
               <folding />
             </state>
           </provider>
@@ -110,7 +101,7 @@
       <file leaf-file-name="pics_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/tasks/pics_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+            <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -126,7 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/slogans.css.scss" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/contact.rb" />
         <option value="$PROJECT_DIR$/app/mailers/contact_mailer.rb" />
@@ -136,7 +126,6 @@
         <option value="$PROJECT_DIR$/app/controllers/contacts_controller.rb" />
         <option value="$PROJECT_DIR$/spec/models/contact_spec.rb" />
         <option value="$PROJECT_DIR$/spec/features/contact_spec.rb" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/initializers/_load_config.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pics.css.scss" />
@@ -158,25 +147,27 @@
         <option value="$PROJECT_DIR$/app/views/blogs/index.html.slim" />
         <option value="$PROJECT_DIR$/app/models/concerns/navigatable.rb" />
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
-        <option value="$PROJECT_DIR$/app/models/pic.rb" />
         <option value="$PROJECT_DIR$/spec/models/pic_spec.rb" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/config/sitemap.rb" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
         <option value="$PROJECT_DIR$/config/database_sample.yml" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/style.css.scss" />
         <option value="$PROJECT_DIR$/app/views/pics/index.html.slim" />
         <option value="$PROJECT_DIR$/app/views/pics/show.html.slim" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.slim" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/app/mailers/pic_mailer.rb" />
+        <option value="$PROJECT_DIR$/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/helpers/pics_helper.rb" />
         <option value="$PROJECT_DIR$/spec/tasks/pics_spec.rb" />
         <option value="$PROJECT_DIR$/log/mailman_pics_development.log" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/mailers/pic_mailer.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/pics_helper.rb" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/pic.rake" />
+        <option value="$PROJECT_DIR$/log/development.log" />
+        <option value="$PROJECT_DIR$/app/models/pic.rb" />
       </list>
     </option>
   </component>
@@ -188,10 +179,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="12" />
-    <option name="y" value="24" />
-    <option name="width" value="2445" />
-    <option name="height" value="1241" />
+    <option name="x" value="1096" />
+    <option name="y" value="45" />
+    <option name="width" value="1355" />
+    <option name="height" value="1139" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -219,7 +210,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,6 +238,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,7 +284,73 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attachments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="000" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="000" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dbjohn.com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="environments" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -318,6 +406,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -349,7 +438,7 @@
       <recent name="$PROJECT_DIR$/vendor/assets/stylesheets" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.pic:email: dbjohn.com">
+  <component name="RunManager" selected="RSpec.pic:email creates a new pic from an auth email: dbjohn.com">
     <configuration default="false" name="Pic: dbjohn.com" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="dbjohn.com" />
@@ -674,9 +763,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="RSpec.pic:email: dbjohn.com" />
-        <item index="1" class="java.lang.String" itemvalue="RSpec.pic:email creates a new pic from an auth email: dbjohn.com" />
-        <item index="2" class="java.lang.String" itemvalue="RSpec.pic:email does not croak: dbjohn.com" />
+        <item index="0" class="java.lang.String" itemvalue="RSpec.pic:email creates a new pic from an auth email: dbjohn.com" />
+        <item index="1" class="java.lang.String" itemvalue="RSpec.pic:email does not croak: dbjohn.com" />
+        <item index="2" class="java.lang.String" itemvalue="RSpec.pic:email: dbjohn.com" />
         <item index="3" class="java.lang.String" itemvalue="RSpec.pic:email does not create a new pic from an unauth email: dbjohn.com" />
         <item index="4" class="java.lang.String" itemvalue="RSpec.Pic: dbjohn.com" />
       </list>
@@ -692,32 +781,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="24" width="2445" height="1241" extended-state="0" />
+    <frame x="1096" y="45" width="1355" height="1139" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22535788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23468634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33242258" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39232054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39142334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32572994" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -733,21 +822,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/contact.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="62" selection-start="128" selection-end="147" vertical-scroll-proportion="0.09728183" vertical-offset="0" max-vertical-offset="699" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.65665233" vertical-offset="0" max-vertical-offset="699" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/features/contact_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="18" selection-start="464" selection-end="464" vertical-scroll-proportion="0.252809" vertical-offset="0" max-vertical-offset="1068" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacts/_form.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="432" selection-end="432" vertical-scroll-proportion="0.15804598" vertical-offset="0" max-vertical-offset="1044" />
@@ -780,11 +854,6 @@
         <state line="19" column="15" selection-start="403" selection-end="403" vertical-scroll-proportion="0.2760684" vertical-offset="0" max-vertical-offset="1170" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/mail.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="162" selection-end="162" vertical-scroll-proportion="0.043589745" vertical-offset="0" max-vertical-offset="1170" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/home.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="196" selection-end="196" vertical-scroll-proportion="0.08916084" vertical-offset="0" max-vertical-offset="1144" />
@@ -812,9 +881,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/home_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/concerns/navigatable.rb">
@@ -840,9 +907,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/blogs/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="56" selection-start="346" selection-end="346" vertical-scroll-proportion="0.32789317" vertical-offset="0" max-vertical-offset="674">
-          <folding />
-        </state>
+        <state line="13" column="56" selection-start="346" selection-end="346" vertical-scroll-proportion="0.32789317" vertical-offset="0" max-vertical-offset="674" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/blogs/show.html.slim">
@@ -854,9 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/factories/pics.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/support/mail_helper.rb">
@@ -917,16 +980,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/sitemap.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="447" selection-end="447" vertical-scroll-proportion="0.2905983" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database_sample.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="483" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="447" selection-end="447" vertical-scroll-proportion="0.2905983" vertical-offset="0" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/light_wool.png">
@@ -936,9 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="1" selection-start="859" selection-end="859" vertical-scroll-proportion="0.45042735" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="31" column="1" selection-start="859" selection-end="859" vertical-scroll-proportion="0.45042735" vertical-offset="0" max-vertical-offset="1170" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/deploy.rb">
@@ -950,68 +1002,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pics.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="615" selection-end="615" vertical-scroll-proportion="0.37777779" vertical-offset="0" max-vertical-offset="1170">
-          <folding />
-        </state>
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="52" selection-start="1515" selection-end="1537" vertical-scroll-proportion="0.6363636" vertical-offset="54" max-vertical-offset="1224">
-          <folding />
-        </state>
+        <state line="46" column="52" selection-start="1515" selection-end="1537" vertical-scroll-proportion="0.6363636" vertical-offset="54" max-vertical-offset="1224" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/style.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="53" selection-start="402" selection-end="402" vertical-scroll-proportion="-0.638986" vertical-offset="986" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.3673293" vertical-offset="0" max-vertical-offset="1598">
-          <folding />
-        </state>
+        <state line="15" column="53" selection-start="402" selection-end="402" vertical-scroll-proportion="-0.638986" vertical-offset="986" max-vertical-offset="2227" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pics/show.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="71" selection-start="477" selection-end="477" vertical-scroll-proportion="0.1486014" vertical-offset="0" max-vertical-offset="1144">
-          <folding />
-        </state>
+        <state line="10" column="71" selection-start="477" selection-end="477" vertical-scroll-proportion="0.1486014" vertical-offset="0" max-vertical-offset="1144" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pics/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="62" selection-start="879" selection-end="879" vertical-scroll-proportion="0.3715035" vertical-offset="0" max-vertical-offset="1144">
-          <folding />
-        </state>
+        <state line="25" column="62" selection-start="879" selection-end="879" vertical-scroll-proportion="0.3715035" vertical-offset="0" max-vertical-offset="1144" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.13374126" vertical-offset="0" max-vertical-offset="1144">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/mailman_pics_development.log">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="9268" selection-end="9268" vertical-scroll-proportion="0.8484398" vertical-offset="1129" max-vertical-offset="1802">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.13374126" vertical-offset="0" max-vertical-offset="1144" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -1021,44 +1037,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/config/database_sample.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="24" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1190">
+        <state line="0" column="0" selection-start="0" selection-end="615" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/pics_helper.rb">
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+        <state line="26" column="0" selection-start="615" selection-end="615" vertical-scroll-proportion="0.36516854" vertical-offset="0" max-vertical-offset="1068">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/tasks/pics_spec.rb">
+    <entry file="file://$PROJECT_DIR$/config/environments/test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="72" selection-end="72" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+        <state line="34" column="45" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.79812205" vertical-offset="0" max-vertical-offset="639">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/pic.rake">
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="11" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/pic.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="42" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+        <state line="80" column="50" selection-start="3481" selection-end="3489" vertical-scroll-proportion="1.315" vertical-offset="411" max-vertical-offset="1440">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/pic_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="499" selection-end="499" vertical-scroll-proportion="0.2034188" vertical-offset="0" max-vertical-offset="1170">
+        <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.04694836" vertical-offset="0" max-vertical-offset="639">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="12" selection-start="673" selection-end="673" vertical-scroll-proportion="0.47923324" vertical-offset="0" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/mailman_pics_development.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="1270" selection-end="1270" vertical-scroll-proportion="0.3286385" vertical-offset="0" max-vertical-offset="639">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="52" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.85915494" vertical-offset="36" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/tasks/pics_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/development.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="52" selection-start="9842" selection-end="9842" vertical-scroll-proportion="0.8083067" vertical-offset="244" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/pic.rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="49" selection-start="1136" selection-end="1136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/pic.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/pics_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="15" selection-start="485" selection-end="485" vertical-scroll-proportion="0.28169015" vertical-offset="0" max-vertical-offset="639">
           <folding />
         </state>
       </provider>

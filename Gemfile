@@ -73,7 +73,7 @@ gem "validates_formatting_of"
 gem 'bootstrap_form', github: 'potenza/bootstrap_form'
 gem "geocoder"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-gem 'fancybox2-rails'
+gem 'fancybox2-rails', github: 'kyparn/fancybox2-rails'
 gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
 gem "has_permalink"

@@ -17,7 +17,7 @@ h1.hide Blog posts of David B. John
       .text-muted.small
         =blog.created_at.to_s(:pretty)
         span &nbsp;•&nbsp;
-        = link_to blog.title, blog_path(blog, anchor: 'disqus_thread')
+        = link_to '', blog_path(blog, anchor: 'disqus_thread')
       p= truncate_html(blog.content, length: 200)
 
 .pull-right

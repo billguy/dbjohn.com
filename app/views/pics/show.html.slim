@@ -39,7 +39,9 @@ p=@pic.caption
     = link_to 'Delete', pic_path(@pic), method: :delete, data: { confirm: 'Are you sure?' }
   .clearfix
 
+
 #disqus_thread
+
 - content_for :footer do
   javascript:
     var disqus_shortname = '#{APP_CONFIG['disqus_shortname']}'; // required: replace example with your forum shortname

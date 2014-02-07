@@ -6,7 +6,13 @@ class Pic < ActiveRecord::Base
 
   validates_presence_of :title, :caption
 
-  has_attached_file :attachment, :styles => { :large => "720x540>", :medium => "230x230#", :thumb => "100x100#" }
+  has_attached_file :attachment, :processors => [:watermark],
+                    :styles => {
+                        :original => { :watermark_path => "#{Rails.root}/public/images/dbjohn.png" },
+                        :large => "720x540>",
+                        :medium => "230x230#",
+                        :thumb => "100x100#"
+                    }
   validates :attachment, :attachment_presence => true
   validates_attachment_content_type :attachment, :content_type => %w(image/jpeg image/jpg image/png)
 

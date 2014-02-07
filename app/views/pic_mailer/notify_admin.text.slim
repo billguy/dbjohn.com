@@ -1,2 +1,5 @@
 | A new pic sent by @pic.sent_by is awaiting your approval.
-| #{ link_to('Click', approve_pic_path(@pic, token: @pic.token)) } to approve.
+| #{ link_to('Click to approve.', approve_pic_url(@pic, token: @pic.token)) }
+|
+|
+|

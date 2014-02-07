@@ -8,7 +8,7 @@ class Pic < ActiveRecord::Base
 
   has_attached_file :attachment, :processors => [:watermark],
                     :styles => {
-                        :original => { :watermark_path => "#{Rails.root}/public/images/dbjohn.png" },
+                        :original => { :watermark_path => "#{Rails.root}/public/images/dbjohn_watermark.png" },
                         :large => "720x540>",
                         :medium => "230x230#",
                         :thumb => "100x100#"

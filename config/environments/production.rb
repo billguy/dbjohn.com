@@ -79,6 +79,7 @@ DbjohnCom::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.default_url_options = { :host => APP_CONFIG['domain'] }
 
 
   config.middleware.use ExceptionNotification::Rack,

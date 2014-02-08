@@ -8,13 +8,21 @@
   = f.file_field :attachment, data: { fileupload: true }
   = f.text_area :caption
   = f.text_field :tag_list, class: 'tag_list'
-  = hidden_field_tag :add_another
+  = check_box_tag :add_another,nil, false, class: 'hide'
   = f.form_group do
     = f.primary "Save", data: { "disable-with" => "Saving..."}
     - if @pic.new_record?
       | &nbsp;
-      = f.primary "Save and add another", data: { "disable-with" => "Saving..."}, onclick: 'document.getElementById("hiddenId").value = 1;'
+      = f.primary "Save and add another", data: { "disable-with" => "Saving..."}, onclick: 'document.getElementById("add_another").checked = true;'
     button.btn.btn-link type="button" onclick="location.href = '#{pics_path}'" Cancel
 
 javascript:
   tags = '#{@pic.tag_list}'
+
+- content_for :footer do
+  javascript:
+    $('form :submit').click( function () {
+        var buttons = $('form :submit').not($(this));
+        buttons.removeAttr('data-disable-with');
+        buttons.attr('disabled', true);
+    });

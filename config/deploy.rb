@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 require "whenever/capistrano"
+load 'deploy/assets'
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
@@ -54,12 +55,22 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/system/ckeditor_assets #{release_path}/public"
     run "ln -nfs #{deploy_to}/shared/system/pics #{release_path}/public"
   end
+  namespace :assets do
+    desc 'Run the precompile task locally and rsync with shared'
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+      %x{bundle exec rake assets:precompile}
+      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{domain}:##{deploy_to}/shared}
+      %x{bundle exec rake assets:clean}
+    end
+  end
+
   desc "Restart nginx"
   task :restart do
     run "#{deploy_to}/bin/restart"
   end
 end
 
+#after 'deploy:update_code', 'deploy:assets'
 after 'deploy:publishing', 'deploy:restart'
 
 after "deploy", "refresh_sitemaps"
@@ -73,4 +84,3 @@ task :copy_nondigest_assets, roles: :app do
 end
 after 'deploy:assets:precompile', 'copy_nondigest_assets'
 
-load 'deploy/assets'

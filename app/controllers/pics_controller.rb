@@ -48,7 +48,11 @@ class PicsController < ApplicationController
 
     respond_to do |format|
       if @pic.save
-        format.html { redirect_to @pic, notice: 'Pic was successfully created.' }
+        if params[:add_another]
+          format.html { redirect_to new_pic_path, notice: 'Pic was successfully created.' }
+        else
+          format.html { redirect_to @pic, notice: 'Pic was successfully created.' }
+        end
         format.json { render action: 'show', status: :created, location: @pic }
       else
         format.html { render action: 'new' }
@@ -85,6 +89,6 @@ class PicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pic_params
-      params.require(:pic).permit(:published, :title, :attachment, :caption, :tag_list)
+      params.require(:pic).permit(:published, :title, :attachment, :caption, :tag_list, :add_another)
     end
 end

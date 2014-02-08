@@ -13,7 +13,8 @@ set :applicationdir, APP_CONFIG['cap_applicationdir']
 set :deploy_to, applicationdir
 set :default_environment, {
     'PATH' => "#{deploy_to}/bin:$PATH",
-    'GEM_HOME' => "#{deploy_to}/gems"
+    'GEM_HOME' => "#{deploy_to}/gems",
+    'RUBYLIB' => "#{deploy_to}/lib"
 }
 set :rails_env, "production"
 set :scm, :git

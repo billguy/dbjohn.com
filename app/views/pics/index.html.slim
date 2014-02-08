@@ -2,22 +2,17 @@
 
 =filter_text
 .content
+  .row
+    div class="#{can?(:manage, Pic) ? 'col-xs-7' : 'col-xs-8'}"
+      = print_tags(Pic, Pic.tag_counts_on(:tags))
+    div class="#{can?(:manage, Pic) ? 'col-xs-5' : 'col-xs-4'}"
+      .btn-group
+        = link_to 'All', pics_path, class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
+        = link_to 'Month', pics_path(filter: :month), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
+        = link_to 'Year', pics_path(filter: :year), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
+        - if can? :manage, Pic
+          = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
 
-  - if can? :manage, Pic
-    .btn-group.pull-right
-      = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
-
-
-  .btn-group.pull-right
-    = link_to 'All', pics_path, class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
-    = link_to 'Month', pics_path(filter: :month), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
-    = link_to 'Year', pics_path(filter: :year), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
-    | &nbsp;
-
-  .pull-left
-    = print_tags(Pic, Pic.tag_counts_on(:tags))
-
-  .clearfix
   br
 
   - @pics.each do |pic|

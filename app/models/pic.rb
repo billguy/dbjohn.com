@@ -43,7 +43,7 @@ class Pic < ActiveRecord::Base
     self.camera_model = exif.model if exif.model
     self.date_taken = exif.date_time if exif.date_time
     self.latitude = exif.gps_latitude if exif.gps_latitude
-    self.longitude = exif.gps_longitude if exif.gps_longitude
+    self.longitude = -exif.gps_longitude if exif.gps_longitude #for some reason Aperture doesn't set geographic east correctly  so I'm setting longitude to negative
     reverse_geocode if self.latitude && self.longitude
   rescue
     false

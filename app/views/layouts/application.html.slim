@@ -4,12 +4,9 @@ html lang="en"
     meta charset="utf-8"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    =display_meta_tags author: 'David B. John', site: 'David B. John', reverse: true, keywords: %w[wildlife new\ orleans photography birds louisiana ruby\ on\ rails programming application\ developer david\ john david\ b.\ john]
 
-    meta content="" name="description"
-    meta content="" name="author"
     link href="favicon.png" rel="shortcut icon"
-    title= content_for?(:title) ? yield(:title) : 'David B. John'
-
     = stylesheet_link_tag    "application", media: "all"
     = stylesheet_link_tag controller.controller_name, :media => "all" if Rails.application.assets.find_asset("#{controller.controller_name}.css")
 

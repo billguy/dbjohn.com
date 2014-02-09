@@ -1,7 +1,6 @@
 module ApplicationHelper
-
-  def title(text)
-    content_for(:title) { text }
+  def deparameterize(thing)
+    thing.gsub(/%2F/, '/').gsub(/[_|-]/, ' ')
   end
 
   def flash_class(level)

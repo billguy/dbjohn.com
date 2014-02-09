@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   load_and_authorize_resource find_by: :permalink
   skip_load_resource only: [:create, :show, :index]
-  skip_authorize_resource only: [:show]
+  skip_authorize_resource only: [:show, :index]
 
   # GET /pages
   # GET /pages.json

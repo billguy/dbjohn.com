@@ -1,17 +1,22 @@
+- set_meta_tags title: 'Active pages', description: 'Published pages of David B. John'
+
 .pull-left.h1 Pages
-.pull-right.h1= link_to 'New Page', new_page_path, class: 'btn btn-primary'
+- if can? :manage, Page
+  .pull-right.h1= link_to 'New Page', new_page_path, class: 'btn btn-primary'
 
 table.table.table-hover
   thead
     tr
       th Title
       th Permalink
-      th
-      th
+      - if can? :manage, Page
+        th
+        th
   tbody
     - @pages.each do |page|
       tr
         td= page.title
         td= link_to page.permalink, page
-        td= link_to 'Edit', edit_page_path(page)
-        td= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete
+        - if can? :manage, Page
+          td= link_to 'Edit', edit_page_path(page)
+          td= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete

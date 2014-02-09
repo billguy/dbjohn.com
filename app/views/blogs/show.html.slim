@@ -1,4 +1,5 @@
-- title @blog.title
+- set_meta_tags title: @blog.title.titleize, description: truncate_html(@blog.content, lenght: 150)
+
 
 - if @previous_blog || @next_blog
   .row

@@ -2,6 +2,9 @@
 @import "caption";
 @import "tags";
 
+.btn-group.pull-right{
+  margin-right: 10px;
+}
 .fancybox-prev, .fancybox-next{
   opacity: 0;
 }
@@ -14,10 +17,6 @@ a.fancybox{
 }
 
 @media screen and (min-width: 768px) {
-
-//  .content{
-//    min-height: 750px;
-//  }
 
   #subject{
     min-height: 400px;

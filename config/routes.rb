@@ -13,7 +13,7 @@ DbjohnCom::Application.routes.draw do
   resources :tags, only: [:index]
   resources :blogs
   # redirect old wordpress blogs
-  get '/:year/:month/:day/:id' => redirect { |params, req| "/blogs/#{params[:id]}" }
+  get '/:year/:month/:day/:id' => redirect { |params, req| "/blogs/#{URI.parse(URI.encode(params[:id].strip))}" }
 
   resources :pages
   get ':id', to: 'pages#show'

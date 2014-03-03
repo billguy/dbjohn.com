@@ -70,8 +70,7 @@ namespace :deploy do
   end
 end
 
-#after 'deploy:update_code', 'deploy:assets'
-after 'deploy:publishing', 'deploy:restart'
+after 'deploy', 'deploy:restart'
 
 after "deploy", "refresh_sitemaps"
 task :refresh_sitemaps do

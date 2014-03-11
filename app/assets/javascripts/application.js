@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.effect-slide
 //= require bootstrap
 //= require lazyload.min.js
 
@@ -21,9 +22,9 @@ $(function() {
         $('#q').animate({width: 'toggle'},250);
     });
 
-    var slogan = $('#slogan').data('slogan');
+    var slogan = $('#slogan a').data('slogan');
     if (slogan != '') {
-        $('#slogan').delay(1500).fadeOut(500, function() {
+        $('#slogan a').delay(1500).fadeOut(500, function() {
             $(this).text(slogan).fadeIn(500);
         });
     }

@@ -21,6 +21,8 @@ html lang="en"
   body
     .container
       .header
+        #slogan.pull-left
+          a href="/" data-slogan="#{@slogan.title rescue nil}" David B. John
         ul.nav.nav-pills.pull-right
           li
             a href="/pics" Pics
@@ -33,8 +35,7 @@ html lang="en"
               input.form-control placeholder="search" type="text" name="q" id="q" style="display: none;position: absolute; right: 43px; width: 175px;"
               button.form-control.btn.btn-link type="button" id="search"
                 span.glyphicon.glyphicon-search
-        .h3
-          a#slogan href="/" data-slogan="#{@slogan.title rescue nil}" David B. John
+        .clearfix
 
       - flash.each do |key, value|
         div class="#{flash_class(key)}"

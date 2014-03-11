@@ -17,6 +17,10 @@
 
 $(function() {
 
+    $(document).on('click', '#search', function() {
+        $('#q').animate({width: 'toggle'},250);
+    });
+
     var slogan = $('#slogan').data('slogan');
     if (slogan != '') {
         $('#slogan').delay(1500).fadeOut(500, function() {
@@ -31,12 +35,6 @@ $(function() {
     window.setTimeout(function () {
         showAlert();
     }, 50);
-
-    $(document).on('click', '#search', function() {
-        alert();
-        $('.search-bar').animate({width: 'toggle'},250);
-    });
-
 
 });
 

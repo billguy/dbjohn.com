@@ -46,6 +46,15 @@ end
 
 before "deploy:assets:precompile", "deploy:symlink_db"
 
+namespace :assets do
+  desc 'Run the precompile task locally and rsync with shared'
+  task :precompile, :only => { :primary => true } do
+    %x{RAILS_ENV=production bundle exec rake assets:precompile}
+    %x{rsync -avz --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{domain}:##{deploy_to}/shared}
+    %x{rm -rf public/assets}
+  end
+end
+
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
@@ -55,15 +64,6 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/system/ckeditor_assets #{release_path}/public"
     run "ln -nfs #{deploy_to}/shared/system/pics #{release_path}/public"
   end
-  namespace :assets do
-    desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :only => { :primary => true } do
-      %x{RAILS_ENV=production bundle exec rake assets:precompile}
-      %x{rsync -avz --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{domain}:##{deploy_to}/shared}
-      %x{rm -rf public/assets}
-    end
-  end
-
   desc "Restart nginx"
   task :restart do
     run "#{deploy_to}/bin/restart"

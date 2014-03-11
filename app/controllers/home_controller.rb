@@ -3,4 +3,7 @@ class HomeController < ApplicationController
     @latest_pic = Pic.latest.first
     @latest_blogs = Blog.latest(2)
   end
+
+  def search
+  end
 end

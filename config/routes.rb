@@ -15,6 +15,8 @@ DbjohnCom::Application.routes.draw do
   # redirect old wordpress blogs
   get '/:year/:month/:day/:id' => redirect { |params, req| "/blogs/#{URI.parse(URI.encode(params[:id].strip))}" }
 
+  get 'search', to: 'home#search'
+
   resources :pages
   get ':id', to: 'pages#show'
   root to: 'home#index'

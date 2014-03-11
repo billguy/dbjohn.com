@@ -32,5 +32,10 @@ $(function() {
         showAlert();
     }, 50);
 
+    $('#search').click(function() {
+        $('.search-bar').animate({width: 'toggle'},250);
+    });
+
 
 });
+

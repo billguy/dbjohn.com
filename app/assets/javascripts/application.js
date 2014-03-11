@@ -33,6 +33,7 @@ $(function() {
     }, 50);
 
     $(document).on('click', '#search', function() {
+        alert();
         $('.search-bar').animate({width: 'toggle'},250);
     });
 

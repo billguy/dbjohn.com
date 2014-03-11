@@ -57,7 +57,7 @@ namespace :deploy do
   end
   namespace :assets do
     desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :roles => :web, :except => { :no_release => true } do
+    task :precompile, :only => { :primary => true } do
       %x{RAILS_ENV=production bundle exec rake assets:precompile}
       %x{rsync -avz --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{domain}:##{deploy_to}/shared}
       %x{rm -rf public/assets}

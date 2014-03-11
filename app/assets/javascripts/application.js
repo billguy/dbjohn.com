@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
-//= require jquery.ui.effect-slide
 //= require bootstrap
 //= require lazyload.min.js
 

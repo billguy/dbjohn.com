@@ -32,7 +32,7 @@ $(function() {
         showAlert();
     }, 50);
 
-    $('#search').click(function() {
+    $(document).on('click', '#search', function() {
         $('.search-bar').animate({width: 'toggle'},250);
     });
 

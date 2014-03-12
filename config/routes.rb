@@ -1,5 +1,8 @@
 DbjohnCom::Application.routes.draw do
 
+  # redirect old wordpress blogs
+  get '/:year/:month/:day/:id' => redirect { |params, req| "blogs/#{URI.escape(params[:id])}" }, :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :id => /.*/ }
+
   devise_for :users
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -12,8 +15,6 @@ DbjohnCom::Application.routes.draw do
   resources :slogans, except: [:show]
   resources :tags, only: [:index]
   resources :blogs
-  # redirect old wordpress blogs
-  get '/:year/:month/:day/:id' => redirect { |params, req| "/blogs/#{URI.parse(URI.encode(params[:id].strip))}" }
 
   get 'search', to: 'home#search'
 

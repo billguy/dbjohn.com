@@ -12,6 +12,7 @@ DbjohnCom::Application.routes.draw do
   resources :slogans, except: [:show]
   resources :tags, only: [:index]
   resources :blogs
+  resources :contacts, only: [:new, :create], path: 'contact'
   # redirect old wordpress blogs
   get '/:year/:month/:day/:id' => redirect { |params, req| "/blogs/#{URI.parse(URI.encode(params[:id].strip))}" }
 

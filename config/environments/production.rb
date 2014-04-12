@@ -59,7 +59,7 @@ DbjohnCom::Application.configure do
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  config.assets.precompile += %w( contacts.js contacts.css blank.gif light_wool.png loading.gif rails.jpgckeditor/* lazyload.min.js _caption.css _mixins.css _tags.css blogs.css home.css pages.css pics.css slogans.css style.css tags.js pics.js pages.js blogs.js)
+  config.assets.precompile += %w( ckeditor/**/.js contacts.js contacts.css blank.gif light_wool.png loading.gif rails.jpgckeditor/* lazyload.min.js _caption.css _mixins.css _tags.css blogs.css home.css pages.css pics.css slogans.css style.css tags.js pics.js pages.js blogs.js)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

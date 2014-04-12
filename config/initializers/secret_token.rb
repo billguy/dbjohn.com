@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DbjohnCom::Application.config.secret_key_base = '356605b104245dda034374ca0f0419e68d79ee76c45fcd0afa0b041690b4d3572b8f270ab94e91ffbb3e0240438acd97acfd972352fa71ac360f031575bd441f'
+DbjohnCom::Application.config.secret_key_base = APP_CONFIG['secret_token']

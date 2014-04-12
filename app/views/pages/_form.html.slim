@@ -8,7 +8,7 @@
           a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" Page details...
       #collapseOne.panel-collapse.collapse.in
         .panel-body
-          = bootstrap_form_for(@page, style: :horizontal, left: "col-sm-2", right: "col-sm-7") do |f|
+          = bootstrap_form_for(@page, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-7") do |f|
             = f.text_field :title
             = f.text_field :permalink
             = f.text_area :javascript

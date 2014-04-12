@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:test, :development]
@@ -10,7 +10,7 @@ gem 'mysql2', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-gem "slim-rails", '~> 1.1.1'
+gem "slim-rails"
 
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
@@ -39,10 +39,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'rspec-rails', group: [:test, :development]
+gem 'rspec-rails', '~> 3.0.0.beta', group: [:test, :development]
 gem 'factory_girl_rails', group: [:test, :development]
 
 group :test do
+  gem 'minitest'
   gem 'capybara'
   gem 'zeus'
   gem 'shoulda-matchers'
@@ -52,6 +53,9 @@ end
 
 group :development do
   gem 'thin'
+  gem 'capistrano-local-precompile', require: false, github: 'spagalloco/capistrano-local-precompile'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'kaminari-bootstrap', '~> 3.0.1'
@@ -66,11 +70,9 @@ gem 'paper_trail', '>= 3.0.0.rc2'
 gem 'capistrano', '~> 2.15'
 gem 'mailman'
 gem 'whenever'
-gem 'better_errors'
-gem 'binding_of_caller'
 gem 'exception_notification'
 gem "validates_formatting_of"
-gem 'bootstrap_form', github: 'potenza/bootstrap_form'
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 gem "geocoder"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'fancybox2-rails', github: 'kyparn/fancybox2-rails'

@@ -103,7 +103,7 @@ describe Pic do
 
     it 'should generate a token' do
       pic = FactoryGirl.build(:pic)
-      expect { pic.save }.to change{pic.token}
+      expect{pic.save}.to change{pic.token}
     end
 
     it 'should be 64 in length' do
@@ -119,12 +119,12 @@ describe Pic do
 
     it 'should publish when a valid token' do
       pic = FactoryGirl.create(:pic)
-      expect { pic.approve(pic.token) }.to change{pic.published}.to(true)
+      expect{pic.approve(pic.token)}.to change{pic.published}.to(true)
     end
 
     it 'should not publish when an invalid token' do
       pic = FactoryGirl.create(:pic)
-      expect { pic.approve("invalid") }.not_to change{pic.published}.to(true)
+      expect{pic.approve("invalid")}.to_not change{pic.published}
     end
   end
 

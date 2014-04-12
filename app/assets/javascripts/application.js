@@ -17,9 +17,13 @@
 
 $(function() {
 
-    var slogan = $('#slogan').data('slogan');
+    $(document).on('click', '#search', function() {
+        $('#q').animate({width: 'toggle'},250);
+    });
+
+    var slogan = $('#slogan a').data('slogan');
     if (slogan != '') {
-        $('#slogan').delay(1500).fadeOut(500, function() {
+        $('#slogan a').delay(1500).fadeOut(500, function() {
             $(this).text(slogan).fadeIn(500);
         });
     }
@@ -32,5 +36,5 @@ $(function() {
         showAlert();
     }, 50);
 
-
 });
+

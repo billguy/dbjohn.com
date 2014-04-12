@@ -28,6 +28,11 @@ test:
 
   git_repo: git@github.com:billguy/dbjohn.com.git
 
+  disqus_shortname:
+
+  # https://www.google.com/cse
+  google_search_key:
+
 development:
   host: 'http://dbjohn.com/'
   domain: dbjohn.com
@@ -57,6 +62,12 @@ development:
   analytics_key: 12345
 
   git_repo: git@github.com:billguy/dbjohn.com.git
+
+  disqus_shortname:
+
+  # https://www.google.com/cse
+  google_search_key:
+
 production:
   host: 'http://dbjohn.com/'
   domain: dbjohn.com
@@ -86,3 +97,8 @@ production:
   analytics_key: 12345
 
   git_repo: git@github.com:billguy/dbjohn.com.git
+
+  disqus_shortname:
+
+  # https://www.google.com/cse
+  google_search_key:

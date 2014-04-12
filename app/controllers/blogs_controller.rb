@@ -19,6 +19,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.find_by!(permalink: params[:id])
+    redirect_to(root_path, notice: 'Page not found') and return unless @blog
     flash.now[:notice] = "This blog post is not published" unless @blog.published
     @previous_blog = @blog.prev(!current_user)
     @next_blog = @blog.next(!current_user)

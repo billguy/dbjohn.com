@@ -1,6 +1,7 @@
 require 'bundler/capistrano'
 require "whenever/capistrano"
 load 'deploy/assets'
+require 'capistrano/local_precompile'
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
@@ -34,8 +35,6 @@ set :deploy_via, :export
 set :keep_releases, 2
 set :use_sudo, false
 
-after "deploy", "deploy:cleanup"
-
 before "deploy:assets:precompile", "gems:install"
 namespace :gems do
   desc "Install gems"
@@ -54,14 +53,6 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{deploy_to}/shared/system/ckeditor_assets #{release_path}/public"
     run "ln -nfs #{deploy_to}/shared/system/pics #{release_path}/public"
-  end
-  namespace :assets do
-    desc 'Run the precompile task locally and rsync with shared'
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      %x{bundle exec rake assets:precompile}
-      %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{domain}:##{deploy_to}/shared}
-      %x{bundle exec rake assets:clean}
-    end
   end
 
   desc "Restart nginx"

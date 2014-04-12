@@ -34,7 +34,7 @@ $(function() {
 
     window.setTimeout(function () {
         showAlert();
-    }, 50);
+    }, 250);
 
 });
 

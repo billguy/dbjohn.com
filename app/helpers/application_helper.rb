@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def flash_class(level)
-    case level
-      when :notice then "alert alert-info alert-dismissable fade in"
-      when :success then "alert alert-success alert-dismissable fade in"
-      when :error then "alert alert-danger alert-dismissable fade in"
-      when :alert then "alert alert-warning alert-dismissable fade in"
+    case level.to_sym
+      when :notice then "alert alert-info alert-dismissable fade"
+      when :success then "alert alert-success alert-dismissable fade"
+      when :error then "alert alert-danger alert-dismissable fade"
+      when :alert then "alert alert-warning alert-dismissable fade"
     end
   end
 

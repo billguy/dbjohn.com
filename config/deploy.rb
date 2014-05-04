@@ -2,6 +2,7 @@ require 'bundler/capistrano'
 require "whenever/capistrano"
 load 'deploy/assets'
 require 'capistrano/local_precompile'
+set(:rsync_cmd){ "rsync -av --delete" }
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 

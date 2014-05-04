@@ -49,7 +49,6 @@ class PicsController < ApplicationController
     respond_to do |format|
       if @pic.save
         if params[:add_another]
-          p 'tttt'
           format.html { redirect_to new_pic_path, notice: 'Pic was successfully created.' }
         else
           format.html { redirect_to @pic, notice: 'Pic was successfully created.' }

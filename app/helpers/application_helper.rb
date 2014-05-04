@@ -13,13 +13,13 @@ module ApplicationHelper
   end
 
   def caption(pic)
-    date = pic.date_taken || pic.updated_at
-    pic_date = "#{date.strftime("%m.%d.%y %l:%M%p")}<br/>"
+    pic_date = pic.date_taken || pic.updated_at.strftime("%m.%d.%y %l:%M%p")
     location = pic.location
-    model = pic.camera_model
-    taken_with = model ? "<br/><span class='smaller'>Taken with a #{pic.camera_model}</span>" : nil
+    details = pic.details
+    camera = pic.camera_model ? "<br/><span class='smaller'>#{pic.camera_model}</span>" : nil
+    taken_with = details ? "<br/><span class='smaller'>#{details}</span>" : nil
     near = location ? "<br/><span class='smaller'>#{location}</span>" : nil
-    raw "#{pic_date}#{pic.title}#{taken_with}#{near}"
+    raw "#{pic_date}<br/>#{pic.title}#{camera}#{taken_with}#{near}"
   end
 
   def filter_text

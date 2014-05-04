@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502214840) do
+ActiveRecord::Schema.define(version: 20140503181013) do
 
   create_table "blogs", force: true do |t|
     t.boolean  "published"
@@ -71,12 +71,10 @@ ActiveRecord::Schema.define(version: 20140502214840) do
     t.string   "token"
     t.string   "sent_by"
     t.string   "location"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "camera_model"
-    t.datetime "date_taken"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "sessions", force: true do |t|

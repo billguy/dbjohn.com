@@ -10,13 +10,6 @@ describe Pic do
   it { should callback(:generate_token).before(:create) }
   it { should respond_to(:tag_list)}
 
-  it '#load_exif' do
-    Pic.any_instance.stub(:notify_admin).and_return(nil)
-    Pic.any_instance.should_receive(:load_exif)
-    pic = FactoryGirl.build(:pic_gps, published: true)
-    pic.save
-  end
-
   describe 'geocode' do
     before do
       Pic.any_instance.stub(:notify_admin).and_return(nil)
@@ -126,6 +119,68 @@ describe Pic do
       pic = FactoryGirl.create(:pic)
       expect{pic.approve("invalid")}.to_not change{pic.published}
     end
+  end
+
+  describe 'exif' do
+
+    before(:all) do
+      @exif_pic = FactoryGirl.create(:pic_gps)
+      @pic = FactoryGirl.create(:pic)
+      @pic_without_gps = FactoryGirl.create(:pic_without_gps)
+    end
+
+    describe '#exif?' do
+      it 'pic with exif' do
+        expect(@exif_pic.exif?).to be true
+      end
+
+      it 'pic without exif' do
+        expect(@pic.exif?).to be false
+      end
+    end
+
+    it '#camera_make' do
+      expect(@exif_pic.camera_make).to eq('Sony')
+    end
+
+    it '#camera_model' do
+      expect(@exif_pic.camera_model).to eq('DSC-S600')
+    end
+
+    it '#f_stop' do
+      expect(@exif_pic.f_stop).to eq(6.3)
+    end
+
+    it '#exposure_time' do
+      expect(@exif_pic.exposure_time).to eq('1/250')
+    end
+
+    it '#date_taken' do
+      expect(@exif_pic.date_taken).to eq('04.03.08 10:57AM')
+    end
+
+    it '#iso' do
+      expect(@exif_pic.iso).to eq(80)
+    end
+
+    it '#latitude' do
+      expect(@exif_pic.latitude).to eq(37.33027777777778)
+      expect(@pic.latitude).to be nil
+      expect(@pic_without_gps.longitude).to be nil
+    end
+
+    it '#longitude' do
+      expect(@exif_pic.longitude).to eq(-121.895)
+      expect(@pic.longitude).to be nil
+      expect(@pic_without_gps.longitude).to be nil
+    end
+
+    it '#details' do
+      expect(@exif_pic.details).to eq('f6.3, ISO 80, 1/250')
+      expect(@pic.longitude).to be nil
+      expect(@pic_without_gps.longitude).to be nil
+    end
+
   end
 
 end

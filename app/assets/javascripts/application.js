@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require lazyload.min.js
+//= require jquery.bttrlazyloading
+
 
 $(function() {
 
@@ -35,6 +36,10 @@ $(function() {
     window.setTimeout(function () {
         showAlert();
     }, 250);
+
+    $(".lazy-load").bttrlazyloading({
+	    animation: 'fadeIn'
+    });
 
 });
 

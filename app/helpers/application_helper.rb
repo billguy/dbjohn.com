@@ -36,7 +36,7 @@ module ApplicationHelper
   def print_tags(model, tags)
     return '' if tags.size == 0
     output = "<ul class=\"inline tags\">"
-    tags.each do |tag|
+    tags.sort_by(&:name).each do |tag|
       output << "<li><a href=\"#{polymorphic_path(model, tag: tag.name, filter: params[:filter])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
     end
     output << "</ul>"

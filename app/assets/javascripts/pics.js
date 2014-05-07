@@ -1,5 +1,6 @@
 //= require fancybox
 //= require tags
+//= require magnifier
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;

@@ -84,4 +84,3 @@ gem 'valid_email'
 gem 'sitemap_generator'
 gem 'paperclip-watermark'
 gem 'meta-tags', require: 'meta_tags'
-

@@ -22,8 +22,10 @@ h1.hide=@pic.title
 
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
-    =image_tag('blank.gif', class: "lazy-load img-responsive #{'disabled' unless @pic.published}", data: { "bttrlazyloading-xs-src" => @pic.attachment.url(:large), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
-    figcaption= caption(@pic)
+    .magnify
+      .large style="background: url(#{@pic.attachment.url(:xlarge)});"
+      =image_tag('blank.gif', class: "small lazy-load img-responsive #{'disabled' unless @pic.published}", data: { "bttrlazyloading-xs-src" => @pic.attachment.url(:xlarge), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
+      figcaption= caption(@pic)
 .clearfix
 
 .pull-left.h1=@pic.title

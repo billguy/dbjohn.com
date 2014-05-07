@@ -5,8 +5,10 @@
   - if @latest_pic
     figure.cap-bot
       =link_to pic_path(@latest_pic) do
-        =image_tag('blank.gif', class: 'lazy-load img-responsive', data: { "bttrlazyloading-xs-src" => @latest_pic.attachment.url(:large), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
-        figcaption= caption(@latest_pic)
+        .magnify
+          .large style="background: url(#{@latest_pic.attachment.url(:xlarge)});"
+          =image_tag('blank.gif', class: 'small lazy-load img-responsive', data: { "bttrlazyloading-xs-src" => @latest_pic.attachment.url(:xlarge), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
+          figcaption= caption(@latest_pic)
 
 .row.marketing
   hr

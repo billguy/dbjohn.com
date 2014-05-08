@@ -66,5 +66,7 @@ $(document).ready(function(){
 				$(".large").css({left: px, top: py, backgroundPosition: bgp});
 			}
 		}
+	}).mouseleave(function(e){
+	    $(".large").fadeOut(100);
 	})
 })

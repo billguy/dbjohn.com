@@ -2,27 +2,28 @@
 
 h1.hide=@pic.title
 - if @previous_pic || @next_pic
-  .row
-    .col-xs-6
+  #nav.row
+    .col-xs-4.col-sm-2
       - if @previous_pic
-        .media
+        .media.pull-left
           = link_to pic_path(@previous_pic), class: "pull-left thumbnail #{'disabled' unless @previous_pic.published}" do
             = image_tag('blank.gif', class: 'nav-pic lazy-load', data: { "bttrlazyloading-xs-src" => @previous_pic.attachment.url(:thumb), "bttrlazyloading-xs-width" => "100", "bttrlazyloading-xs-height" => "100"})
-          .media-body.hidden-xs
-            h4.media-heading=link_to @previous_pic.title, @previous_picgroup
-            p= truncate_html(@previous_pic.caption, length: 100)
-    .col-xs-6
+
+    .col-xs-4.col-sm-8.vcenter
+      - if @pic.geocodable?
+        #map style="width: 100%;height: 100%;"
+      - else
+        .h4.text-muted.text-center.content Map Unavailable
+    .col-xs-4.col-sm-2
       - if @next_pic
-        .media
+        .media.pull-right
           = link_to pic_path(@next_pic), class: "pull-right thumbnail #{'disabled' unless @next_pic.published}" do
             = image_tag('blank.gif', class: 'nav-pic lazy-load', data: { "bttrlazyloading-xs-src" => @next_pic.attachment.url(:thumb), "bttrlazyloading-xs-width" => "100", "bttrlazyloading-xs-height" => "100"})
-          .media-body.hidden-xs
-            h4.media-heading=link_to @next_pic.title, @next_pic
-            p= truncate_html(@next_pic.caption, length: 100)
 
+.clearfix
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
-    .magnify
+    .magnify.thumbnail
       .large style="background: url(#{@pic.attachment.url(:xlarge)});"
       =image_tag('blank.gif', class: "small lazy-load img-responsive #{'disabled' unless @pic.published}", data: { "bttrlazyloading-xs-src" => @pic.attachment.url(:xlarge), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
       figcaption= caption(@pic)
@@ -41,6 +42,37 @@ p=@pic.caption
     '  |
     = link_to 'Delete', pic_path(@pic), method: :delete, data: { confirm: 'Are you sure?' }
   .clearfix
+
+
+- if @pic.geocodable?
+  - content_for :footer do
+    = javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry"
+    = javascript_include_tag '//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js'
+
+    javascript:
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
+          disableDefaultUI: true,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        },
+        internal:
+          {
+            id: 'map'
+          }
+        }, function(){
+          markers = handler.addMarkers([
+            {
+              "lat": #{@pic.latitude},
+              "lng": #{@pic.longitude}
+            }
+          ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        google.maps.event.addListener(marker, 'click', function() {
+          alert();
+        });
+      });
 
 #disqus_thread
 

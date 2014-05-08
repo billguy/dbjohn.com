@@ -24,7 +24,33 @@ a.fancybox{
   }
 }
 
-.nav-pic {
+
+
+.vcenter{
+  display: table !important;
   height: 100px;
-  width: 100px;
+  .content{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  #map{
+    margin-top: 4px;
+  }
+  #map img {
+    max-width: none;
+  }
+  #map label {
+    width: auto; display:inline;
+  }
+}
+
+#nav{
+  .thumbnail{
+    height: 110px;
+    width: 110px;
+  }
+  .nav-pic {
+    height: 100px;
+    width: 100px;
+  }
 }

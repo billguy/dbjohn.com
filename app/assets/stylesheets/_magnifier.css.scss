@@ -1,6 +1,13 @@
 /*Some CSS*/
 * {margin: 0; padding: 0;}
-.magnify {width: 697px; height: 392px; position: relative;}
+.magnify {
+//  width: 697px;
+//  height: 392px;
+  position: relative;
+  .thumbnail{
+    min-height: 386px;
+  }
+}
 
 /*Lets create the magnifying glass*/
 .large {
@@ -9,6 +16,7 @@
 	position: absolute;
 	border-radius: 100%;
     z-index: 10000000;
+    cursor: none;
 	
 	/*Multiple box shadows to achieve the glass effect*/
 	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 

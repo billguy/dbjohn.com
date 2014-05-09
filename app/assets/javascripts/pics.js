@@ -1,8 +1,6 @@
 //= require fancybox
 //= require tags
 //= require magnifier
-//= require underscore
-//= require gmaps/google
 
 
 $(document).on('change', 'form [data-fileupload]', function() {

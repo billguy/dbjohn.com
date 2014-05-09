@@ -47,32 +47,18 @@ p=@pic.caption
 - if @pic.geocodable?
   - content_for :footer do
     = javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry"
-    = javascript_include_tag '//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js'
-
+    = javascript_include_tag asset_path('gmapsjs.js')
     javascript:
-      handler = Gmaps.build('Google');
-      handler.buildMap({
-        provider: {
-          disableDefaultUI: true,
-          mapTypeId: google.maps.MapTypeId.SATELLITE
-        },
-        internal:
-          {
-            id: 'map'
-          }
-        }, function(){
-          markers = handler.addMarkers([
-            {
-              "lat": #{@pic.latitude},
-              "lng": #{@pic.longitude}
-            }
-          ]);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        google.maps.event.addListener(marker, 'click', function() {
-          alert();
-        });
+
+      url = GMaps.staticMapURL({
+        size: [456, 100],
+        lat: #{@pic.latitude},
+        lng: #{@pic.longitude},
+        markers: [
+          {lat: #{@pic.latitude}, lng: #{@pic.longitude}, size: 'small'}
+        ]
       });
+      $('<img/>').attr('src', url).attr('class', 'img-responsive').appendTo('#map');
 
 #disqus_thread
 

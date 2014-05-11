@@ -1,7 +1,7 @@
 - set_meta_tags title: 'Pics', description: 'Photographs I\'ve recently taken', keywords: 'wildlife, photography, new orleans'
 
 =filter_text
-#pics.content
+.content
   .row
     div class="#{can?(:manage, Pic) ? 'col-xs-7' : 'col-xs-8'}"
       = print_tags(Pic, Pic.tag_counts_on(:tags))
@@ -12,22 +12,69 @@
         = link_to 'Year', pics_path(filter: :year), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
         - if can? :manage, Pic
           = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
-    .clearfix
+        .row
+          .col-sm-offset-2.col-sm-6.col-sm-offset-2
+            #pic-switcher.hidden-xs
+              =check_box_tag "switcher", 1, params[:switcher], style: "display:none;"
+      .clearfix
+
   br
-
-  - @pics.each do |pic|
-    figure.cap-bot
-      = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
-        =image_tag('blank.gif', class: "lazy-load #{'disabled' unless pic.published}", data: { "bttrlazyloading-xs-src" => pic.attachment.url(:medium), "bttrlazyloading-xs-width" => "230", "bttrlazyloading-xs-height" => "230"})
-        - if can? :edit, pic
-          = link_to edit_pic_path(pic) do
-            figcaption= caption(pic)
-        - else
-          figcaption= caption(pic)
-
-  .clearfix
 
   .row
     .col-sm-12
-      = paginate @pics
+      .content-container
+        #map
+        #pics
+          - @pics.each do |pic|
+            figure.cap-bot
+              = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
+                =image_tag('blank.gif', class: "lazy-load #{'disabled' unless pic.published}", data: { "bttrlazyloading-xs-src" => pic.attachment.url(:medium), "bttrlazyloading-xs-width" => "230", "bttrlazyloading-xs-height" => "230"})
+                - if can? :edit, pic
+                  = link_to edit_pic_path(pic) do
+                    figcaption= caption(pic)
+                - else
+                  figcaption= caption(pic)
 
+          .clearfix
+
+          .row
+            .col-sm-12
+              = paginate @pics
+
+-content_for :footer do
+
+  = javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry"
+  = javascript_include_tag asset_path('oms.js')
+
+  javascript:
+    var loaded = false;
+
+    $("[name='switcher']").bootstrapSwitch({
+      offText: 'PICS',
+      onText: 'MAP',
+      offColor: 'primary',
+      onInit: function(event, state) {
+        $(this).fadeIn();
+      },
+      onSwitchChange: function(event, state) {
+
+        if (state){
+          $('#pics').toggle(function(){
+            $(this).animate({opacity:0},200);
+          },function(){
+            $('#map').animate({opacity:1},200);
+          });
+
+          if (!loaded) {
+            loaded = true;
+            $.getScript(window.location);
+          }
+        }else {
+          $('#pics').toggle(function(){
+            $(this).animate({opacity:1},200);
+          },function(){
+            $('#map').animate({opacity:0},200);
+          });
+        }
+      }
+    });

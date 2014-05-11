@@ -1,7 +1,7 @@
 //= require fancybox
 //= require tags
 //= require magnifier
-
+//= require bootstrap-switch
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;
@@ -24,7 +24,6 @@ $(document).on('change', 'form [data-fileupload]', function() {
     }
 });
 
-
 $(function() {
     $("a.fancybox").fancybox({
         helpers : {
@@ -39,9 +38,7 @@ $(function() {
     });
 });
 
-
 $(document).on('click', 'img.fancybox-image', function(){
     var current = $.fancybox.current.element;
     window.location.href = $(current).data('path')
 });
-

@@ -1,0 +1,29 @@
+var gm = google.maps;
+var center = new gm.LatLng(<%= @geo_center.first %>, <%= @geo_center.second %>);
+var map = new gm.Map(document.getElementById('map'), {
+  center: center,
+  zoom: 12
+});
+
+var oms = new OverlappingMarkerSpiderfier(map, {
+    keepSpiderfied: true
+});
+var iw = new gm.InfoWindow();
+oms.addListener('click', function(marker, event) {
+  iw.setContent(marker.desc);
+  iw.open(map, marker);
+});
+
+<% @pics.select(&:geocodable?).each do |pic| %>
+    var loc = new gm.LatLng(<%= pic.latitude %>, <%= pic.longitude %>);
+    var icon = new google.maps.MarkerImage('<%= pic.attachment.url(:xsmall) %>', new google.maps.Size(50, 50));
+    var marker = new gm.Marker({
+      position: loc,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: '<%= pic.title %>',
+      desc: '<%= render(pic).gsub("'", '"').html_safe %>',
+      icon: icon
+    });
+    oms.addMarker(marker);
+<% end %>

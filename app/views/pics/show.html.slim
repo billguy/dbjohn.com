@@ -11,7 +11,7 @@ h1.hide=@pic.title
 
     .col-xs-4.col-sm-8.vcenter
       - if @pic.geocodable?
-        #map style="width: 100%;height: 100%;"
+        #map style="width: 100%;height: 100%;background-position: 50% 0;"
       - else
         .h4.text-muted.text-center.content Map Unavailable
     .col-xs-4.col-sm-2
@@ -51,14 +51,14 @@ p=@pic.caption
     javascript:
 
       url = GMaps.staticMapURL({
-        size: [456, 100],
+        size: [456, 122],
         lat: #{@pic.latitude},
         lng: #{@pic.longitude},
         markers: [
           {lat: #{@pic.latitude}, lng: #{@pic.longitude}, size: 'small'}
         ]
       });
-      $('<img/>').attr('src', url).attr('class', 'img-responsive').appendTo('#map');
+      $('#map').css('background-image', 'url(' + url + ')');
 
 #disqus_thread
 

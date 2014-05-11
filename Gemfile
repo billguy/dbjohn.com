@@ -85,3 +85,4 @@ gem 'sitemap_generator'
 gem 'paperclip-watermark'
 gem 'meta-tags', require: 'meta_tags'
 gem 'gmapsjs'
+gem "bootstrap-switch-rails"

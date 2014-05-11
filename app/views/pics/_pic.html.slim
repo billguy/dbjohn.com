@@ -1,0 +1,9 @@
+.row
+  .col-sm-12
+    .media
+      =link_to pic, class: 'pull-left' do
+        =image_tag pic.attachment.url(:thumb), class: 'media-object'
+      .media-body
+        .h4.media-heading
+          =link_to pic.title, pic
+        p=caption(pic)

@@ -2,6 +2,7 @@
 @import "caption";
 @import "tags";
 @import "magnifier";
+@import "bootstrap3-switch";
 
 .btn-group.pull-right{
   margin-right: 10px;
@@ -23,8 +24,6 @@ a.fancybox{
     min-height: 400px;
   }
 }
-
-
 
 .vcenter{
   display: table !important;
@@ -51,5 +50,23 @@ a.fancybox{
   .nav-pic {
     height: 100px;
     width: 100px;
+  }
+}
+
+#pic-switcher{
+  height:25px;
+  margin-top: 5px;
+}
+
+
+.content-container{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  #map{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
   }
 }

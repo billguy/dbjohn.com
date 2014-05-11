@@ -12,7 +12,8 @@ class Pic < ActiveRecord::Base
                         :xlarge => "1440×1080>",
                         :large => "720x540>",
                         :medium => "230x230#",
-                        :thumb => "100x100#"
+                        :thumb => "100x100#",
+                        :xsmall => "50x50>"
                     }
   validates :attachment, :attachment_presence => true
   validates_attachment_content_type :attachment, :content_type => %w(image/jpeg image/jpg image/png)
@@ -40,6 +41,10 @@ class Pic < ActiveRecord::Base
 
   def geocodable?
     latitude && longitude
+  end
+
+  def to_coord
+    [latitude, longitude] if geocodable?
   end
 
   def exif?

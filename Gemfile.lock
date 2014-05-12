@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bootstrap-ruby/rails-bootstrap-forms.git
-  revision: 28ea2723a3a8f4e370957199e502f409768a599e
+  revision: c54c35f6fb6ce95b66adb07ce0815d1ba4595700
   specs:
     bootstrap_form (2.1.1)
 
@@ -37,14 +37,14 @@ GIT
 
 GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 8adf1840019909e10fe3364c246fec4079f84252
+  revision: a416cb86a3ddc6906892b2c0472deea306989fea
   specs:
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 41da3a3c4c139964a9877c77220f94200d73c87a
+  revision: 266a32a5230af67e397e92a9e8c2f314ff4fe555
   specs:
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -81,11 +81,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (3.1.1)
+    acts-as-taggable-on (3.2.1)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
-      activesupport (>= 3, < 5)
-    acts_as_textcaptcha (4.1.1)
+    acts_as_textcaptcha (4.1.2)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     better_errors (1.1.0)
@@ -149,8 +148,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
-    geocoder (1.2.0)
-    gmapsjs (0.2.30.1)
+    geocoder (1.2.1)
+    gmapsjs (0.4.12)
     has_permalink (0.1.6)
     highline (1.6.21)
     hike (1.2.3)
@@ -191,7 +190,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.3)
-    multi_json (1.9.3)
+    multi_json (1.10.0)
     mysql2 (0.3.15)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -204,7 +203,7 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
-    paper_trail (3.0.1)
+    paper_trail (3.0.2)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
     paperclip-watermark (1.0.0)

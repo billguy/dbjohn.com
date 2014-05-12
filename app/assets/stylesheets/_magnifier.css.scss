@@ -1,12 +1,8 @@
 /*Some CSS*/
 * {margin: 0; padding: 0;}
 .magnify {
-//  width: 697px;
-//  height: 392px;
-  position: relative;
-  .thumbnail{
-    min-height: 386px;
-  }
+  min-height: 386px;
+  width: 100%;
 }
 
 /*Lets create the magnifying glass*/

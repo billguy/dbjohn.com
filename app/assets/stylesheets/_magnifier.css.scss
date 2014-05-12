@@ -1,7 +1,6 @@
 /*Some CSS*/
 * {margin: 0; padding: 0;}
 .magnify {
-  min-height: 386px;
   width: 100%;
 }
 
@@ -24,3 +23,9 @@
 }
 
 .small{display: block;}
+
+@media screen and (min-width: 768px) {
+  .magnify {
+    min-height: 386px;
+  }
+}

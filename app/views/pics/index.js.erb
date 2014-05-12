@@ -16,14 +16,15 @@ oms.addListener('click', function(marker, event) {
 
 <% @pics.select(&:geocodable?).each do |pic| %>
     var loc = new gm.LatLng(<%= pic.latitude %>, <%= pic.longitude %>);
-    var icon = new google.maps.MarkerImage('<%= pic.attachment.url(:xsmall) %>', new google.maps.Size(50, 50));
+    var pinColor = "#{pic.tags.collect(&:color).compact.first}";
+    var icon = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|" + pinColor);
     var marker = new gm.Marker({
       position: loc,
       map: map,
       animation: google.maps.Animation.DROP,
       title: '<%= pic.title %>',
-      desc: '<%= render(pic).gsub("'", '"').html_safe %>',
-      icon: icon
+      icon: icon,
+      desc: '<%= render(pic).gsub("'", '"').html_safe %>'
     });
     oms.addMarker(marker);
 <% end %>

@@ -55,8 +55,8 @@ html lang="en"
             = link_to "DBJohn, LLC", new_user_session_path, class: 'text-muted'
 
     = javascript_include_tag "application"
+    =yield :footer_pre
     = javascript_include_tag controller.controller_name if Rails.application.assets.find_asset("#{controller.controller_name}.js")
-
     =yield :footer
 
     - if Rails.env.production?

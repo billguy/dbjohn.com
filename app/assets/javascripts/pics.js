@@ -2,6 +2,7 @@
 //= require tags
 //= require magnifier
 //= require bootstrap-switch
+//= require gmapsjs
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;

@@ -16,7 +16,7 @@ oms.addListener('click', function(marker, event) {
 
 <% @pics.select(&:geocodable?).each do |pic| %>
     var loc = new gm.LatLng(<%= pic.latitude %>, <%= pic.longitude %>);
-    var pinColor = "<%= pic.tags.collect(&:color).compact.first %>";
+    var pinColor = "<%= pic.tags.collect(&:color).reject(&:blank?).first %>";
     var icon = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|" + pinColor);
     var marker = new gm.Marker({
       position: loc,

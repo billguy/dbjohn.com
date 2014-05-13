@@ -12,6 +12,8 @@ h1.hide=@pic.title
     .col-xs-4.col-sm-8.vcenter
       - if @pic.geocodable?
         #map style="width: 100%;height: 100%;background-position: 50% 0;"
+        .hidden
+          = link_to nil, pics_path(tags: @pic.tag_list, map: 1 ), id: "gmap"
       - else
         .h4.text-muted.text-center.content Map Unavailable
     .col-xs-4.col-sm-2
@@ -61,7 +63,9 @@ p=@pic.caption
           {lat: #{@pic.latitude}, lng: #{@pic.longitude}, size: 'small'}
         ]
       });
-      $('#map').css('background-image', 'url(' + url + ')');
+      $('#map').css('background-image', 'url(' + url + ')').click(function(){
+        $("#gmap")[0].click();
+      });
 
 #disqus_thread
 

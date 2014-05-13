@@ -7,9 +7,9 @@
       = print_tags(Pic, Pic.tag_counts_on(:tags))
     div class="#{can?(:manage, Pic) ? 'col-xs-5' : 'col-xs-4'}"
       .btn-group.pull-right
-        = link_to 'All', pics_path, class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
-        = link_to 'Month', pics_path(filter: :month), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
-        = link_to 'Year', pics_path(filter: :year), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
+        = link_to 'All', pics_path(params.except(:controller, :action, :filter)), class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
+        = link_to 'Month', pics_path(params.except(:controller, :action).merge(filter: :month)), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
+        = link_to 'Year', pics_path(params.except(:controller, :action).merge(filter: :year)), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
         - if can? :manage, Pic
           = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
         .row
@@ -22,24 +22,27 @@
 
   .row
     .col-sm-12
-      .content-container
-        #map-container
-          #map
-          =print_markers
-        #pics
-          - @pics.each do |pic|
-            figure.cap-bot
-              = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
-                =image_tag('blank.gif', class: "lazy-load #{'disabled' unless pic.published}", data: { "bttrlazyloading-xs-src" => pic.attachment.url(:medium), "bttrlazyloading-xs-width" => "230", "bttrlazyloading-xs-height" => "230"})
-                - if can? :edit, pic
-                  = link_to edit_pic_path(pic) do
+      - if @pics.any?
+        .content-container
+          #map-container
+            #map
+            =print_markers
+          #pics
+            - @pics.each do |pic|
+              figure.cap-bot
+                = link_to( pic.attachment.url(:large), rel: 'gallery', class: 'fancybox', data: { 'fancybox-title' => pic.caption, path: pic_path(pic) }, title: pic.title) do
+                  =image_tag('blank.gif', class: "lazy-load #{'disabled' unless pic.published}", data: { "bttrlazyloading-xs-src" => pic.attachment.url(:medium), "bttrlazyloading-xs-width" => "230", "bttrlazyloading-xs-height" => "230"})
+                  - if can? :edit, pic
+                    = link_to edit_pic_path(pic) do
+                      figcaption= caption(pic)
+                  - else
                     figcaption= caption(pic)
-                - else
-                  figcaption= caption(pic)
-      .clearfix
-        .row
-          .col-sm-12
-            = paginate @pics
+        .clearfix
+          .row
+            .col-sm-12
+              = paginate @pics
+      - else
+        i No results.
 
 -content_for :footer_pre do
   = javascript_include_tag "//maps.google.com/maps/api/js?sensor=true"
@@ -48,8 +51,8 @@
 
   javascript:
     var loaded = false;
-
-    $("[name='switcher']").bootstrapSwitch({
+    var $switch = $("[name='switcher']");
+    $switch.bootstrapSwitch({
       offText: 'PICS',
       onText: 'MAP',
       offColor: 'primary',
@@ -57,7 +60,6 @@
         $(this).fadeIn();
       },
       onSwitchChange: function(event, state) {
-
         if (state){
           $('#pics').toggle(function(){
             $(this).animate({opacity:0},200);
@@ -78,3 +80,7 @@
         }
       }
     });
+
+    if (#{params[:map] ? true : false}){
+      $switch.bootstrapSwitch('toggleState');
+    }

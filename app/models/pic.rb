@@ -27,6 +27,10 @@ class Pic < ActiveRecord::Base
     obj.location  = [geo.first.city, " #{geo.first.state}"].join(",")
   end
 
+  def self.default_coord
+    [29.940483333333336, -90.20313333333334]
+  end
+
   def image?
     self.attachment && self.attachment_content_type =~ /image/
   end

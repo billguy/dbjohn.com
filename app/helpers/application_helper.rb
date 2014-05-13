@@ -24,11 +24,14 @@ module ApplicationHelper
 
   def filter_text
     filter = []
-    if params[:tag]
-      filter << link_to("tagged with '#{params[:tag]}'", url_for(only_path: true, filter: params[:filter]))
+    new_params = params.except(:controller, :action)
+    param_tags = params[:tags] ? params[:tags].reject(&:blank?) : []
+    if param_tags.any?
+      tags = param_tags.map{|tag| link_to(tag, url_for( new_params.merge( (new_tags = param_tags.reject{|t| t == tag}).empty? ? {} : { tags: new_tags} ).except(new_tags.empty? ? :tags : nil))) }
+      filter << "tagged with " + tags.join(', ')
     end
     if params[:filter]
-      filter << link_to("filtered by '#{params[:filter]}'", url_for(only_path: true, filter: params[:tag]))
+      filter << "filtered by " + link_to(params[:filter], url_for(new_params.except(:filter).merge(tags: params[:tags])))
     end
     "<div id='alert' class='alert alert-warning fade'>Viewing #{filter.join(" and ")}</div>".html_safe if filter.any?
   end
@@ -36,8 +39,13 @@ module ApplicationHelper
   def print_tags(model, tags)
     return '' if tags.size == 0
     output = "<ul class=\"inline tags\">"
-    tags.sort_by(&:name).each do |tag|
-      output << "<li><a href=\"#{polymorphic_path(model, tag: tag.name, filter: params[:filter])}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
+    param_tags = params[:tags] || []
+    param_tags.reject!(&:blank?)
+    tags.reject{|t| param_tags.include?(t.name) }.sort_by(&:name).each do |tag|
+      new_tags = {}
+      new_tags[:tags] = param_tags + [tag.name]
+      new_params = params.except(:controller, :action, :tags).merge(new_tags)
+      output << "<li><a href=\"#{polymorphic_path(model, new_params)}\">#{tag.name} <span>#{model.tagged_with(tag).length}</span></a></li>"
     end
     output << "</ul>"
     output.html_safe

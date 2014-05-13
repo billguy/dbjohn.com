@@ -7,8 +7,9 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-    if params[:tag]
-      @pics = Pic.tagged_with(params[:tag])
+    tags = params[:tags] ? params[:tags].reject(&:blank?) : []
+    if tags.any?
+      @pics = Pic.tagged_with(tags)
       @pics = @pics.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
     else
       @pics = Pic.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
@@ -17,7 +18,7 @@ class PicsController < ApplicationController
     respond_to do |format|
       format.html
       format.js {
-        @geo_center = Geocoder::Calculations.geographic_center @pics.collect(&:to_coord).compact
+        @geo_center = Geocoder::Calculations.geographic_center @pics.collect(&:to_coord).compact || Pic.default_coord
       }
     end
   end

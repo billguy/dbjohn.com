@@ -9,21 +9,19 @@ h1.hide=@pic.title
           = link_to pic_path(@previous_pic), class: "pull-left thumbnail #{'disabled' unless @previous_pic.published}" do
             = image_tag('blank.gif', class: 'nav-pic lazy-load', data: { "bttrlazyloading-xs-src" => @previous_pic.attachment.url(:thumb), "bttrlazyloading-xs-width" => "100", "bttrlazyloading-xs-height" => "100"})
 
-    .col-xs-4.col-sm-8.vcenter
+    .col-sm-8.vcenter
       - if @pic.geocodable?
-        .hidden-xs
-          #map style="width: 100%;height: 100%;background-position: 50% 0;"
-        .hidden
-          = link_to nil, pics_path(tags: @pic.tag_list, map: 1 ), id: "gmap"
+        #map.hidden-xs style="width: 100%;height: 100%;background-position: 50% 0;"
+        = link_to nil, pics_path(tags: @pic.tag_list, map: 1 ), id: "gmap", class: 'hidden'
       - else
-        .h4.text-muted.text-center.content Map Unavailable
-    .col-xs-4.col-sm-2
+        .h4.hidden-xs.text-muted.text-center.content Map Unavailable
+    .col-sm-2 
       - if @next_pic
         .media.pull-right
           = link_to pic_path(@next_pic), class: "pull-right thumbnail #{'disabled' unless @next_pic.published}" do
             = image_tag('blank.gif', class: 'nav-pic lazy-load', data: { "bttrlazyloading-xs-src" => @next_pic.attachment.url(:thumb), "bttrlazyloading-xs-width" => "100", "bttrlazyloading-xs-height" => "100"})
 
-.clearfix
+  .clearfix
 figure#subject.cap-bot
   = link_to(@pic.attachment.url) do
     .magnify.thumbnail

@@ -13,7 +13,7 @@ DbjohnCom::Application.routes.draw do
   end
 
   resources :slogans, except: [:show]
-  resources :tags, only: [:index]
+  resources :tags, only: [:index, :edit, :update]
   resources :blogs
   resources :contacts, only: [:new, :create], path: 'contact'
 

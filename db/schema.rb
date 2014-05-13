@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503181013) do
+ActiveRecord::Schema.define(version: 20140513103214) do
 
   create_table "blogs", force: true do |t|
     t.boolean  "published"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20140503181013) do
     t.string   "permalink"
     t.text     "content"
     t.text     "javascript"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.string   "permalink"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,10 +71,10 @@ ActiveRecord::Schema.define(version: 20140503181013) do
     t.string   "token"
     t.string   "sent_by"
     t.string   "location"
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "sessions", force: true do |t|
@@ -98,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140503181013) do
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
+    t.string  "color"
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true

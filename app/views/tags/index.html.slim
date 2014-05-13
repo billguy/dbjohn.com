@@ -1,0 +1,16 @@
+h1 Tags
+
+table.table.table-hover
+  thead
+    tr
+      th Name
+      th Color
+      th
+  tbody
+    - @tags.each do |tag|
+      tr
+        td= tag.name
+        td style="background-color:##{tag.color}"
+        td= link_to 'Edit', edit_tag_path(tag)
+
+

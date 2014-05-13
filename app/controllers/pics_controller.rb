@@ -9,15 +9,13 @@ class PicsController < ApplicationController
   def index
     if params[:tag]
       @pics = Pic.tagged_with(params[:tag])
-      @pics = @pics.filter_by( filter=params[:filter], published=!current_user.present?)
+      @pics = @pics.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
     else
-      @pics = Pic.filter_by( filter=params[:filter], published=!current_user.present?)
+      @pics = Pic.filter_by( filter=params[:filter], published=!current_user.present?).page params[:page]
     end
 
     respond_to do |format|
-      format.html{
-        @pics = @pics.page params[:page]
-      }
+      format.html
       format.js {
         @geo_center = Geocoder::Calculations.geographic_center @pics.collect(&:to_coord).compact
       }

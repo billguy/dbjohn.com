@@ -34,17 +34,17 @@
                     figcaption= caption(pic)
                 - else
                   figcaption= caption(pic)
-
-          .clearfix
-
+      .clearfix
           .row
             .col-sm-12
               = paginate @pics
 
--content_for :footer do
+-content_for :footer_pre do
 
-  = javascript_include_tag "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry"
+  = javascript_include_tag "//maps.google.com/maps/api/js?sensor=true"
   = javascript_include_tag asset_path('oms.js')
+
+-content_for :footer do
 
   javascript:
     var loaded = false;

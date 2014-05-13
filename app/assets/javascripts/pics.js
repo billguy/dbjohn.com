@@ -3,6 +3,7 @@
 //= require magnifier
 //= require bootstrap-switch
 //= require gmapsjs
+//= require oms
 
 $(document).on('change', 'form [data-fileupload]', function() {
     var ext, image_container, input, reader;

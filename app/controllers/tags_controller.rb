@@ -14,9 +14,9 @@ class TagsController < ApplicationController
           else
             tags = [ {id: params[:q], name: params[:q]} ]
           end
-          respond_with tags
+          render json: tags
         else
-          respond_with ActsAsTaggableOn::Tag.all
+          render json: ActsAsTaggableOn::Tag.all
         end
       }
     end

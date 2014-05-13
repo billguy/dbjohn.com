@@ -1,7 +1,13 @@
 = bootstrap_form_for(@tag, url: tag_path, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-7") do |f|
   = f.text_field :name
   = f.text_field :color, class: 'pick-a-color'
+
   = f.form_group do
     = f.primary "Save", data: { "disable-with" => "Saving..."}
     button.btn.btn-link type="button" onclick="location.href = '#{tags_path}'" Cancel
 
+- content_for :footer do
+  javascript:
+    $("<span class='clear-color glyphicon glyphicon-remove'></span>").insertAfter("#acts_as_taggable_on_tag_color").click(function(){
+      $("#acts_as_taggable_on_tag_color").val('');
+    });

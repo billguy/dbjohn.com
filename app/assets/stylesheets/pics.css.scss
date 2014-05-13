@@ -58,15 +58,18 @@ a.fancybox{
   margin-top: 5px;
 }
 
-
 .content-container{
-  position: relative;
-  height: 500px;
-  width: 100%;
-  #map{
-    height: 100%;
+  min-height: 500px;
+  #map-container{
+    padding-right: 30px;
     width: 100%;
     position: absolute;
+    top: 0;
     opacity: 0;
+    #map{
+      position: relative;
+      min-height: 400px;
+      width: 100%;
+    }
   }
 }

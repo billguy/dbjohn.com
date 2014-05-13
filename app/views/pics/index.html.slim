@@ -23,7 +23,9 @@
   .row
     .col-sm-12
       .content-container
-        #map
+        #map-container
+          #map
+          =print_markers
         #pics
           - @pics.each do |pic|
             figure.cap-bot
@@ -35,9 +37,9 @@
                 - else
                   figcaption= caption(pic)
       .clearfix
-          .row
-            .col-sm-12
-              = paginate @pics
+        .row
+          .col-sm-12
+            = paginate @pics
 
 -content_for :footer_pre do
 
@@ -62,7 +64,7 @@
           $('#pics').toggle(function(){
             $(this).animate({opacity:0},200);
           },function(){
-            $('#map').animate({opacity:1},200);
+            $('#map-container').animate({opacity:1},200);
           });
 
           if (!loaded) {
@@ -73,7 +75,7 @@
           $('#pics').toggle(function(){
             $(this).animate({opacity:1},200);
           },function(){
-            $('#map').animate({opacity:0},200);
+            $('#map-container').animate({opacity:0},200);
           });
         }
       }

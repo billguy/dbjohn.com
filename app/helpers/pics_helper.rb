@@ -1,6 +1,15 @@
 module PicsHelper
   require "mailman"
 
+  def print_markers
+    html = '<div class="row">'
+    Pic.tag_counts_on(:tags).select{|t| t.color.present?}.sort_by(&:name).each_with_index do |tag, index|
+      html << "<div class='col-sm-2'><image src='http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|#{tag.color}' style='display:inline;'/> #{tag.name}</div>"
+    end
+    html << '</div>'
+    html.html_safe
+  end
+
   def fetch_email
     Mailman.config.logger = Logger.new File.expand_path("../../../log/mailman_pics_#{Rails.env}.log", __FILE__)
     Mailman.config.poll_interval = 0

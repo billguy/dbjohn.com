@@ -10,9 +10,8 @@ h1.hide Blog posts of David B. John
 
 .clearfix
 
-  - @blogs.each_with_index do |blog, index|
-    - if index % 2 == 0
-      .row
+.row
+  - @blogs.each_with_index do |blog|
     .col-md-6 class="#{'disabled' unless blog.published}"
       h4
         = link_to blog.title, blog

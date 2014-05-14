@@ -1,14 +1,14 @@
 test:
   host: 'http://dbjohn.com/'
-  domain: dbjohn.com
+  domain: yourdomain.com
 
   cap_applicationdir: /home/../..
   cap_user: someuser
 
-  devise_secret_key:
-  secret_token:
+  devise_secret_key: "generate with rake secret"
+  secret_token: "generate with rake secret"
 
-  admin_email: dj@dbjohn.com
+  admin_email: your@email.com
 
   textcaptcha_api_key: demo
 
@@ -26,7 +26,7 @@ test:
 
   analytics_key: 12345
 
-  git_repo: git@github.com:billguy/dbjohn.com.git
+  git_repo: git@github.com:user/repo.git
 
   disqus_shortname:
 
@@ -35,15 +35,15 @@ test:
 
 development:
   host: 'http://dbjohn.com/'
-  domain: dbjohn.com
+  domain: yourdomain.com
 
   cap_applicationdir: /home/../..
   cap_user: someuser
 
-  devise_secret_key:
-  secret_token:
+  devise_secret_key: "generate with rake secret"
+  secret_token: "generate with rake secret"
 
-  admin_email: dj@dbjohn.com
+  admin_email: your@email.com
 
   textcaptcha_api_key: demo
 
@@ -61,7 +61,7 @@ development:
 
   analytics_key: 12345
 
-  git_repo: git@github.com:billguy/dbjohn.com.git
+  git_repo: git@github.com:user/repo.git
 
   disqus_shortname:
 
@@ -70,15 +70,15 @@ development:
 
 production:
   host: 'http://dbjohn.com/'
-  domain: dbjohn.com
+  domain: yourdomain.com
 
   cap_applicationdir: /home/../..
   cap_user: someuser
 
-  devise_secret_key:
-  secret_token:
+  devise_secret_key: "generate with rake secret"
+  secret_token: "generate with rake secret"
 
-  admin_email: dj@dbjohn.com
+  admin_email: your@email.com
 
   textcaptcha_api_key: demo
 
@@ -96,7 +96,7 @@ production:
 
   analytics_key: 12345
 
-  git_repo: git@github.com:billguy/dbjohn.com.git
+  git_repo: git@github.com:user/repo.git
 
   disqus_shortname:
 

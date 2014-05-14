@@ -1,6 +1,7 @@
 class Pic < ActiveRecord::Base
 
   include Navigatable
+  include Emailable
 
   has_paper_trail
 

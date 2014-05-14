@@ -1,5 +1,6 @@
 require 'spec_helper'
 require "navigatable"
+require "emailable"
 
 describe Pic do
 
@@ -9,6 +10,9 @@ describe Pic do
   it { should callback(:notify_admin).after(:create) }
   it { should callback(:generate_token).before(:create) }
   it { should respond_to(:tag_list)}
+
+  it_behaves_like "navigatable"
+  it_behaves_like "emailable"
 
   describe 'geocode' do
     before do
@@ -37,8 +41,6 @@ describe Pic do
       pic.location.should be_nil
     end
   end
-
-  it_behaves_like "navigatable"
 
   describe '#latest' do
     before do

@@ -18,20 +18,10 @@ module PicsHelper
         username: APP_CONFIG['pics_mail_address'],
         password: APP_CONFIG['pics_mail_pass']
     }
-    email = nil
     Mailman::Application.run do
-      APP_CONFIG['pics_authorized_emails'].each do |e|
-        from(e) do
-          begin
-            email = message
-          rescue Exception => e
-            Mailman.logger.error "Exception occurred while receiving message:\n#{message}"
-            Mailman.logger.error [e, *e.backtrace].join("\n")
-            #TicketMailer.exception_notification(message,e).deliver
-          end
-        end
+      default do
+        Pic.receive_mail(message)
       end
     end
-    email
   end
 end

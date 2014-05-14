@@ -4,7 +4,8 @@
 .content
   .row
     div class="#{can?(:manage, Pic) ? 'col-xs-7' : 'col-xs-8'}"
-      = print_tags(Pic, Pic.tag_counts_on(:tags))
+      - tag_counts = params[:tags] ? Pic.tagged_with(params[:tags]).tag_counts_on(:tags) : Pic.tag_counts_on(:tags)
+      = print_tags(Pic, tag_counts)
     div class="#{can?(:manage, Pic) ? 'col-xs-5' : 'col-xs-4'}"
       .btn-group.pull-right
         = link_to 'All', pics_path(params.except(:controller, :action, :filter)), class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
@@ -26,7 +27,7 @@
         .content-container
           #map-container
             #map
-            =print_markers
+            =print_markers(tag_counts)
           #pics
             - @pics.each do |pic|
               figure.cap-bot

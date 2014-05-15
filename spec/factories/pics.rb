@@ -21,6 +21,10 @@ FactoryGirl.define do
       attachment { fixture_file_upload(Rails.root.join('spec', 'support', 'test_wo_gps.jpg'), 'image/jpg') }
     end
 
+    factory :pic_with_crazy_filename do
+      attachment { fixture_file_upload(Rails.root.join('spec', 'support', 'a crazy%file(name).jpg'), 'image/jpg') }
+    end
+
   end
 
 end

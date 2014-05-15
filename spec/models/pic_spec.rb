@@ -185,4 +185,9 @@ describe Pic do
 
   end
 
+  it 'should escape the attachment filename' do
+    pic = FactoryGirl.create(:pic_with_crazy_filename)
+    pic.attachment_file_name.should eq('a_crazy_file_name_.jpg')
+  end
+
 end

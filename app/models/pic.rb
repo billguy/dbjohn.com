@@ -15,7 +15,7 @@ class Pic < ActiveRecord::Base
                         :medium => "230x230#",
                         :thumb => "100x100#",
                         :xsmall => "50x50>"
-                    }, filename_cleaner: Paperclip::FilenameCleaner.new(/\(\)/)
+                    }, filename_cleaner: Paperclip::FilenameCleaner.new(/[&$+,\/:;=?@<>\[\]\{\}\|\\\^~%#\(\) ]/)
 
   validates :attachment, :attachment_presence => true
   validates_attachment_content_type :attachment, :content_type => %w(image/jpeg image/jpg image/png)

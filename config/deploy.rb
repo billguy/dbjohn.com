@@ -3,6 +3,7 @@ require "whenever/capistrano"
 load 'deploy/assets'
 require 'capistrano/local_precompile'
 set(:rsync_cmd){ "rsync -av --delete" }
+set(:precompile_cmd)   { "RAILS_ENV=#{rails_env.to_s.shellescape} #{rake} assets:precompile" }
 
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 

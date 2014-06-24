@@ -55,6 +55,7 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{deploy_to}/shared/system/ckeditor_assets #{release_path}/public"
     run "ln -nfs #{deploy_to}/shared/system/pics #{release_path}/public"
+    run "ln -nfs #{deploy_to}/shared/tmp #{release_path}/tmp"
   end
 
   desc "Restart nginx"

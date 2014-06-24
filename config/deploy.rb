@@ -37,6 +37,7 @@ set :deploy_via, :export
 set :keep_releases, 2
 set :use_sudo, false
 
+after "deploy", "deploy:cleanup"
 before "deploy:assets:precompile", "gems:install"
 namespace :gems do
   desc "Install gems"

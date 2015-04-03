@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?
-      ContactMailer.new_contact(@contact).deliver
+      ContactMailer.new_contact(@contact).deliver_now
       redirect_to root_path, notice: "Thanks for your message."
     else
       render :new

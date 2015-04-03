@@ -112,7 +112,7 @@ class Pic < ActiveRecord::Base
   end
 
   def notify_admin
-    PicMailer.notify_admin(self).deliver
+    PicMailer.notify_admin(self).deliver_now
   end
 
   def exif(arg)

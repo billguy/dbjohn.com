@@ -80,7 +80,7 @@ describe Pic do
   describe '#notify_admin' do
     it 'should call PicMailer unless published' do
       pic = FactoryGirl.build(:pic)
-      PicMailer.should_receive(:notify_admin).and_return( double("PicMailer", :deliver => true) )
+      PicMailer.should_receive(:notify_admin).and_return( double("PicMailer", :deliver_now => true) )
       pic.save
     end
 

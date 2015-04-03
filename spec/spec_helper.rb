@@ -44,9 +44,15 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+  config.mock_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+
   config.include FactoryGirl::Syntax::Methods
   config.include Paperclip::Shoulda::Matchers
-
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

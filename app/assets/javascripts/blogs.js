@@ -1,4 +1,3 @@
-//= require ckeditor/override
 //= require ckeditor/init
 //= require tags
 //= require syntax-highlighter-rails/shCore

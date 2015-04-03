@@ -10,10 +10,10 @@
           =image_tag('blank.gif', class: 'small lazy-load img-responsive', data: { "bttrlazyloading-xs-src" => @latest_pic.attachment.url(:xlarge), "bttrlazyloading-xs-width" => "700", "bttrlazyloading-xs-height" => "403"})
           figcaption= caption(@latest_pic)
 
-.row.marketing
+.row.marketing.blogs
   hr
   - @latest_blogs.each do |blog|
-    .col-md-6 class="#{'disabled' unless blog.published}"
+    .col-md-6.blog class="#{'disabled' unless blog.published}"
       h4
         = link_to blog.title, blog
       .text-muted.small=blog.updated_at.to_s(:pretty)

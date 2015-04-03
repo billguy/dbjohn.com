@@ -1,4 +1,4 @@
-DbjohnCom::Application.routes.draw do
+Rails.application.routes.draw do
 
   # redirect old wordpress blogs
   get '/:year/:month/:day/:id' => redirect { |params, req| "blogs/#{URI.escape(params[:id])}" }, :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :id => /.*/ }

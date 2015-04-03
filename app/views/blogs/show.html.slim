@@ -1,6 +1,5 @@
 - set_meta_tags title: @blog.title.titleize, description: truncate_html(@blog.content, lenght: 150)
 
-
 - if @previous_blog || @next_blog
   .row
     .col-xs-6.pull-left
@@ -32,9 +31,7 @@ h1.pull-left= @blog.title
     javascript:
       #{raw @blog.javascript}
 
-
 #disqus_thread
-
 
 - content_for :footer do
   javascript:

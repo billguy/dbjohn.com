@@ -1,51 +1,22 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.1'
 
-# Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:test, :development]
 gem 'mysql2', group: :production
-
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem "slim-rails"
-
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
-
-#gem "compass-rails"
 gem 'therubyracer'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
+gem 'jbuilder', '~> 2.0'
+gem 'coffee-script'
 gem 'rspec-rails', '~> 3.0.0.beta', group: [:test, :development]
 gem 'factory_girl_rails', group: [:test, :development]
 
 group :test do
-  gem 'minitest'
   gem 'capybara'
-  gem 'zeus'
   gem 'shoulda-matchers'
   gem "shoulda-callback-matchers", ">=0.3.0"
   gem 'database_cleaner'
@@ -54,18 +25,17 @@ end
 group :development do
   gem 'thin'
   gem 'capistrano-local-precompile', require: false, github: 'spagalloco/capistrano-local-precompile'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'devise'
 gem 'acts-as-taggable-on'
-gem 'cancan'
+gem 'cancancan'
 gem "ckeditor", github: 'galetahub/ckeditor'
 gem 'acts_as_textcaptcha'
 gem 'exifr'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip-watermark'
 gem 'paper_trail', '>= 3.0.0.rc2'
 gem 'capistrano', '~> 2.15'
 gem 'mailman'
@@ -74,7 +44,6 @@ gem 'exception_notification'
 gem "validates_formatting_of"
 gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
 gem "geocoder"
-gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'fancybox2-rails', github: 'kyparn/fancybox2-rails'
 gem 'truncate_html'
 gem 'jquery-tokeninput-rails'
@@ -82,7 +51,6 @@ gem "has_permalink"
 gem 'syntax-highlighter-rails'
 gem 'valid_email'
 gem 'sitemap_generator'
-gem 'paperclip-watermark'
 gem 'meta-tags', require: 'meta_tags'
 gem 'gmapsjs'
 gem "bootstrap-switch-rails"

@@ -30,17 +30,6 @@ $tagsHeight: 26px;
 $tagsDefaultColor: #eb6b22;
 $tagsColors: orange #eb6b22, green #65bb34, blue #56a3d5;
 
-//body {
-//  font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
-//  color: #404040;
-//  background: #eee;
-//}
-//
-//.container {
-//  margin: 50px auto;
-//  width: 380px;
-//}
-
 ul.tags {
   @include clearfix;
   padding-left: 0px;
@@ -48,16 +37,9 @@ ul.tags {
   li {
     position: relative;
     float: left;
-    //margin: 0 0 8px 12px;
     padding-left: 0px;
     padding-right: 0px;
     margin-right: 10px;
-
-
-    &:active {
-      //margin-top: 1px;
-      //margin-bottom: 7px;
-    }
 
     &:after {
       content: '';

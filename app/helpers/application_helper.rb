@@ -38,7 +38,7 @@ module ApplicationHelper
 
   def print_tags(model, tags)
     return '' if tags.size == 0
-    output = "<ul class=\"inline tags\">"
+    output = "<ul class=\"list-inline tags\">"
     param_tags = params[:tags] || []
     param_tags.reject!(&:blank?)
     tags.reject{|t| param_tags.include?(t.name) }.sort_by(&:name).each do |tag|

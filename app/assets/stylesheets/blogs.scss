@@ -1,4 +1,4 @@
-@import "tags";
+@import "token_tags";
 @import "syntax-highlighter-rails/shCore";
 @import "syntax-highlighter-rails/shThemeDefault";
 
@@ -20,6 +20,7 @@ h4{
 
 .blogs{
   .blog{
-    min-height: 200px;
+    height: 300px;
+    overflow: hidden;
   }
 }

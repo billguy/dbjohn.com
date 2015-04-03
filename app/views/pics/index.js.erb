@@ -24,7 +24,7 @@ oms.addListener('click', function(marker, event) {
       animation: google.maps.Animation.DROP,
       title: '<%= pic.title %>',
       icon: icon,
-      desc: '<%= render(pic).gsub("'", '"').html_safe %>'
+      desc: '<%= j(render pic).html_safe %>'
     });
     oms.addMarker(marker);
 <% end %>

@@ -1,18 +1,22 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import "caption";
 @import "magnifier";
-
 
 h4{
   margin-bottom: 0px;
 }
 
-
 @media screen and (min-width: 768px) {
   #latest{
     min-height: 363px;
+  }
+}
+
+.blogs{
+  .blog{
+    height: 200px;
+    overflow: hidden;
   }
 }

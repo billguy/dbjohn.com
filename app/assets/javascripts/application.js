@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require jquery.bttrlazyloading
 
-
 $(function() {
 
     $(document).on('click', '#search', function() {
@@ -42,4 +41,3 @@ $(function() {
     });
 
 });
-

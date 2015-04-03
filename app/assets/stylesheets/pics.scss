@@ -1,8 +1,9 @@
 @import "fancybox";
 @import "caption";
-@import "tags";
+@import "token_tags";
 @import "magnifier";
 @import "bootstrap3-switch";
+@import "jquery.fancybox";
 
 .btn-group.pull-right{
   margin-right: 10px;
@@ -73,4 +74,8 @@ a.fancybox{
       width: 100%;
     }
   }
+}
+
+.media-body.details{
+  width: 150px;
 }

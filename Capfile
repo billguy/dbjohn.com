@@ -15,7 +15,6 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
-require 'capistrano/rvm'
 require 'capistrano/rails'
 require 'whenever/capistrano'
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined

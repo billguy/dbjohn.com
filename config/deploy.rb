@@ -1,15 +1,16 @@
-lock '3.7.1'
+lock '3.8.0'
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
 set :passenger_restart_with_touch, true
 set :repo_url, APP_CONFIG['git_repo']
 set :application, "DbjohnCom"
+set :deploy_to, APP_CONFIG['cap_applicationdir']
 set :default_environment, {
-    'PATH' => "#{APP_CONFIG['cap_applicationdir']}/bin:$PATH",
-    'GEM_HOME' => "#{APP_CONFIG['cap_applicationdir']}/gems",
-    'RUBYLIB' => "#{APP_CONFIG['cap_applicationdir']}/lib"
+    'PATH' => "#{deploy_to}/bin:$PATH",
+    'GEM_HOME' => "#{deploy_to}/gems",
+    'RUBYLIB' => "#{deploy_to}/lib"
 }
-
+set :tmp_dir, "/home/#{APP_CONFIG['cap_user']}/tmp"
 server APP_CONFIG['domain'], user: APP_CONFIG['cap_user'], roles: %w{app db web}
 
 set :whenever_command,      ->{ [:bundle, :exec, :whenever] }

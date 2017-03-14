@@ -1,80 +1,23 @@
-require 'bundler/capistrano'
-require "whenever/capistrano"
-load 'deploy/assets'
-require 'capistrano/local_precompile'
-set(:rsync_cmd){ "rsync -av --delete" }
-set(:precompile_cmd)   { "RAILS_ENV=#{rails_env.to_s.shellescape} #{rake} assets:precompile" }
-
+lock '3.7.1'
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
-set :application, "DbjohnCom" #change this to your Rails app name
-set :repository,  APP_CONFIG['git_repo']
-
-set :user, APP_CONFIG['cap_user']
-set :domain, APP_CONFIG['domain']
-set :applicationdir, APP_CONFIG['cap_applicationdir']
-
-set :deploy_to, applicationdir
+set :passenger_restart_with_touch, true
+set :repo_url, APP_CONFIG['git_repo']
+set :application, "DbjohnCom"
 set :default_environment, {
-    'PATH' => "#{deploy_to}/bin:$PATH",
-    'GEM_HOME' => "#{deploy_to}/gems",
-    'RUBYLIB' => "#{deploy_to}/lib"
+    'PATH' => "#{APP_CONFIG['cap_applicationdir']}/bin:$PATH",
+    'GEM_HOME' => "#{APP_CONFIG['cap_applicationdir']}/gems",
+    'RUBYLIB' => "#{APP_CONFIG['cap_applicationdir']}/lib"
 }
-set :rails_env, "production"
-set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :git_enable_submodules, 1 # if you have vendored rails
-set :branch, 'master'
-set :git_shallow_clone, 1
-set :scm_verbose, true
-set :rake, 'bundle exec rake'
 
-role :web, domain                           # Your HTTP server, Apache/etc
-role :app, domain                           # This may be the same as your 'Web' server
-role :db,  domain, :primary => true         # This is where Rails migrations will run
+server APP_CONFIG['domain'], user: APP_CONFIG['cap_user'], roles: %w{app db web}
 
-set :deploy_via, :export
+set :whenever_command,      ->{ [:bundle, :exec, :whenever] }
+set :whenever_identifier, ->{ "DJ_#{fetch(:stage)}" }
+
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/config.yml', )
+
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/pics', 'public/ckeditor_assets')
+
 set :keep_releases, 2
-set :use_sudo, false
-
-after "deploy", "deploy:cleanup"
-before "deploy:assets:precompile", "gems:install"
-namespace :gems do
-  desc "Install gems"
-  task :install, :roles => :app do
-    run "cd #{current_release} && bundle install --without development test"
-  end
-end
-
-before "deploy:assets:precompile", "deploy:symlink_db"
-
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :symlink_db, :roles => :app do
-    run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
-    run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{deploy_to}/shared/system/ckeditor_assets #{release_path}/public"
-    run "ln -nfs #{deploy_to}/shared/system/pics #{release_path}/public"
-    run "ln -nfs #{deploy_to}/shared/tmp/cache #{release_path}/tmp/cache"
-  end
-
-  desc "Restart nginx"
-  task :restart do
-    run "#{deploy_to}/bin/restart"
-  end
-end
-
-after 'deploy', 'deploy:restart'
-
-after "deploy", "refresh_sitemaps"
-task :refresh_sitemaps do
-  run "cd #{latest_release} && RAILS_ENV=#{rails_env} #{rake} sitemap:refresh"
-end
-
-desc 'copy ckeditor nondigest assets'
-task :copy_nondigest_assets, roles: :app do
-  run_locally "#{rake} RAILS_ENV=#{rails_env} ckeditor:copy_nondigest_assets"
-end
-after 'deploy:assets:prepare', 'copy_nondigest_assets'
-

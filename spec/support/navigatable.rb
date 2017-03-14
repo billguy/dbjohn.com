@@ -3,9 +3,9 @@ shared_examples_for "navigatable" do
   let(:object) { described_class }
   describe 'next, prev' do
     before do
-      @object1 = FactoryGirl.create(object, published: true)
-      @object2 = FactoryGirl.create(object, published: true)
-      @object3 = FactoryGirl.create(object, published: true)
+      @object1 = FactoryGirl.create(described_class.name.underscore.to_sym, published: true)
+      @object2 = FactoryGirl.create(described_class.name.underscore.to_sym, published: true)
+      @object3 = FactoryGirl.create(described_class.name.underscore.to_sym, published: true)
     end
 
     it '#prev' do

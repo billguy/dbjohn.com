@@ -1,22 +1,23 @@
 - set_meta_tags title: 'Pics', description: 'Photographs I\'ve recently taken', keywords: 'wildlife, photography, new orleans'
+- h_params = params.to_h
 
 =filter_text
 .content
   .row
     div class="#{can?(:manage, Pic) ? 'col-xs-7' : 'col-xs-8'}"
-      - tag_counts = params[:tags] ? Pic.tagged_with(params[:tags]).tag_counts_on(:tags) : Pic.tag_counts_on(:tags)
+      - tag_counts = h_params[:tags] ? Pic.tagged_with(h_params[:tags]).tag_counts_on(:tags) : Pic.tag_counts_on(:tags)
       = print_tags(Pic, tag_counts)
     div class="#{can?(:manage, Pic) ? 'col-xs-5' : 'col-xs-4'}"
       .btn-group.pull-right
-        = link_to 'All', pics_path(params.except(:controller, :action, :filter)), class: "btn btn-default #{'active' unless params.has_key?(:filter)}"
-        = link_to 'Month', pics_path(params.except(:controller, :action).merge(filter: :month)), class: "btn btn-default #{'active' if params[:filter] == 'month'}"
-        = link_to 'Year', pics_path(params.except(:controller, :action).merge(filter: :year)), class: "btn btn-default #{'active' if params[:filter] == 'year'}"
+        = link_to 'All', pics_path(h_params.except(:controller, :action, :filter)), class: "btn btn-default #{'active' unless h_params.has_key?(:filter)}"
+        = link_to 'Month', pics_path(h_params.except(:controller, :action).merge(filter: :month)), class: "btn btn-default #{'active' if h_params[:filter] == 'month'}"
+        = link_to 'Year', pics_path(h_params.except(:controller, :action).merge(filter: :year)), class: "btn btn-default #{'active' if h_params[:filter] == 'year'}"
         - if can? :manage, Pic
           = link_to 'New Pic', new_pic_path, class: 'btn btn-primary'
         .row
           .col-sm-offset-2.col-sm-6.col-sm-offset-2
             #pic-switcher.hidden-xs
-              =check_box_tag "switcher", 1, params[:switcher], style: "display:none;"
+              =check_box_tag "switcher", 1, h_params[:switcher], style: "display:none;"
       .clearfix
 
   br
@@ -82,6 +83,6 @@
       }
     });
 
-    if (#{params[:map] ? true : false}){
+    if (#{h_params[:map] ? true : false}){
       $switch.bootstrapSwitch('toggleState');
     }

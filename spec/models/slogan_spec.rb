@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Slogan do
+describe Slogan, type: :model do
 
   it { should validate_presence_of(:title)}
 

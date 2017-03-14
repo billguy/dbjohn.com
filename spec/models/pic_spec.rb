@@ -2,7 +2,7 @@ require 'spec_helper'
 require "navigatable"
 require "emailable"
 
-describe Pic do
+describe Pic, type: :model do
 
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:caption) }

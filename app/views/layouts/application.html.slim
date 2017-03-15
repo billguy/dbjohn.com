@@ -8,7 +8,7 @@ html lang="en"
 
     link href="favicon.png" rel="shortcut icon"
     = stylesheet_link_tag "application", media: "all"
-    = stylesheet_link_tag controller.controller_name, :media => "all" if Rails.application.assets.find_asset("#{controller.controller_name}.css")
+    = stylesheet_link_tag controller.controller_name, :media => "all" if asset_exists?("#{controller.controller_name}.css")
 
     =yield :header
 
@@ -56,7 +56,7 @@ html lang="en"
 
     = javascript_include_tag "application"
     =yield :footer_pre
-    = javascript_include_tag controller.controller_name if Rails.application.assets.find_asset("#{controller.controller_name}.js")
+    = javascript_include_tag controller.controller_name if asset_exists?("#{controller.controller_name}.js")
     =yield :footer
 
     - if Rails.env.production?

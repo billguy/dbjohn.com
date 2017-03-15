@@ -5,7 +5,7 @@ set :passenger_restart_with_touch, true
 set :repo_url, APP_CONFIG['git_repo']
 set :application, "DbjohnCom"
 set :deploy_to, APP_CONFIG['cap_applicationdir']
-set :default_environment, {
+set :default_env, {
     'PATH' => "#{deploy_to}/bin:$PATH",
     'GEM_HOME' => "#{deploy_to}/gems",
     'RUBYLIB' => "#{deploy_to}/lib"

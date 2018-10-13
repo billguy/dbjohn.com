@@ -1,4 +1,4 @@
-lock '3.8.0'
+lock '3.11.0'
 APP_CONFIG = YAML.load_file("config/config.yml")["production"]
 
 set :passenger_restart_with_touch, true

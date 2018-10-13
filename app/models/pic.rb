@@ -1,5 +1,5 @@
 class Pic < ActiveRecord::Base
-
+  require 'exifr/jpeg'
   include Navigatable
   include Emailable
 

@@ -33,7 +33,7 @@ module ApplicationHelper
 
   def filter_text
     filter = []
-    h_params = params.to_h
+    h_params = params.permit.to_h
     new_params = h_params.except(:controller, :action)
     param_tags = h_params[:tags] ? h_params[:tags].reject(&:blank?) : []
     if param_tags.any?
@@ -49,7 +49,7 @@ module ApplicationHelper
   def print_tags(model, tags)
     return '' if tags.size == 0
     output = "<ul class=\"list-inline tags\">"
-    h_params = params.to_h
+    h_params = params.permit.to_h
     param_tags = h_params[:tags] || []
     param_tags.reject!(&:blank?)
     tags.reject{|t| param_tags.include?(t.name) }.sort_by(&:name).each do |tag|

@@ -100,13 +100,13 @@ Rails.application.configure do
         :port => APP_CONFIG['smtp_port'],
     }
 
-  # config.middleware.use ExceptionNotification::Rack,
-  #     :ignore_exceptions => ['ActionController::BadRequest'] + ExceptionNotifier.ignored_exceptions,
-  #     :ignore_crawlers => %w{Googlebot bingbot},
-  #     :email => {
-  #       :email_prefix => "[%s Exception]" % [Rails.application.class.parent_name],
-  #       :sender_address => %{"Exception Notifier" <#{APP_CONFIG['admin_email']}>},
-  #       :exception_recipients => %W{#{APP_CONFIG['admin_email']}}
-  #   }
+  config.middleware.use ExceptionNotification::Rack,
+      :ignore_exceptions => ['ActionController::BadRequest'] + ExceptionNotifier.ignored_exceptions,
+      :ignore_crawlers => %w{Googlebot bingbot},
+      :email => {
+        :email_prefix => "[%s Exception]" % [Rails.application.class.parent_name],
+        :sender_address => %{"Exception Notifier" <#{APP_CONFIG['admin_email']}>},
+        :exception_recipients => %W{#{APP_CONFIG['admin_email']}}
+    }
 
 end

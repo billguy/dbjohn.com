@@ -1,5 +1,5 @@
 class Pic < ActiveRecord::Base
-  require 'exifr/jpeg'
+
   include Navigatable
   include Emailable
 
@@ -54,6 +54,7 @@ class Pic < ActiveRecord::Base
   end
 
   def exif?
+    return false
     exif(:exif?)
   rescue EXIFR::MalformedJPEG
     false

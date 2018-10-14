@@ -92,6 +92,14 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+
+  config.action_mailer.smtp_settings = {
+        :address => APP_CONFIG['smtp_server'],
+        :enable_starttls_auto => false,
+        :openssl_verify_mode  => 'none',
+        :port => APP_CONFIG['smtp_port'],
+    }
+
   config.middleware.use ExceptionNotification::Rack,
       :ignore_exceptions => ['ActionController::BadRequest'] + ExceptionNotifier.ignored_exceptions,
       :ignore_crawlers => %w{Googlebot bingbot},

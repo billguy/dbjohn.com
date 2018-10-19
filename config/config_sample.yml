@@ -1,5 +1,5 @@
 test:
-  host: 'http://dbjohn.com/'
+  host: 'https://dbjohn.com/'
   domain: yourdomain.com
 
   cap_applicationdir: /home/../..
@@ -35,7 +35,7 @@ test:
   google_search_key:
 
 development:
-  host: 'http://dbjohn.com/'
+  host: 'https://dbjohn.com/'
   domain: yourdomain.com
 
   cap_applicationdir: /home/../..
@@ -71,7 +71,7 @@ development:
   google_search_key:
 
 production:
-  host: 'http://dbjohn.com/'
+  host: 'https://dbjohn.com/'
   domain: yourdomain.com
 
   cap_applicationdir: /home/../..

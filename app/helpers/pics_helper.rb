@@ -4,7 +4,7 @@ module PicsHelper
   def print_markers(tag_counts = Pic.tag_counts_on(:tags))
     html = '<div class="row">'
     tag_counts.select{|t| t.color.present?}.sort_by(&:name).each_with_index do |tag, index|
-      html << "<div class='col-sm-3'><image src='http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|#{tag.color}' style='display:inline;'/> #{tag.name}</div>"
+      html << "<div class='col-sm-3'><image src='https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|#{tag.color}' style='display:inline;'/> #{tag.name}</div>"
     end
     html << '</div>'
     html.html_safe

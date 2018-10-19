@@ -47,7 +47,7 @@
         i No results.
 
 -content_for :footer_pre do
-  = javascript_include_tag "//maps.google.com/maps/api/js?sensor=true&key=AIzaSyDG0gbC5VfMXfNL_DMQqjxbF5JVR2vf6iA"
+  = javascript_include_tag "//maps.google.com/maps/api/js?sensor=true&key=#{APP_CONFIG['map_key']}"
 
 -content_for :footer do
 

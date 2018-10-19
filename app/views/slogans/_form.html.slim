@@ -1,7 +1,5 @@
-= bootstrap_form_for(@slogan, layout: :horizontal, label_col: "col-sm-1", control_col: "col-sm-7") do |f|
-  = f.form_group do
-    =f.check_box :active
-  =f.text_field :title
-  = f.form_group do
-    = f.primary "Save", data: { "disable-with" => "Saving..."}
-    button.btn.btn-link type="button" onclick="location.href = '#{slogans_path}'" Cancel
+= simple_form_for(@slogan, layout: :horizontal, label_col: "col-sm-1", control_col: "col-sm-7") do |f|
+  =f.input :active
+  =f.input :title
+  = f.button :submit, data: { "disable-with" => "Saving..."}
+  button.btn.btn-link type="button" onclick="location.href = '#{slogans_path}'" Cancel

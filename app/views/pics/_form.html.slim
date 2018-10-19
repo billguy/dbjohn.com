@@ -1,19 +1,18 @@
-= bootstrap_form_for(@pic, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-7") do |f|
-  = f.form_group do
-    = f.check_box :published
-  = f.text_field :title
-  = f.form_group do
-    = image_tag(f.object.attachment.url(:thumb), class: 'img-polaroid') if f.object.attachment.exists?
-  = f.file_field :attachment, data: { fileupload: true }
-  = f.text_area :caption
-  = f.text_field :tag_list, class: 'tag_list'
+= simple_form_for(@pic, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-7") do |f|
+  = f.input :published
+  = f.input :title
+  br
+  = image_tag(f.object.attachment.url(:thumb), class: 'img-polaroid') if f.object.attachment.exists?
+  = f.input :attachment, data: { fileupload: true }
+  = f.input :caption
+  = f.input :tag_list, class: 'tag_list'
   = check_box_tag :add_another,nil, false, class: 'hide'
-  = f.form_group do
-    = f.primary "Save", data: { "disable-with" => "Saving..."}
-    - if @pic.new_record?
-      | &nbsp;
-      = f.primary "Save and add another", data: { "disable-with" => "Saving..."}, onclick: 'document.getElementById("add_another").checked = true;'
-    button.btn.btn-link type="button" onclick="location.href = '#{pics_path}'" Cancel
+  br
+  = f.button :submit, data: { "disable-with" => "Saving..."}
+  - if @pic.new_record?
+    | &nbsp;
+    = f.submit "Save and add another", data: { "disable-with" => "Saving..."}, onclick: 'document.getElementById("add_another").checked = true;'
+  button.btn.btn-link type="button" onclick="location.href = '#{pics_path}'" Cancel
 
 javascript:
   tags = '#{@pic.tag_list}'

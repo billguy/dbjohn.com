@@ -1,16 +1,16 @@
-= bootstrap_form_for(@blog, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f|
-  = f.form_group do
-    = f.check_box :published
-  = f.text_field :title
-  = f.text_field :permalink
-  = f.text_field :tag_list, class: 'tag_list'
+= simple_form_for(@blog, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f|
 
-  = f.static_control nil, label: "Content" do
-    = cktext_area :blog, :content, :cols => 40, class: 'ckeditor', :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
-  = f.text_area :javascript
-  = f.form_group do
-    = f.primary "Save", data: { "disable-with" => "Saving..."}
-    button.btn.btn-link type="button" onclick="location.href = '#{blogs_path}'" Cancel
+  = f.input :published
+  = f.input :title
+  = f.input :permalink
+  = f.input :tag_list, class: 'tag_list'
+
+  br
+  = cktext_area :blog, :content, :cols => 40, class: 'ckeditor', :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}
+  = f.input :javascript
+
+  = f.button :submit, data: { "disable-with" => "Saving..."}
+  button.btn.btn-link type="button" onclick="location.href = '#{blogs_path}'" Cancel
 
 javascript:
   tags = '#{@blog.tag_list}'

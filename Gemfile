@@ -43,7 +43,7 @@ gem 'mailman'
 gem 'whenever'
 gem 'exception_notification'
 gem "validates_formatting_of"
-gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms'
+gem 'simple_form'
 gem "geocoder"
 gem 'fancybox2-rails', github: 'ChallahuAkbar/fancybox2-rails'
 gem 'truncate_html'

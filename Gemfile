@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'coffee-script'
 gem 'rspec-rails', '~> 3.8', group: [:test, :development]
 gem 'factory_girl_rails', group: [:test, :development]
+gem 'yaml_db'
+gem 'mini_magick'
 
 group :test do
   gem 'capybara'

@@ -7,6 +7,8 @@ class Pic < ActiveRecord::Base
 
   validates_presence_of :title, :caption
 
+  has_one_attached :photo
+
   has_attached_file :attachment, :processors => [:watermark],
                     :styles => {
                         :original => { :watermark_path => "#{Rails.root}/public/images/dbjohn_watermark.png" },

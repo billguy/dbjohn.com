@@ -6,6 +6,8 @@
 .DS_Store
 public/.DS_Store
 storage/
+.env
+/config/master.key
 /.idea
 # Ignore bundler config.
 /.bundle

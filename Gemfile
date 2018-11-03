@@ -58,3 +58,5 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'gmapsjs'
 gem "bootstrap-switch-rails"
 gem 'bootsnap', require: false
+
+gem 'google-cloud-storage', '~> 1.11', require: false
